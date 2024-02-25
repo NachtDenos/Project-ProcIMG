@@ -57,7 +57,7 @@ namespace ProcIMG
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(250, 1000);
+            this.panelSideMenu.Size = new System.Drawing.Size(250, 793);
             this.panelSideMenu.TabIndex = 0;
             // 
             // panelLogo
@@ -76,7 +76,7 @@ namespace ProcIMG
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(250, 0);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1550, 1000);
+            this.panelChildForm.Size = new System.Drawing.Size(1174, 793);
             this.panelChildForm.TabIndex = 1;
             // 
             // pictureBox1
@@ -85,7 +85,7 @@ namespace ProcIMG
             this.pictureBox1.Image = global::ProcIMG.Properties.Resources.LOGOGRANDE;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1550, 1000);
+            this.pictureBox1.Size = new System.Drawing.Size(1174, 793);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -102,7 +102,7 @@ namespace ProcIMG
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Image = global::ProcIMG.Properties.Resources.cerrar_sesion;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(0, 950);
+            this.btnExit.Location = new System.Drawing.Point(0, 743);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.btnExit.Size = new System.Drawing.Size(250, 50);
@@ -190,10 +190,11 @@ namespace ProcIMG
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
-            this.ClientSize = new System.Drawing.Size(1800, 1000);
+            this.ClientSize = new System.Drawing.Size(1424, 793);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panelSideMenu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "PhotoCraft";
