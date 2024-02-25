@@ -93,6 +93,16 @@ namespace ProcIMG.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LOGOGRANDE {
+            get {
+                object obj = ResourceManager.GetObject("LOGOGRANDE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logoRojo {
             get {
                 object obj = ResourceManager.GetObject("logoRojo", resourceCulture);

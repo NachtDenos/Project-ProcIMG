@@ -30,16 +30,19 @@ namespace ProcIMG
         private void InitializeComponent()
         {
             this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.panelChildForm = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnCamara = new System.Windows.Forms.Button();
             this.btnVideo = new System.Windows.Forms.Button();
             this.btnPhotos = new System.Windows.Forms.Button();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.panelChildForm = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelSideMenu.SuspendLayout();
+            this.panelLogo.SuspendLayout();
             this.panelChildForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSideMenu
@@ -56,6 +59,36 @@ namespace ProcIMG
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(250, 561);
             this.panelSideMenu.TabIndex = 0;
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.pictureBox2);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(250, 100);
+            this.panelLogo.TabIndex = 0;
+            // 
+            // panelChildForm
+            // 
+            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
+            this.panelChildForm.Controls.Add(this.pictureBox1);
+            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm.Location = new System.Drawing.Point(250, 0);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Size = new System.Drawing.Size(684, 561);
+            this.panelChildForm.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::ProcIMG.Properties.Resources.LOGOGRANDE;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(684, 561);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // btnExit
             // 
@@ -141,34 +174,16 @@ namespace ProcIMG
             this.btnPhotos.UseVisualStyleBackColor = false;
             this.btnPhotos.Click += new System.EventHandler(this.btnPhotos_Click);
             // 
-            // panelLogo
+            // pictureBox2
             // 
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(250, 100);
-            this.panelLogo.TabIndex = 0;
-            // 
-            // panelChildForm
-            // 
-            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
-            this.panelChildForm.Controls.Add(this.pictureBox1);
-            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(250, 0);
-            this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(684, 561);
-            this.panelChildForm.TabIndex = 1;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = global::ProcIMG.Properties.Resources.logoRojo1;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(684, 561);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Image = global::ProcIMG.Properties.Resources.logoRojo1;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(250, 100);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // PhotoCraft
             // 
@@ -185,8 +200,10 @@ namespace ProcIMG
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PhotoCraft";
             this.panelSideMenu.ResumeLayout(false);
+            this.panelLogo.ResumeLayout(false);
             this.panelChildForm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -201,6 +218,7 @@ namespace ProcIMG
         private System.Windows.Forms.Button btnVideo;
         private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
