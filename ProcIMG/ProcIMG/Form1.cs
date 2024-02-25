@@ -10,11 +10,48 @@ using System.Windows.Forms;
 
 namespace ProcIMG
 {
-    public partial class Form1 : Form
+    public partial class PhotoCraft : Form
     {
-        public Form1()
+
+        private Form activeForm = null;
+
+        public PhotoCraft()
         {
             InitializeComponent();
+        }
+
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelChildForm.Controls.Add(childForm);
+            panelChildForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void btnPhotos_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ImagenesForm());
+        }
+
+        private void btnVideo_Click(object sender, EventArgs e)
+        {
+            openChildForm(new VideosForm());
+        }
+
+        private void btnCamara_Click(object sender, EventArgs e)
+        {
+            openChildForm(new CamaraForm());
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); 
         }
     }
 }

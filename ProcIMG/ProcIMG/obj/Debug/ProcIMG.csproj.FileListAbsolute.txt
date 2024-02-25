@@ -1,0 +1,13 @@
+C:\Users\PC\OneDrive\Documentos\Tareas\Procesamiento de Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\bin\Debug\ProcIMG.exe.config
+C:\Users\PC\OneDrive\Documentos\Tareas\Procesamiento de Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\bin\Debug\ProcIMG.exe
+C:\Users\PC\OneDrive\Documentos\Tareas\Procesamiento de Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\bin\Debug\ProcIMG.pdb
+C:\Users\PC\OneDrive\Documentos\Tareas\Procesamiento de Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.csproj.AssemblyReference.cache
+C:\Users\PC\OneDrive\Documentos\Tareas\Procesamiento de Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.Properties.Resources.resources
+C:\Users\PC\OneDrive\Documentos\Tareas\Procesamiento de Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.csproj.GenerateResource.cache
+C:\Users\PC\OneDrive\Documentos\Tareas\Procesamiento de Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.csproj.CoreCompileInputs.cache
+C:\Users\PC\OneDrive\Documentos\Tareas\Procesamiento de Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.exe
+C:\Users\PC\OneDrive\Documentos\Tareas\Procesamiento de Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.pdb
+C:\Users\PC\OneDrive\Documentos\Tareas\Procesamiento de Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.CamaraForm.resources
+C:\Users\PC\OneDrive\Documentos\Tareas\Procesamiento de Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.ImagenesForm.resources
+C:\Users\PC\OneDrive\Documentos\Tareas\Procesamiento de Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.VideosForm.resources
+C:\Users\PC\OneDrive\Documentos\Tareas\Procesamiento de Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.PhotoCraft.resources

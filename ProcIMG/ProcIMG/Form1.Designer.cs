@@ -1,7 +1,7 @@
 ﻿
 namespace ProcIMG
 {
-    partial class Form1
+    partial class PhotoCraft
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,152 @@ namespace ProcIMG
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.btnPhotos = new System.Windows.Forms.Button();
+            this.btnVideo = new System.Windows.Forms.Button();
+            this.btnCamara = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.panelChildForm = new System.Windows.Forms.Panel();
+            this.panelSideMenu.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // panelSideMenu
+            // 
+            this.panelSideMenu.AutoScroll = true;
+            this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
+            this.panelSideMenu.Controls.Add(this.btnExit);
+            this.panelSideMenu.Controls.Add(this.btnCamara);
+            this.panelSideMenu.Controls.Add(this.btnVideo);
+            this.panelSideMenu.Controls.Add(this.btnPhotos);
+            this.panelSideMenu.Controls.Add(this.panelLogo);
+            this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelSideMenu.Name = "panelSideMenu";
+            this.panelSideMenu.Size = new System.Drawing.Size(250, 561);
+            this.panelSideMenu.TabIndex = 0;
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(250, 100);
+            this.panelLogo.TabIndex = 0;
+            // 
+            // btnPhotos
+            // 
+            this.btnPhotos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
+            this.btnPhotos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPhotos.FlatAppearance.BorderSize = 0;
+            this.btnPhotos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.btnPhotos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPhotos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPhotos.ForeColor = System.Drawing.Color.White;
+            this.btnPhotos.Location = new System.Drawing.Point(0, 100);
+            this.btnPhotos.Name = "btnPhotos";
+            this.btnPhotos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnPhotos.Size = new System.Drawing.Size(250, 50);
+            this.btnPhotos.TabIndex = 1;
+            this.btnPhotos.Text = "Imágenes";
+            this.btnPhotos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPhotos.UseVisualStyleBackColor = false;
+            this.btnPhotos.Click += new System.EventHandler(this.btnPhotos_Click);
+            // 
+            // btnVideo
+            // 
+            this.btnVideo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
+            this.btnVideo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVideo.FlatAppearance.BorderSize = 0;
+            this.btnVideo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.btnVideo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnVideo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVideo.ForeColor = System.Drawing.Color.White;
+            this.btnVideo.Location = new System.Drawing.Point(0, 150);
+            this.btnVideo.Name = "btnVideo";
+            this.btnVideo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnVideo.Size = new System.Drawing.Size(250, 50);
+            this.btnVideo.TabIndex = 2;
+            this.btnVideo.Text = "Videos";
+            this.btnVideo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVideo.UseVisualStyleBackColor = false;
+            this.btnVideo.Click += new System.EventHandler(this.btnVideo_Click);
+            // 
+            // btnCamara
+            // 
+            this.btnCamara.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
+            this.btnCamara.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCamara.FlatAppearance.BorderSize = 0;
+            this.btnCamara.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.btnCamara.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnCamara.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCamara.ForeColor = System.Drawing.Color.White;
+            this.btnCamara.Location = new System.Drawing.Point(0, 200);
+            this.btnCamara.Name = "btnCamara";
+            this.btnCamara.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnCamara.Size = new System.Drawing.Size(250, 50);
+            this.btnCamara.TabIndex = 3;
+            this.btnCamara.Text = "Cámara";
+            this.btnCamara.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCamara.UseVisualStyleBackColor = false;
+            this.btnCamara.Click += new System.EventHandler(this.btnCamara_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Location = new System.Drawing.Point(0, 511);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnExit.Size = new System.Drawing.Size(250, 50);
+            this.btnExit.TabIndex = 4;
+            this.btnExit.Text = "Salir";
+            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // panelChildForm
+            // 
+            this.panelChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
+            this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChildForm.Location = new System.Drawing.Point(250, 0);
+            this.panelChildForm.Name = "panelChildForm";
+            this.panelChildForm.Size = new System.Drawing.Size(684, 561);
+            this.panelChildForm.TabIndex = 1;
+            // 
+            // PhotoCraft
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
+            this.ClientSize = new System.Drawing.Size(934, 561);
+            this.Controls.Add(this.panelChildForm);
+            this.Controls.Add(this.panelSideMenu);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(950, 600);
+            this.Name = "PhotoCraft";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "PhotoCraft";
+            this.panelSideMenu.ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panelSideMenu;
+        private System.Windows.Forms.Button btnPhotos;
+        private System.Windows.Forms.Panel panelLogo;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button btnCamara;
+        private System.Windows.Forms.Button btnVideo;
+        private System.Windows.Forms.Panel panelChildForm;
     }
 }
 
