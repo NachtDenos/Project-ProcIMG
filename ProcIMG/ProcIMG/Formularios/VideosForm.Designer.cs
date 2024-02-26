@@ -33,44 +33,44 @@ namespace ProcIMG
             this.lblImagen = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.btnBrightness = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnMirrorVi = new System.Windows.Forms.Button();
+            this.btnPixelVi = new System.Windows.Forms.Button();
+            this.btnGaussianVi = new System.Windows.Forms.Button();
+            this.btnBrightnessVi = new System.Windows.Forms.Button();
+            this.btnNoiseVi = new System.Windows.Forms.Button();
+            this.btnContrastVi = new System.Windows.Forms.Button();
+            this.btnColorVi = new System.Windows.Forms.Button();
+            this.btnBorderVi = new System.Windows.Forms.Button();
+            this.btnGradientVi = new System.Windows.Forms.Button();
+            this.btnNegativeVi = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.prbVideoLine = new System.Windows.Forms.ProgressBar();
+            this.btnPauseVi = new System.Windows.Forms.Button();
+            this.btnPlayVi = new System.Windows.Forms.Button();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pbEditImage = new System.Windows.Forms.PictureBox();
+            this.btnDownloadVi = new System.Windows.Forms.Button();
+            this.btnEraseVi = new System.Windows.Forms.Button();
+            this.btnUploadVi = new System.Windows.Forms.Button();
+            this.pbHistogramEditVi = new System.Windows.Forms.PictureBox();
+            this.pbHistogramOriginalVi = new System.Windows.Forms.PictureBox();
+            this.pbOriginalVideo = new System.Windows.Forms.PictureBox();
+            this.pbEditVideo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEditImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHistogramEditVi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHistogramOriginalVi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOriginalVideo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEditVideo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExitFormVideo
@@ -79,7 +79,7 @@ namespace ProcIMG
             this.btnExitFormVideo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExitFormVideo.ForeColor = System.Drawing.Color.White;
             this.btnExitFormVideo.Location = new System.Drawing.Point(13, 13);
-            this.btnExitFormVideo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExitFormVideo.Margin = new System.Windows.Forms.Padding(4);
             this.btnExitFormVideo.Name = "btnExitFormVideo";
             this.btnExitFormVideo.Size = new System.Drawing.Size(30, 30);
             this.btnExitFormVideo.TabIndex = 0;
@@ -123,145 +123,145 @@ namespace ProcIMG
             this.label3.TabIndex = 43;
             this.label3.Text = "Filtros";
             // 
-            // button10
+            // btnMirrorVi
             // 
-            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(602, 724);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(119, 30);
-            this.button10.TabIndex = 36;
-            this.button10.Text = "Espejo";
-            this.button10.UseVisualStyleBackColor = false;
+            this.btnMirrorVi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnMirrorVi.FlatAppearance.BorderSize = 0;
+            this.btnMirrorVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMirrorVi.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMirrorVi.ForeColor = System.Drawing.Color.White;
+            this.btnMirrorVi.Location = new System.Drawing.Point(602, 724);
+            this.btnMirrorVi.Name = "btnMirrorVi";
+            this.btnMirrorVi.Size = new System.Drawing.Size(119, 30);
+            this.btnMirrorVi.TabIndex = 36;
+            this.btnMirrorVi.Text = "Espejo";
+            this.btnMirrorVi.UseVisualStyleBackColor = false;
             // 
-            // button6
+            // btnPixelVi
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(32, 724);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(119, 30);
-            this.button6.TabIndex = 30;
-            this.button6.Text = "Pixelar";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnPixelVi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnPixelVi.FlatAppearance.BorderSize = 0;
+            this.btnPixelVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPixelVi.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPixelVi.ForeColor = System.Drawing.Color.White;
+            this.btnPixelVi.Location = new System.Drawing.Point(32, 724);
+            this.btnPixelVi.Name = "btnPixelVi";
+            this.btnPixelVi.Size = new System.Drawing.Size(119, 30);
+            this.btnPixelVi.TabIndex = 30;
+            this.btnPixelVi.Text = "Pixelar";
+            this.btnPixelVi.UseVisualStyleBackColor = false;
             // 
-            // button9
+            // btnGaussianVi
             // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(454, 724);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(119, 30);
-            this.button9.TabIndex = 35;
-            this.button9.Text = "Gaussiano";
-            this.button9.UseVisualStyleBackColor = false;
+            this.btnGaussianVi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnGaussianVi.FlatAppearance.BorderSize = 0;
+            this.btnGaussianVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGaussianVi.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGaussianVi.ForeColor = System.Drawing.Color.White;
+            this.btnGaussianVi.Location = new System.Drawing.Point(454, 724);
+            this.btnGaussianVi.Name = "btnGaussianVi";
+            this.btnGaussianVi.Size = new System.Drawing.Size(119, 30);
+            this.btnGaussianVi.TabIndex = 35;
+            this.btnGaussianVi.Text = "Gaussiano";
+            this.btnGaussianVi.UseVisualStyleBackColor = false;
             // 
-            // btnBrightness
+            // btnBrightnessVi
             // 
-            this.btnBrightness.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
-            this.btnBrightness.FlatAppearance.BorderSize = 0;
-            this.btnBrightness.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBrightness.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrightness.ForeColor = System.Drawing.Color.White;
-            this.btnBrightness.Location = new System.Drawing.Point(32, 660);
-            this.btnBrightness.Name = "btnBrightness";
-            this.btnBrightness.Size = new System.Drawing.Size(119, 30);
-            this.btnBrightness.TabIndex = 21;
-            this.btnBrightness.Text = "Brillo";
-            this.btnBrightness.UseVisualStyleBackColor = false;
+            this.btnBrightnessVi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnBrightnessVi.FlatAppearance.BorderSize = 0;
+            this.btnBrightnessVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBrightnessVi.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrightnessVi.ForeColor = System.Drawing.Color.White;
+            this.btnBrightnessVi.Location = new System.Drawing.Point(32, 660);
+            this.btnBrightnessVi.Name = "btnBrightnessVi";
+            this.btnBrightnessVi.Size = new System.Drawing.Size(119, 30);
+            this.btnBrightnessVi.TabIndex = 21;
+            this.btnBrightnessVi.Text = "Brillo";
+            this.btnBrightnessVi.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // btnNoiseVi
             // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(313, 724);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(119, 30);
-            this.button8.TabIndex = 34;
-            this.button8.Text = "Ruido";
-            this.button8.UseVisualStyleBackColor = false;
+            this.btnNoiseVi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnNoiseVi.FlatAppearance.BorderSize = 0;
+            this.btnNoiseVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNoiseVi.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNoiseVi.ForeColor = System.Drawing.Color.White;
+            this.btnNoiseVi.Location = new System.Drawing.Point(313, 724);
+            this.btnNoiseVi.Name = "btnNoiseVi";
+            this.btnNoiseVi.Size = new System.Drawing.Size(119, 30);
+            this.btnNoiseVi.TabIndex = 34;
+            this.btnNoiseVi.Text = "Ruido";
+            this.btnNoiseVi.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnContrastVi
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(176, 660);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 30);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Contraste";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnContrastVi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnContrastVi.FlatAppearance.BorderSize = 0;
+            this.btnContrastVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnContrastVi.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContrastVi.ForeColor = System.Drawing.Color.White;
+            this.btnContrastVi.Location = new System.Drawing.Point(176, 660);
+            this.btnContrastVi.Name = "btnContrastVi";
+            this.btnContrastVi.Size = new System.Drawing.Size(119, 30);
+            this.btnContrastVi.TabIndex = 22;
+            this.btnContrastVi.Text = "Contraste";
+            this.btnContrastVi.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // btnColorVi
             // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(176, 724);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(119, 30);
-            this.button7.TabIndex = 32;
-            this.button7.Text = "Color";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnColorVi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnColorVi.FlatAppearance.BorderSize = 0;
+            this.btnColorVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnColorVi.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnColorVi.ForeColor = System.Drawing.Color.White;
+            this.btnColorVi.Location = new System.Drawing.Point(176, 724);
+            this.btnColorVi.Name = "btnColorVi";
+            this.btnColorVi.Size = new System.Drawing.Size(119, 30);
+            this.btnColorVi.TabIndex = 32;
+            this.btnColorVi.Text = "Color";
+            this.btnColorVi.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnBorderVi
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(313, 660);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(119, 30);
-            this.button3.TabIndex = 24;
-            this.button3.Text = "Esquinas";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnBorderVi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnBorderVi.FlatAppearance.BorderSize = 0;
+            this.btnBorderVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBorderVi.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorderVi.ForeColor = System.Drawing.Color.White;
+            this.btnBorderVi.Location = new System.Drawing.Point(313, 660);
+            this.btnBorderVi.Name = "btnBorderVi";
+            this.btnBorderVi.Size = new System.Drawing.Size(119, 30);
+            this.btnBorderVi.TabIndex = 24;
+            this.btnBorderVi.Text = "Esquinas";
+            this.btnBorderVi.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnGradientVi
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(454, 660);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(119, 30);
-            this.button4.TabIndex = 25;
-            this.button4.Text = "Gradiente";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnGradientVi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnGradientVi.FlatAppearance.BorderSize = 0;
+            this.btnGradientVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGradientVi.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGradientVi.ForeColor = System.Drawing.Color.White;
+            this.btnGradientVi.Location = new System.Drawing.Point(454, 660);
+            this.btnGradientVi.Name = "btnGradientVi";
+            this.btnGradientVi.Size = new System.Drawing.Size(119, 30);
+            this.btnGradientVi.TabIndex = 25;
+            this.btnGradientVi.Text = "Gradiente";
+            this.btnGradientVi.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // btnNegativeVi
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(602, 660);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(119, 30);
-            this.button5.TabIndex = 28;
-            this.button5.Text = "Negativo";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnNegativeVi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnNegativeVi.FlatAppearance.BorderSize = 0;
+            this.btnNegativeVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNegativeVi.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNegativeVi.ForeColor = System.Drawing.Color.White;
+            this.btnNegativeVi.Location = new System.Drawing.Point(602, 660);
+            this.btnNegativeVi.Name = "btnNegativeVi";
+            this.btnNegativeVi.Size = new System.Drawing.Size(119, 30);
+            this.btnNegativeVi.TabIndex = 28;
+            this.btnNegativeVi.Text = "Negativo";
+            this.btnNegativeVi.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -287,38 +287,38 @@ namespace ProcIMG
             this.label1.TabIndex = 23;
             this.label1.Text = "Editado";
             // 
-            // progressBar1
+            // prbVideoLine
             // 
-            this.progressBar1.Location = new System.Drawing.Point(32, 555);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(779, 10);
-            this.progressBar1.TabIndex = 48;
+            this.prbVideoLine.Location = new System.Drawing.Point(32, 555);
+            this.prbVideoLine.Name = "prbVideoLine";
+            this.prbVideoLine.Size = new System.Drawing.Size(779, 10);
+            this.prbVideoLine.TabIndex = 48;
             // 
-            // button14
+            // btnPauseVi
             // 
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.Image = global::ProcIMG.Properties.Resources.boton_de_pausa;
-            this.button14.Location = new System.Drawing.Point(441, 572);
-            this.button14.Margin = new System.Windows.Forms.Padding(4);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(41, 41);
-            this.button14.TabIndex = 50;
-            this.button14.UseVisualStyleBackColor = true;
+            this.btnPauseVi.FlatAppearance.BorderSize = 0;
+            this.btnPauseVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPauseVi.ForeColor = System.Drawing.Color.White;
+            this.btnPauseVi.Image = global::ProcIMG.Properties.Resources.boton_de_pausa;
+            this.btnPauseVi.Location = new System.Drawing.Point(441, 572);
+            this.btnPauseVi.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPauseVi.Name = "btnPauseVi";
+            this.btnPauseVi.Size = new System.Drawing.Size(41, 41);
+            this.btnPauseVi.TabIndex = 50;
+            this.btnPauseVi.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnPlayVi
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = global::ProcIMG.Properties.Resources.punta_de_flecha_del_boton_de_reproduccion;
-            this.button1.Location = new System.Drawing.Point(402, 572);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(41, 41);
-            this.button1.TabIndex = 49;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPlayVi.FlatAppearance.BorderSize = 0;
+            this.btnPlayVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlayVi.ForeColor = System.Drawing.Color.White;
+            this.btnPlayVi.Image = global::ProcIMG.Properties.Resources.punta_de_flecha_del_boton_de_reproduccion;
+            this.btnPlayVi.Location = new System.Drawing.Point(402, 572);
+            this.btnPlayVi.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPlayVi.Name = "btnPlayVi";
+            this.btnPlayVi.Size = new System.Drawing.Size(41, 41);
+            this.btnPlayVi.TabIndex = 49;
+            this.btnPlayVi.UseVisualStyleBackColor = true;
             // 
             // pictureBox9
             // 
@@ -380,82 +380,82 @@ namespace ProcIMG
             this.pictureBox4.TabIndex = 40;
             this.pictureBox4.TabStop = false;
             // 
-            // button13
+            // btnDownloadVi
             // 
-            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.Image = global::ProcIMG.Properties.Resources.descargas;
-            this.button13.Location = new System.Drawing.Point(1052, 535);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(50, 50);
-            this.button13.TabIndex = 39;
-            this.button13.UseVisualStyleBackColor = false;
+            this.btnDownloadVi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnDownloadVi.FlatAppearance.BorderSize = 0;
+            this.btnDownloadVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDownloadVi.ForeColor = System.Drawing.Color.White;
+            this.btnDownloadVi.Image = global::ProcIMG.Properties.Resources.descargas;
+            this.btnDownloadVi.Location = new System.Drawing.Point(1052, 535);
+            this.btnDownloadVi.Name = "btnDownloadVi";
+            this.btnDownloadVi.Size = new System.Drawing.Size(50, 50);
+            this.btnDownloadVi.TabIndex = 39;
+            this.btnDownloadVi.UseVisualStyleBackColor = false;
             // 
-            // button12
+            // btnEraseVi
             // 
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Image = global::ProcIMG.Properties.Resources.goma_de_borrar;
-            this.button12.Location = new System.Drawing.Point(973, 535);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(50, 50);
-            this.button12.TabIndex = 38;
-            this.button12.UseVisualStyleBackColor = false;
+            this.btnEraseVi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnEraseVi.FlatAppearance.BorderSize = 0;
+            this.btnEraseVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEraseVi.ForeColor = System.Drawing.Color.White;
+            this.btnEraseVi.Image = global::ProcIMG.Properties.Resources.goma_de_borrar;
+            this.btnEraseVi.Location = new System.Drawing.Point(973, 535);
+            this.btnEraseVi.Name = "btnEraseVi";
+            this.btnEraseVi.Size = new System.Drawing.Size(50, 50);
+            this.btnEraseVi.TabIndex = 38;
+            this.btnEraseVi.UseVisualStyleBackColor = false;
             // 
-            // button11
+            // btnUploadVi
             // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
-            this.button11.FlatAppearance.BorderSize = 0;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Image = global::ProcIMG.Properties.Resources.subir;
-            this.button11.Location = new System.Drawing.Point(890, 535);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(50, 50);
-            this.button11.TabIndex = 37;
-            this.button11.UseVisualStyleBackColor = false;
+            this.btnUploadVi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnUploadVi.FlatAppearance.BorderSize = 0;
+            this.btnUploadVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUploadVi.ForeColor = System.Drawing.Color.White;
+            this.btnUploadVi.Image = global::ProcIMG.Properties.Resources.subir;
+            this.btnUploadVi.Location = new System.Drawing.Point(890, 535);
+            this.btnUploadVi.Name = "btnUploadVi";
+            this.btnUploadVi.Size = new System.Drawing.Size(50, 50);
+            this.btnUploadVi.TabIndex = 37;
+            this.btnUploadVi.UseVisualStyleBackColor = false;
             // 
-            // pictureBox3
+            // pbHistogramEditVi
             // 
-            this.pictureBox3.Image = global::ProcIMG.Properties.Resources.histogram_regular;
-            this.pictureBox3.Location = new System.Drawing.Point(874, 401);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(260, 99);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 33;
-            this.pictureBox3.TabStop = false;
+            this.pbHistogramEditVi.Image = global::ProcIMG.Properties.Resources.histogram_regular;
+            this.pbHistogramEditVi.Location = new System.Drawing.Point(874, 401);
+            this.pbHistogramEditVi.Name = "pbHistogramEditVi";
+            this.pbHistogramEditVi.Size = new System.Drawing.Size(260, 99);
+            this.pbHistogramEditVi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbHistogramEditVi.TabIndex = 33;
+            this.pbHistogramEditVi.TabStop = false;
             // 
-            // pictureBox2
+            // pbHistogramOriginalVi
             // 
-            this.pictureBox2.Image = global::ProcIMG.Properties.Resources.histogram_regular;
-            this.pictureBox2.Location = new System.Drawing.Point(874, 283);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(260, 99);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 31;
-            this.pictureBox2.TabStop = false;
+            this.pbHistogramOriginalVi.Image = global::ProcIMG.Properties.Resources.histogram_regular;
+            this.pbHistogramOriginalVi.Location = new System.Drawing.Point(874, 283);
+            this.pbHistogramOriginalVi.Name = "pbHistogramOriginalVi";
+            this.pbHistogramOriginalVi.Size = new System.Drawing.Size(260, 99);
+            this.pbHistogramOriginalVi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbHistogramOriginalVi.TabIndex = 31;
+            this.pbHistogramOriginalVi.TabStop = false;
             // 
-            // pictureBox1
+            // pbOriginalVideo
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(850, 76);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(283, 169);
-            this.pictureBox1.TabIndex = 29;
-            this.pictureBox1.TabStop = false;
+            this.pbOriginalVideo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbOriginalVideo.Location = new System.Drawing.Point(850, 76);
+            this.pbOriginalVideo.Name = "pbOriginalVideo";
+            this.pbOriginalVideo.Size = new System.Drawing.Size(283, 169);
+            this.pbOriginalVideo.TabIndex = 29;
+            this.pbOriginalVideo.TabStop = false;
             // 
-            // pbEditImage
+            // pbEditVideo
             // 
-            this.pbEditImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbEditImage.Location = new System.Drawing.Point(12, 76);
-            this.pbEditImage.Name = "pbEditImage";
-            this.pbEditImage.Size = new System.Drawing.Size(822, 473);
-            this.pbEditImage.TabIndex = 27;
-            this.pbEditImage.TabStop = false;
+            this.pbEditVideo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbEditVideo.Location = new System.Drawing.Point(12, 76);
+            this.pbEditVideo.Name = "pbEditVideo";
+            this.pbEditVideo.Size = new System.Drawing.Size(822, 473);
+            this.pbEditVideo.TabIndex = 27;
+            this.pbEditVideo.TabStop = false;
             // 
             // VideosForm
             // 
@@ -463,41 +463,41 @@ namespace ProcIMG
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
             this.ClientSize = new System.Drawing.Size(1174, 793);
-            this.Controls.Add(this.button14);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.btnPauseVi);
+            this.Controls.Add(this.btnPlayVi);
+            this.Controls.Add(this.prbVideoLine);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button10);
+            this.Controls.Add(this.btnMirrorVi);
             this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button9);
+            this.Controls.Add(this.btnPixelVi);
+            this.Controls.Add(this.btnGaussianVi);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.btnBrightness);
+            this.Controls.Add(this.btnBrightnessVi);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button13);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.pbEditImage);
+            this.Controls.Add(this.btnNoiseVi);
+            this.Controls.Add(this.btnDownloadVi);
+            this.Controls.Add(this.btnContrastVi);
+            this.Controls.Add(this.btnEraseVi);
+            this.Controls.Add(this.btnColorVi);
+            this.Controls.Add(this.btnUploadVi);
+            this.Controls.Add(this.btnBorderVi);
+            this.Controls.Add(this.btnGradientVi);
+            this.Controls.Add(this.btnNegativeVi);
+            this.Controls.Add(this.pbHistogramEditVi);
+            this.Controls.Add(this.pbHistogramOriginalVi);
+            this.Controls.Add(this.pbOriginalVideo);
+            this.Controls.Add(this.pbEditVideo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblImagen);
             this.Controls.Add(this.btnExitFormVideo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VideosForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "VideosForm";
@@ -507,10 +507,10 @@ namespace ProcIMG
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEditImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHistogramEditVi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHistogramOriginalVi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbOriginalVideo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEditVideo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -525,30 +525,30 @@ namespace ProcIMG
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btnMirrorVi;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnPixelVi;
+        private System.Windows.Forms.Button btnGaussianVi;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Button btnBrightness;
+        private System.Windows.Forms.Button btnBrightnessVi;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pbEditImage;
+        private System.Windows.Forms.Button btnNoiseVi;
+        private System.Windows.Forms.Button btnDownloadVi;
+        private System.Windows.Forms.Button btnContrastVi;
+        private System.Windows.Forms.Button btnEraseVi;
+        private System.Windows.Forms.Button btnColorVi;
+        private System.Windows.Forms.Button btnUploadVi;
+        private System.Windows.Forms.Button btnBorderVi;
+        private System.Windows.Forms.Button btnGradientVi;
+        private System.Windows.Forms.Button btnNegativeVi;
+        private System.Windows.Forms.PictureBox pbHistogramEditVi;
+        private System.Windows.Forms.PictureBox pbHistogramOriginalVi;
+        private System.Windows.Forms.PictureBox pbOriginalVideo;
+        private System.Windows.Forms.PictureBox pbEditVideo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.ProgressBar prbVideoLine;
+        private System.Windows.Forms.Button btnPlayVi;
+        private System.Windows.Forms.Button btnPauseVi;
     }
 }
