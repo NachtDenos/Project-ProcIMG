@@ -161,5 +161,8 @@
   <ItemGroup>
     <None Include="Resources\boton-de-encendido-apagado.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manual.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

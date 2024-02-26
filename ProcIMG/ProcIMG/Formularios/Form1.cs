@@ -20,20 +20,7 @@ namespace ProcIMG
             InitializeComponent();
         }
 
-        private void openChildForm(Form childForm)
-        {
-            if (activeForm != null)
-                activeForm.Close();
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelChildForm.Controls.Add(childForm);
-            panelChildForm.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-        }
-
+        #region Buttons
         private void btnPhotos_Click(object sender, EventArgs e)
         {
             openChildForm(new ImagenesForm());
@@ -51,7 +38,30 @@ namespace ProcIMG
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit(); 
+            Application.Exit();
         }
+
+        private void btnManual_Click(object sender, EventArgs e)
+        {
+            //Codigo para abrir el manual de usuario en pdf.
+        }
+        #endregion
+
+        #region Functions
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelChildForm.Controls.Add(childForm);
+            panelChildForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+        #endregion
+
     }
 }
