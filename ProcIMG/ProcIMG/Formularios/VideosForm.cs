@@ -16,10 +16,100 @@ namespace ProcIMG
         {
             InitializeComponent();
         }
+        #region Functions
+        private void cleanConfiguration()
+        {
+            lblColorChoiceVi.Visible = false;
+            lblColorChoice2Vi.Visible = false;
+            btnRedVi.Visible = false;
+            btnRedVi2.Visible = false;
+            btnGreenVi.Visible = false;
+            btnGreenVi2.Visible = false;
+            btnBlueVi.Visible = false;
+            btnBlueVi2.Visible = false;
+            btnMoreColorsVi.Visible = false;
+            btnMoreColorsVi2.Visible = false;
+            tbGradientVi.Visible = false;
+            tbFilterOnlyVi.Visible = false;
+            btnVerticalVi.Visible = false;
+            btnHorizontalVi.Visible = false;
+        }
+        #endregion
 
+        #region Buttons
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void btnBrightnessVi_Click(object sender, EventArgs e)
+        {
+            cleanConfiguration();
+            tbFilterOnlyVi.Visible = true;
+        }
+        private void btnContrastVi_Click(object sender, EventArgs e)
+        {
+            cleanConfiguration();
+            tbFilterOnlyVi.Visible = true;
+        }
+        private void btnBorderVi_Click(object sender, EventArgs e)
+        {
+            cleanConfiguration();
+        }
+        private void btnGradientVi_Click(object sender, EventArgs e)
+        {
+            cleanConfiguration();
+            lblColorChoiceVi.Visible = true;
+            lblColorChoice2Vi.Visible = true;
+            btnRedVi.Visible = true;
+            btnRedVi2.Visible = true;
+            btnGreenVi.Visible = true;
+            btnGreenVi2.Visible = true;
+            btnBlueVi.Visible = true;
+            btnBlueVi2.Visible = true;
+            btnMoreColorsVi.Visible = true;
+            btnMoreColorsVi2.Visible = true;
+            tbGradientVi.Visible = true;
+        }
+        private void btnNegativeVi_Click(object sender, EventArgs e)
+        {
+            cleanConfiguration();
+        }
+        private void btnPixelVi_Click(object sender, EventArgs e)
+        {
+            cleanConfiguration();
+            tbFilterOnlyVi.Visible = true;
+        }
+        private void btnColorVi_Click(object sender, EventArgs e)
+        {
+            cleanConfiguration();
+            lblColorChoiceVi.Visible = true;
+            btnRedVi.Visible = true;
+            btnGreenVi.Visible = true;
+            btnBlueVi.Visible = true;
+            btnMoreColorsVi.Visible = true;
+        }
+        private void btnNoiseVi_Click(object sender, EventArgs e)
+        {
+            cleanConfiguration();
+            tbFilterOnlyVi.Visible = true;
+        }
+        private void btnGaussianVi_Click(object sender, EventArgs e)
+        {
+            cleanConfiguration();
+            tbFilterOnlyVi.Visible = true;
+        }
+        private void btnMirrorVi_Click(object sender, EventArgs e)
+        {
+            cleanConfiguration();
+            btnVerticalVi.Visible = true;
+            btnHorizontalVi.Visible = true;
+        }
+
+        #endregion
+
+        private void btnEraseVi_Click(object sender, EventArgs e)
+        {
+            cleanConfiguration();
         }
     }
 }

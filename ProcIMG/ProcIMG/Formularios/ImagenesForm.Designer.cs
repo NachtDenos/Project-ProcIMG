@@ -59,6 +59,20 @@ namespace ProcIMG
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.tbFilterOnlyImg = new System.Windows.Forms.TrackBar();
+            this.lblColorChoiceImg = new System.Windows.Forms.Label();
+            this.btnRedImg = new System.Windows.Forms.Button();
+            this.btnGreenImg = new System.Windows.Forms.Button();
+            this.btnBlueImg = new System.Windows.Forms.Button();
+            this.btnMoreColorsImg = new System.Windows.Forms.Button();
+            this.btnMoreColorsImg2 = new System.Windows.Forms.Button();
+            this.btnBlueImg2 = new System.Windows.Forms.Button();
+            this.btnGreenImg2 = new System.Windows.Forms.Button();
+            this.btnRedImg2 = new System.Windows.Forms.Button();
+            this.lblColorChoiceImg2 = new System.Windows.Forms.Label();
+            this.tbGradientImg = new System.Windows.Forms.TrackBar();
+            this.btnHorizontalImg = new System.Windows.Forms.Button();
+            this.btnVerticalImg = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -69,6 +83,8 @@ namespace ProcIMG
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbFilterOnlyImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbGradientImg)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExitFormImagen
@@ -143,6 +159,7 @@ namespace ProcIMG
             this.btnBrightnessImg.TabIndex = 0;
             this.btnBrightnessImg.Text = "Brillo";
             this.btnBrightnessImg.UseVisualStyleBackColor = false;
+            this.btnBrightnessImg.Click += new System.EventHandler(this.btnBrightnessImg_Click);
             // 
             // btnConstrastImg
             // 
@@ -157,6 +174,7 @@ namespace ProcIMG
             this.btnConstrastImg.TabIndex = 1;
             this.btnConstrastImg.Text = "Contraste";
             this.btnConstrastImg.UseVisualStyleBackColor = false;
+            this.btnConstrastImg.Click += new System.EventHandler(this.btnConstrastImg_Click);
             // 
             // btnBoderImg
             // 
@@ -171,6 +189,7 @@ namespace ProcIMG
             this.btnBoderImg.TabIndex = 2;
             this.btnBoderImg.Text = "Esquinas";
             this.btnBoderImg.UseVisualStyleBackColor = false;
+            this.btnBoderImg.Click += new System.EventHandler(this.btnBoderImg_Click);
             // 
             // btnGradientImg
             // 
@@ -185,6 +204,7 @@ namespace ProcIMG
             this.btnGradientImg.TabIndex = 3;
             this.btnGradientImg.Text = "Gradiente";
             this.btnGradientImg.UseVisualStyleBackColor = false;
+            this.btnGradientImg.Click += new System.EventHandler(this.btnGradientImg_Click);
             // 
             // btnNegativeImg
             // 
@@ -199,6 +219,7 @@ namespace ProcIMG
             this.btnNegativeImg.TabIndex = 4;
             this.btnNegativeImg.Text = "Negativo";
             this.btnNegativeImg.UseVisualStyleBackColor = false;
+            this.btnNegativeImg.Click += new System.EventHandler(this.btnNegativeImg_Click);
             // 
             // btnPixelImg
             // 
@@ -213,6 +234,7 @@ namespace ProcIMG
             this.btnPixelImg.TabIndex = 5;
             this.btnPixelImg.Text = "Pixelar";
             this.btnPixelImg.UseVisualStyleBackColor = false;
+            this.btnPixelImg.Click += new System.EventHandler(this.btnPixelImg_Click);
             // 
             // btnColorImg
             // 
@@ -227,6 +249,7 @@ namespace ProcIMG
             this.btnColorImg.TabIndex = 6;
             this.btnColorImg.Text = "Color";
             this.btnColorImg.UseVisualStyleBackColor = false;
+            this.btnColorImg.Click += new System.EventHandler(this.btnColorImg_Click);
             // 
             // btnNoiseImg
             // 
@@ -241,6 +264,7 @@ namespace ProcIMG
             this.btnNoiseImg.TabIndex = 7;
             this.btnNoiseImg.Text = "Ruido";
             this.btnNoiseImg.UseVisualStyleBackColor = false;
+            this.btnNoiseImg.Click += new System.EventHandler(this.btnNoiseImg_Click);
             // 
             // btnGaussianImg
             // 
@@ -255,6 +279,7 @@ namespace ProcIMG
             this.btnGaussianImg.TabIndex = 8;
             this.btnGaussianImg.Text = "Gaussiano";
             this.btnGaussianImg.UseVisualStyleBackColor = false;
+            this.btnGaussianImg.Click += new System.EventHandler(this.btnGaussianImg_Click);
             // 
             // btnMirrorImg
             // 
@@ -269,6 +294,7 @@ namespace ProcIMG
             this.btnMirrorImg.TabIndex = 9;
             this.btnMirrorImg.Text = "Espejo";
             this.btnMirrorImg.UseVisualStyleBackColor = false;
+            this.btnMirrorImg.Click += new System.EventHandler(this.btnMirrorImg_Click);
             // 
             // pictureBox6
             // 
@@ -325,6 +351,7 @@ namespace ProcIMG
             this.btnEraseImg.Size = new System.Drawing.Size(50, 50);
             this.btnEraseImg.TabIndex = 11;
             this.btnEraseImg.UseVisualStyleBackColor = false;
+            this.btnEraseImg.Click += new System.EventHandler(this.btnEraseImg_Click);
             // 
             // btnUploadImg
             // 
@@ -431,12 +458,214 @@ namespace ProcIMG
             this.pictureBox9.TabIndex = 20;
             this.pictureBox9.TabStop = false;
             // 
+            // tbFilterOnlyImg
+            // 
+            this.tbFilterOnlyImg.Location = new System.Drawing.Point(745, 648);
+            this.tbFilterOnlyImg.Name = "tbFilterOnlyImg";
+            this.tbFilterOnlyImg.Size = new System.Drawing.Size(402, 45);
+            this.tbFilterOnlyImg.TabIndex = 21;
+            this.tbFilterOnlyImg.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.tbFilterOnlyImg.Visible = false;
+            // 
+            // lblColorChoiceImg
+            // 
+            this.lblColorChoiceImg.AutoSize = true;
+            this.lblColorChoiceImg.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColorChoiceImg.ForeColor = System.Drawing.Color.White;
+            this.lblColorChoiceImg.Location = new System.Drawing.Point(741, 658);
+            this.lblColorChoiceImg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblColorChoiceImg.Name = "lblColorChoiceImg";
+            this.lblColorChoiceImg.Size = new System.Drawing.Size(159, 23);
+            this.lblColorChoiceImg.TabIndex = 22;
+            this.lblColorChoiceImg.Text = "Escoge un color:";
+            this.lblColorChoiceImg.Visible = false;
+            // 
+            // btnRedImg
+            // 
+            this.btnRedImg.BackColor = System.Drawing.Color.Red;
+            this.btnRedImg.FlatAppearance.BorderSize = 0;
+            this.btnRedImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRedImg.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRedImg.ForeColor = System.Drawing.Color.White;
+            this.btnRedImg.Location = new System.Drawing.Point(907, 658);
+            this.btnRedImg.Name = "btnRedImg";
+            this.btnRedImg.Size = new System.Drawing.Size(25, 25);
+            this.btnRedImg.TabIndex = 23;
+            this.btnRedImg.UseVisualStyleBackColor = false;
+            this.btnRedImg.Visible = false;
+            // 
+            // btnGreenImg
+            // 
+            this.btnGreenImg.BackColor = System.Drawing.Color.Green;
+            this.btnGreenImg.FlatAppearance.BorderSize = 0;
+            this.btnGreenImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGreenImg.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGreenImg.ForeColor = System.Drawing.Color.White;
+            this.btnGreenImg.Location = new System.Drawing.Point(953, 657);
+            this.btnGreenImg.Name = "btnGreenImg";
+            this.btnGreenImg.Size = new System.Drawing.Size(25, 25);
+            this.btnGreenImg.TabIndex = 24;
+            this.btnGreenImg.UseVisualStyleBackColor = false;
+            this.btnGreenImg.Visible = false;
+            // 
+            // btnBlueImg
+            // 
+            this.btnBlueImg.BackColor = System.Drawing.Color.Blue;
+            this.btnBlueImg.FlatAppearance.BorderSize = 0;
+            this.btnBlueImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBlueImg.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBlueImg.ForeColor = System.Drawing.Color.White;
+            this.btnBlueImg.Location = new System.Drawing.Point(999, 658);
+            this.btnBlueImg.Name = "btnBlueImg";
+            this.btnBlueImg.Size = new System.Drawing.Size(25, 25);
+            this.btnBlueImg.TabIndex = 25;
+            this.btnBlueImg.UseVisualStyleBackColor = false;
+            this.btnBlueImg.Visible = false;
+            // 
+            // btnMoreColorsImg
+            // 
+            this.btnMoreColorsImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnMoreColorsImg.FlatAppearance.BorderSize = 0;
+            this.btnMoreColorsImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMoreColorsImg.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMoreColorsImg.ForeColor = System.Drawing.Color.White;
+            this.btnMoreColorsImg.Location = new System.Drawing.Point(1045, 658);
+            this.btnMoreColorsImg.Name = "btnMoreColorsImg";
+            this.btnMoreColorsImg.Size = new System.Drawing.Size(89, 25);
+            this.btnMoreColorsImg.TabIndex = 26;
+            this.btnMoreColorsImg.Text = "Más colores...";
+            this.btnMoreColorsImg.UseVisualStyleBackColor = false;
+            this.btnMoreColorsImg.Visible = false;
+            // 
+            // btnMoreColorsImg2
+            // 
+            this.btnMoreColorsImg2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnMoreColorsImg2.FlatAppearance.BorderSize = 0;
+            this.btnMoreColorsImg2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMoreColorsImg2.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMoreColorsImg2.ForeColor = System.Drawing.Color.White;
+            this.btnMoreColorsImg2.Location = new System.Drawing.Point(1045, 696);
+            this.btnMoreColorsImg2.Name = "btnMoreColorsImg2";
+            this.btnMoreColorsImg2.Size = new System.Drawing.Size(89, 25);
+            this.btnMoreColorsImg2.TabIndex = 31;
+            this.btnMoreColorsImg2.Text = "Más colores...";
+            this.btnMoreColorsImg2.UseVisualStyleBackColor = false;
+            this.btnMoreColorsImg2.Visible = false;
+            // 
+            // btnBlueImg2
+            // 
+            this.btnBlueImg2.BackColor = System.Drawing.Color.Blue;
+            this.btnBlueImg2.FlatAppearance.BorderSize = 0;
+            this.btnBlueImg2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBlueImg2.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBlueImg2.ForeColor = System.Drawing.Color.White;
+            this.btnBlueImg2.Location = new System.Drawing.Point(999, 696);
+            this.btnBlueImg2.Name = "btnBlueImg2";
+            this.btnBlueImg2.Size = new System.Drawing.Size(25, 25);
+            this.btnBlueImg2.TabIndex = 30;
+            this.btnBlueImg2.UseVisualStyleBackColor = false;
+            this.btnBlueImg2.Visible = false;
+            // 
+            // btnGreenImg2
+            // 
+            this.btnGreenImg2.BackColor = System.Drawing.Color.Green;
+            this.btnGreenImg2.FlatAppearance.BorderSize = 0;
+            this.btnGreenImg2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGreenImg2.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGreenImg2.ForeColor = System.Drawing.Color.White;
+            this.btnGreenImg2.Location = new System.Drawing.Point(953, 695);
+            this.btnGreenImg2.Name = "btnGreenImg2";
+            this.btnGreenImg2.Size = new System.Drawing.Size(25, 25);
+            this.btnGreenImg2.TabIndex = 29;
+            this.btnGreenImg2.UseVisualStyleBackColor = false;
+            this.btnGreenImg2.Visible = false;
+            // 
+            // btnRedImg2
+            // 
+            this.btnRedImg2.BackColor = System.Drawing.Color.Red;
+            this.btnRedImg2.FlatAppearance.BorderSize = 0;
+            this.btnRedImg2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRedImg2.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRedImg2.ForeColor = System.Drawing.Color.White;
+            this.btnRedImg2.Location = new System.Drawing.Point(907, 696);
+            this.btnRedImg2.Name = "btnRedImg2";
+            this.btnRedImg2.Size = new System.Drawing.Size(25, 25);
+            this.btnRedImg2.TabIndex = 28;
+            this.btnRedImg2.UseVisualStyleBackColor = false;
+            this.btnRedImg2.Visible = false;
+            // 
+            // lblColorChoiceImg2
+            // 
+            this.lblColorChoiceImg2.AutoSize = true;
+            this.lblColorChoiceImg2.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColorChoiceImg2.ForeColor = System.Drawing.Color.White;
+            this.lblColorChoiceImg2.Location = new System.Drawing.Point(741, 696);
+            this.lblColorChoiceImg2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblColorChoiceImg2.Name = "lblColorChoiceImg2";
+            this.lblColorChoiceImg2.Size = new System.Drawing.Size(159, 23);
+            this.lblColorChoiceImg2.TabIndex = 27;
+            this.lblColorChoiceImg2.Text = "Escoge un color:";
+            this.lblColorChoiceImg2.Visible = false;
+            // 
+            // tbGradientImg
+            // 
+            this.tbGradientImg.Location = new System.Drawing.Point(745, 736);
+            this.tbGradientImg.Name = "tbGradientImg";
+            this.tbGradientImg.Size = new System.Drawing.Size(402, 45);
+            this.tbGradientImg.TabIndex = 32;
+            this.tbGradientImg.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.tbGradientImg.Visible = false;
+            // 
+            // btnHorizontalImg
+            // 
+            this.btnHorizontalImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnHorizontalImg.FlatAppearance.BorderSize = 0;
+            this.btnHorizontalImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHorizontalImg.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHorizontalImg.ForeColor = System.Drawing.Color.White;
+            this.btnHorizontalImg.Location = new System.Drawing.Point(828, 688);
+            this.btnHorizontalImg.Name = "btnHorizontalImg";
+            this.btnHorizontalImg.Size = new System.Drawing.Size(119, 30);
+            this.btnHorizontalImg.TabIndex = 33;
+            this.btnHorizontalImg.Text = "Horizontal";
+            this.btnHorizontalImg.UseVisualStyleBackColor = false;
+            this.btnHorizontalImg.Visible = false;
+            // 
+            // btnVerticalImg
+            // 
+            this.btnVerticalImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnVerticalImg.FlatAppearance.BorderSize = 0;
+            this.btnVerticalImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerticalImg.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerticalImg.ForeColor = System.Drawing.Color.White;
+            this.btnVerticalImg.Location = new System.Drawing.Point(962, 688);
+            this.btnVerticalImg.Name = "btnVerticalImg";
+            this.btnVerticalImg.Size = new System.Drawing.Size(119, 30);
+            this.btnVerticalImg.TabIndex = 34;
+            this.btnVerticalImg.Text = "Vertical";
+            this.btnVerticalImg.UseVisualStyleBackColor = false;
+            this.btnVerticalImg.Visible = false;
+            // 
             // ImagenesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
             this.ClientSize = new System.Drawing.Size(1174, 793);
+            this.Controls.Add(this.btnVerticalImg);
+            this.Controls.Add(this.btnHorizontalImg);
+            this.Controls.Add(this.tbGradientImg);
+            this.Controls.Add(this.btnMoreColorsImg2);
+            this.Controls.Add(this.btnBlueImg2);
+            this.Controls.Add(this.btnGreenImg2);
+            this.Controls.Add(this.btnRedImg2);
+            this.Controls.Add(this.lblColorChoiceImg2);
+            this.Controls.Add(this.btnMoreColorsImg);
+            this.Controls.Add(this.btnBlueImg);
+            this.Controls.Add(this.btnGreenImg);
+            this.Controls.Add(this.btnRedImg);
+            this.Controls.Add(this.lblColorChoiceImg);
+            this.Controls.Add(this.tbFilterOnlyImg);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox7);
@@ -482,6 +711,8 @@ namespace ProcIMG
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbFilterOnlyImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbGradientImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -519,5 +750,19 @@ namespace ProcIMG
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.TrackBar tbFilterOnlyImg;
+        private System.Windows.Forms.Label lblColorChoiceImg;
+        private System.Windows.Forms.Button btnRedImg;
+        private System.Windows.Forms.Button btnGreenImg;
+        private System.Windows.Forms.Button btnBlueImg;
+        private System.Windows.Forms.Button btnMoreColorsImg;
+        private System.Windows.Forms.Button btnMoreColorsImg2;
+        private System.Windows.Forms.Button btnBlueImg2;
+        private System.Windows.Forms.Button btnGreenImg2;
+        private System.Windows.Forms.Button btnRedImg2;
+        private System.Windows.Forms.Label lblColorChoiceImg2;
+        private System.Windows.Forms.TrackBar tbGradientImg;
+        private System.Windows.Forms.Button btnHorizontalImg;
+        private System.Windows.Forms.Button btnVerticalImg;
     }
 }

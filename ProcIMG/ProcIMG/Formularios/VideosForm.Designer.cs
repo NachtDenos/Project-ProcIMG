@@ -61,6 +61,20 @@ namespace ProcIMG
             this.pbHistogramOriginalVi = new System.Windows.Forms.PictureBox();
             this.pbOriginalVideo = new System.Windows.Forms.PictureBox();
             this.pbEditVideo = new System.Windows.Forms.PictureBox();
+            this.tbFilterOnlyVi = new System.Windows.Forms.TrackBar();
+            this.tbGradientVi = new System.Windows.Forms.TrackBar();
+            this.btnMoreColorsVi2 = new System.Windows.Forms.Button();
+            this.btnBlueVi2 = new System.Windows.Forms.Button();
+            this.btnGreenVi2 = new System.Windows.Forms.Button();
+            this.btnRedVi2 = new System.Windows.Forms.Button();
+            this.lblColorChoice2Vi = new System.Windows.Forms.Label();
+            this.btnMoreColorsVi = new System.Windows.Forms.Button();
+            this.btnBlueVi = new System.Windows.Forms.Button();
+            this.btnGreenVi = new System.Windows.Forms.Button();
+            this.btnRedVi = new System.Windows.Forms.Button();
+            this.lblColorChoiceVi = new System.Windows.Forms.Label();
+            this.btnVerticalVi = new System.Windows.Forms.Button();
+            this.btnHorizontalVi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -71,6 +85,8 @@ namespace ProcIMG
             ((System.ComponentModel.ISupportInitialize)(this.pbHistogramOriginalVi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOriginalVideo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEditVideo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbFilterOnlyVi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbGradientVi)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExitFormVideo
@@ -136,6 +152,7 @@ namespace ProcIMG
             this.btnMirrorVi.TabIndex = 36;
             this.btnMirrorVi.Text = "Espejo";
             this.btnMirrorVi.UseVisualStyleBackColor = false;
+            this.btnMirrorVi.Click += new System.EventHandler(this.btnMirrorVi_Click);
             // 
             // btnPixelVi
             // 
@@ -150,6 +167,7 @@ namespace ProcIMG
             this.btnPixelVi.TabIndex = 30;
             this.btnPixelVi.Text = "Pixelar";
             this.btnPixelVi.UseVisualStyleBackColor = false;
+            this.btnPixelVi.Click += new System.EventHandler(this.btnPixelVi_Click);
             // 
             // btnGaussianVi
             // 
@@ -164,6 +182,7 @@ namespace ProcIMG
             this.btnGaussianVi.TabIndex = 35;
             this.btnGaussianVi.Text = "Gaussiano";
             this.btnGaussianVi.UseVisualStyleBackColor = false;
+            this.btnGaussianVi.Click += new System.EventHandler(this.btnGaussianVi_Click);
             // 
             // btnBrightnessVi
             // 
@@ -178,6 +197,7 @@ namespace ProcIMG
             this.btnBrightnessVi.TabIndex = 21;
             this.btnBrightnessVi.Text = "Brillo";
             this.btnBrightnessVi.UseVisualStyleBackColor = false;
+            this.btnBrightnessVi.Click += new System.EventHandler(this.btnBrightnessVi_Click);
             // 
             // btnNoiseVi
             // 
@@ -192,6 +212,7 @@ namespace ProcIMG
             this.btnNoiseVi.TabIndex = 34;
             this.btnNoiseVi.Text = "Ruido";
             this.btnNoiseVi.UseVisualStyleBackColor = false;
+            this.btnNoiseVi.Click += new System.EventHandler(this.btnNoiseVi_Click);
             // 
             // btnContrastVi
             // 
@@ -206,6 +227,7 @@ namespace ProcIMG
             this.btnContrastVi.TabIndex = 22;
             this.btnContrastVi.Text = "Contraste";
             this.btnContrastVi.UseVisualStyleBackColor = false;
+            this.btnContrastVi.Click += new System.EventHandler(this.btnContrastVi_Click);
             // 
             // btnColorVi
             // 
@@ -220,6 +242,7 @@ namespace ProcIMG
             this.btnColorVi.TabIndex = 32;
             this.btnColorVi.Text = "Color";
             this.btnColorVi.UseVisualStyleBackColor = false;
+            this.btnColorVi.Click += new System.EventHandler(this.btnColorVi_Click);
             // 
             // btnBorderVi
             // 
@@ -234,6 +257,7 @@ namespace ProcIMG
             this.btnBorderVi.TabIndex = 24;
             this.btnBorderVi.Text = "Esquinas";
             this.btnBorderVi.UseVisualStyleBackColor = false;
+            this.btnBorderVi.Click += new System.EventHandler(this.btnBorderVi_Click);
             // 
             // btnGradientVi
             // 
@@ -248,6 +272,7 @@ namespace ProcIMG
             this.btnGradientVi.TabIndex = 25;
             this.btnGradientVi.Text = "Gradiente";
             this.btnGradientVi.UseVisualStyleBackColor = false;
+            this.btnGradientVi.Click += new System.EventHandler(this.btnGradientVi_Click);
             // 
             // btnNegativeVi
             // 
@@ -262,6 +287,7 @@ namespace ProcIMG
             this.btnNegativeVi.TabIndex = 28;
             this.btnNegativeVi.Text = "Negativo";
             this.btnNegativeVi.UseVisualStyleBackColor = false;
+            this.btnNegativeVi.Click += new System.EventHandler(this.btnNegativeVi_Click);
             // 
             // label2
             // 
@@ -405,6 +431,7 @@ namespace ProcIMG
             this.btnEraseVi.Size = new System.Drawing.Size(50, 50);
             this.btnEraseVi.TabIndex = 38;
             this.btnEraseVi.UseVisualStyleBackColor = false;
+            this.btnEraseVi.Click += new System.EventHandler(this.btnEraseVi_Click);
             // 
             // btnUploadVi
             // 
@@ -457,12 +484,214 @@ namespace ProcIMG
             this.pbEditVideo.TabIndex = 27;
             this.pbEditVideo.TabStop = false;
             // 
+            // tbFilterOnlyVi
+            // 
+            this.tbFilterOnlyVi.Location = new System.Drawing.Point(744, 660);
+            this.tbFilterOnlyVi.Name = "tbFilterOnlyVi";
+            this.tbFilterOnlyVi.Size = new System.Drawing.Size(402, 45);
+            this.tbFilterOnlyVi.TabIndex = 51;
+            this.tbFilterOnlyVi.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.tbFilterOnlyVi.Visible = false;
+            // 
+            // tbGradientVi
+            // 
+            this.tbGradientVi.Location = new System.Drawing.Point(744, 728);
+            this.tbGradientVi.Name = "tbGradientVi";
+            this.tbGradientVi.Size = new System.Drawing.Size(402, 45);
+            this.tbGradientVi.TabIndex = 62;
+            this.tbGradientVi.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.tbGradientVi.Visible = false;
+            // 
+            // btnMoreColorsVi2
+            // 
+            this.btnMoreColorsVi2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnMoreColorsVi2.FlatAppearance.BorderSize = 0;
+            this.btnMoreColorsVi2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMoreColorsVi2.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMoreColorsVi2.ForeColor = System.Drawing.Color.White;
+            this.btnMoreColorsVi2.Location = new System.Drawing.Point(1057, 688);
+            this.btnMoreColorsVi2.Name = "btnMoreColorsVi2";
+            this.btnMoreColorsVi2.Size = new System.Drawing.Size(89, 25);
+            this.btnMoreColorsVi2.TabIndex = 61;
+            this.btnMoreColorsVi2.Text = "Más colores...";
+            this.btnMoreColorsVi2.UseVisualStyleBackColor = false;
+            this.btnMoreColorsVi2.Visible = false;
+            // 
+            // btnBlueVi2
+            // 
+            this.btnBlueVi2.BackColor = System.Drawing.Color.Blue;
+            this.btnBlueVi2.FlatAppearance.BorderSize = 0;
+            this.btnBlueVi2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBlueVi2.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBlueVi2.ForeColor = System.Drawing.Color.White;
+            this.btnBlueVi2.Location = new System.Drawing.Point(998, 688);
+            this.btnBlueVi2.Name = "btnBlueVi2";
+            this.btnBlueVi2.Size = new System.Drawing.Size(25, 25);
+            this.btnBlueVi2.TabIndex = 60;
+            this.btnBlueVi2.UseVisualStyleBackColor = false;
+            this.btnBlueVi2.Visible = false;
+            // 
+            // btnGreenVi2
+            // 
+            this.btnGreenVi2.BackColor = System.Drawing.Color.Green;
+            this.btnGreenVi2.FlatAppearance.BorderSize = 0;
+            this.btnGreenVi2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGreenVi2.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGreenVi2.ForeColor = System.Drawing.Color.White;
+            this.btnGreenVi2.Location = new System.Drawing.Point(952, 687);
+            this.btnGreenVi2.Name = "btnGreenVi2";
+            this.btnGreenVi2.Size = new System.Drawing.Size(25, 25);
+            this.btnGreenVi2.TabIndex = 59;
+            this.btnGreenVi2.UseVisualStyleBackColor = false;
+            this.btnGreenVi2.Visible = false;
+            // 
+            // btnRedVi2
+            // 
+            this.btnRedVi2.BackColor = System.Drawing.Color.Red;
+            this.btnRedVi2.FlatAppearance.BorderSize = 0;
+            this.btnRedVi2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRedVi2.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRedVi2.ForeColor = System.Drawing.Color.White;
+            this.btnRedVi2.Location = new System.Drawing.Point(906, 688);
+            this.btnRedVi2.Name = "btnRedVi2";
+            this.btnRedVi2.Size = new System.Drawing.Size(25, 25);
+            this.btnRedVi2.TabIndex = 58;
+            this.btnRedVi2.UseVisualStyleBackColor = false;
+            this.btnRedVi2.Visible = false;
+            // 
+            // lblColorChoice2Vi
+            // 
+            this.lblColorChoice2Vi.AutoSize = true;
+            this.lblColorChoice2Vi.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColorChoice2Vi.ForeColor = System.Drawing.Color.White;
+            this.lblColorChoice2Vi.Location = new System.Drawing.Point(740, 688);
+            this.lblColorChoice2Vi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblColorChoice2Vi.Name = "lblColorChoice2Vi";
+            this.lblColorChoice2Vi.Size = new System.Drawing.Size(159, 23);
+            this.lblColorChoice2Vi.TabIndex = 57;
+            this.lblColorChoice2Vi.Text = "Escoge un color:";
+            this.lblColorChoice2Vi.Visible = false;
+            // 
+            // btnMoreColorsVi
+            // 
+            this.btnMoreColorsVi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnMoreColorsVi.FlatAppearance.BorderSize = 0;
+            this.btnMoreColorsVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMoreColorsVi.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMoreColorsVi.ForeColor = System.Drawing.Color.White;
+            this.btnMoreColorsVi.Location = new System.Drawing.Point(1057, 651);
+            this.btnMoreColorsVi.Name = "btnMoreColorsVi";
+            this.btnMoreColorsVi.Size = new System.Drawing.Size(89, 25);
+            this.btnMoreColorsVi.TabIndex = 56;
+            this.btnMoreColorsVi.Text = "Más colores...";
+            this.btnMoreColorsVi.UseVisualStyleBackColor = false;
+            this.btnMoreColorsVi.Visible = false;
+            // 
+            // btnBlueVi
+            // 
+            this.btnBlueVi.BackColor = System.Drawing.Color.Blue;
+            this.btnBlueVi.FlatAppearance.BorderSize = 0;
+            this.btnBlueVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBlueVi.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBlueVi.ForeColor = System.Drawing.Color.White;
+            this.btnBlueVi.Location = new System.Drawing.Point(998, 650);
+            this.btnBlueVi.Name = "btnBlueVi";
+            this.btnBlueVi.Size = new System.Drawing.Size(25, 25);
+            this.btnBlueVi.TabIndex = 55;
+            this.btnBlueVi.UseVisualStyleBackColor = false;
+            this.btnBlueVi.Visible = false;
+            // 
+            // btnGreenVi
+            // 
+            this.btnGreenVi.BackColor = System.Drawing.Color.Green;
+            this.btnGreenVi.FlatAppearance.BorderSize = 0;
+            this.btnGreenVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGreenVi.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGreenVi.ForeColor = System.Drawing.Color.White;
+            this.btnGreenVi.Location = new System.Drawing.Point(952, 649);
+            this.btnGreenVi.Name = "btnGreenVi";
+            this.btnGreenVi.Size = new System.Drawing.Size(25, 25);
+            this.btnGreenVi.TabIndex = 54;
+            this.btnGreenVi.UseVisualStyleBackColor = false;
+            this.btnGreenVi.Visible = false;
+            // 
+            // btnRedVi
+            // 
+            this.btnRedVi.BackColor = System.Drawing.Color.Red;
+            this.btnRedVi.FlatAppearance.BorderSize = 0;
+            this.btnRedVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRedVi.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRedVi.ForeColor = System.Drawing.Color.White;
+            this.btnRedVi.Location = new System.Drawing.Point(906, 650);
+            this.btnRedVi.Name = "btnRedVi";
+            this.btnRedVi.Size = new System.Drawing.Size(25, 25);
+            this.btnRedVi.TabIndex = 53;
+            this.btnRedVi.UseVisualStyleBackColor = false;
+            this.btnRedVi.Visible = false;
+            // 
+            // lblColorChoiceVi
+            // 
+            this.lblColorChoiceVi.AutoSize = true;
+            this.lblColorChoiceVi.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblColorChoiceVi.ForeColor = System.Drawing.Color.White;
+            this.lblColorChoiceVi.Location = new System.Drawing.Point(740, 650);
+            this.lblColorChoiceVi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblColorChoiceVi.Name = "lblColorChoiceVi";
+            this.lblColorChoiceVi.Size = new System.Drawing.Size(159, 23);
+            this.lblColorChoiceVi.TabIndex = 52;
+            this.lblColorChoiceVi.Text = "Escoge un color:";
+            this.lblColorChoiceVi.Visible = false;
+            // 
+            // btnVerticalVi
+            // 
+            this.btnVerticalVi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnVerticalVi.FlatAppearance.BorderSize = 0;
+            this.btnVerticalVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerticalVi.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerticalVi.ForeColor = System.Drawing.Color.White;
+            this.btnVerticalVi.Location = new System.Drawing.Point(961, 688);
+            this.btnVerticalVi.Name = "btnVerticalVi";
+            this.btnVerticalVi.Size = new System.Drawing.Size(119, 30);
+            this.btnVerticalVi.TabIndex = 64;
+            this.btnVerticalVi.Text = "Vertical";
+            this.btnVerticalVi.UseVisualStyleBackColor = false;
+            this.btnVerticalVi.Visible = false;
+            // 
+            // btnHorizontalVi
+            // 
+            this.btnHorizontalVi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnHorizontalVi.FlatAppearance.BorderSize = 0;
+            this.btnHorizontalVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHorizontalVi.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHorizontalVi.ForeColor = System.Drawing.Color.White;
+            this.btnHorizontalVi.Location = new System.Drawing.Point(827, 688);
+            this.btnHorizontalVi.Name = "btnHorizontalVi";
+            this.btnHorizontalVi.Size = new System.Drawing.Size(119, 30);
+            this.btnHorizontalVi.TabIndex = 63;
+            this.btnHorizontalVi.Text = "Horizontal";
+            this.btnHorizontalVi.UseVisualStyleBackColor = false;
+            this.btnHorizontalVi.Visible = false;
+            // 
             // VideosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
             this.ClientSize = new System.Drawing.Size(1174, 793);
+            this.Controls.Add(this.btnVerticalVi);
+            this.Controls.Add(this.btnHorizontalVi);
+            this.Controls.Add(this.tbGradientVi);
+            this.Controls.Add(this.btnMoreColorsVi2);
+            this.Controls.Add(this.btnBlueVi2);
+            this.Controls.Add(this.btnGreenVi2);
+            this.Controls.Add(this.btnRedVi2);
+            this.Controls.Add(this.lblColorChoice2Vi);
+            this.Controls.Add(this.btnMoreColorsVi);
+            this.Controls.Add(this.btnBlueVi);
+            this.Controls.Add(this.btnGreenVi);
+            this.Controls.Add(this.btnRedVi);
+            this.Controls.Add(this.lblColorChoiceVi);
+            this.Controls.Add(this.tbFilterOnlyVi);
             this.Controls.Add(this.btnPauseVi);
             this.Controls.Add(this.btnPlayVi);
             this.Controls.Add(this.prbVideoLine);
@@ -511,6 +740,8 @@ namespace ProcIMG
             ((System.ComponentModel.ISupportInitialize)(this.pbHistogramOriginalVi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOriginalVideo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEditVideo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbFilterOnlyVi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbGradientVi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -550,5 +781,19 @@ namespace ProcIMG
         private System.Windows.Forms.ProgressBar prbVideoLine;
         private System.Windows.Forms.Button btnPlayVi;
         private System.Windows.Forms.Button btnPauseVi;
+        private System.Windows.Forms.TrackBar tbFilterOnlyVi;
+        private System.Windows.Forms.TrackBar tbGradientVi;
+        private System.Windows.Forms.Button btnMoreColorsVi2;
+        private System.Windows.Forms.Button btnBlueVi2;
+        private System.Windows.Forms.Button btnGreenVi2;
+        private System.Windows.Forms.Button btnRedVi2;
+        private System.Windows.Forms.Label lblColorChoice2Vi;
+        private System.Windows.Forms.Button btnMoreColorsVi;
+        private System.Windows.Forms.Button btnBlueVi;
+        private System.Windows.Forms.Button btnGreenVi;
+        private System.Windows.Forms.Button btnRedVi;
+        private System.Windows.Forms.Label lblColorChoiceVi;
+        private System.Windows.Forms.Button btnVerticalVi;
+        private System.Windows.Forms.Button btnHorizontalVi;
     }
 }
