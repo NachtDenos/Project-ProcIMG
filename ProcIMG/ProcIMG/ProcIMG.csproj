@@ -146,5 +146,14 @@
   <ItemGroup>
     <None Include="Resources\linea.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\punta-de-flecha-del-boton-de-reproduccion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton-de-pausa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Editado.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

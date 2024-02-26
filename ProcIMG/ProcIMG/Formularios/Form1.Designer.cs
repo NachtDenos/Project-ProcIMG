@@ -102,10 +102,10 @@ namespace ProcIMG
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Image = global::ProcIMG.Properties.Resources.cerrar_sesion;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(0, 743);
+            this.btnExit.Location = new System.Drawing.Point(0, 733);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnExit.Size = new System.Drawing.Size(250, 50);
+            this.btnExit.Size = new System.Drawing.Size(250, 60);
             this.btnExit.TabIndex = 4;
             this.btnExit.Text = "Salir";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -123,10 +123,10 @@ namespace ProcIMG
             this.btnCamara.ForeColor = System.Drawing.Color.White;
             this.btnCamara.Image = global::ProcIMG.Properties.Resources.lente;
             this.btnCamara.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCamara.Location = new System.Drawing.Point(0, 200);
+            this.btnCamara.Location = new System.Drawing.Point(0, 220);
             this.btnCamara.Name = "btnCamara";
             this.btnCamara.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnCamara.Size = new System.Drawing.Size(250, 50);
+            this.btnCamara.Size = new System.Drawing.Size(250, 60);
             this.btnCamara.TabIndex = 3;
             this.btnCamara.Text = "Cámara";
             this.btnCamara.UseVisualStyleBackColor = false;
@@ -144,10 +144,10 @@ namespace ProcIMG
             this.btnVideo.ForeColor = System.Drawing.Color.White;
             this.btnVideo.Image = global::ProcIMG.Properties.Resources.video;
             this.btnVideo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVideo.Location = new System.Drawing.Point(0, 150);
+            this.btnVideo.Location = new System.Drawing.Point(0, 160);
             this.btnVideo.Name = "btnVideo";
             this.btnVideo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnVideo.Size = new System.Drawing.Size(250, 50);
+            this.btnVideo.Size = new System.Drawing.Size(250, 60);
             this.btnVideo.TabIndex = 2;
             this.btnVideo.Text = "Videos";
             this.btnVideo.UseVisualStyleBackColor = false;
@@ -168,7 +168,7 @@ namespace ProcIMG
             this.btnPhotos.Location = new System.Drawing.Point(0, 100);
             this.btnPhotos.Name = "btnPhotos";
             this.btnPhotos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnPhotos.Size = new System.Drawing.Size(250, 50);
+            this.btnPhotos.Size = new System.Drawing.Size(250, 60);
             this.btnPhotos.TabIndex = 1;
             this.btnPhotos.Text = "Imágenes";
             this.btnPhotos.UseVisualStyleBackColor = false;

@@ -103,7 +103,7 @@ namespace ProcIMG
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(388, 73);
+            this.label1.Location = new System.Drawing.Point(388, 53);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 23);
@@ -115,7 +115,7 @@ namespace ProcIMG
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(958, 73);
+            this.label2.Location = new System.Drawing.Point(958, 53);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 23);
@@ -284,7 +284,7 @@ namespace ProcIMG
             // pictureBox5
             // 
             this.pictureBox5.Image = global::ProcIMG.Properties.Resources.Original;
-            this.pictureBox5.Location = new System.Drawing.Point(845, 313);
+            this.pictureBox5.Location = new System.Drawing.Point(845, 293);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(23, 77);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -294,7 +294,7 @@ namespace ProcIMG
             // pictureBox4
             // 
             this.pictureBox4.Image = global::ProcIMG.Properties.Resources.Editada;
-            this.pictureBox4.Location = new System.Drawing.Point(845, 417);
+            this.pictureBox4.Location = new System.Drawing.Point(845, 397);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(23, 80);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -343,7 +343,7 @@ namespace ProcIMG
             // pictureBox3
             // 
             this.pictureBox3.Image = global::ProcIMG.Properties.Resources.histogram_regular;
-            this.pictureBox3.Location = new System.Drawing.Point(874, 408);
+            this.pictureBox3.Location = new System.Drawing.Point(874, 388);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(260, 99);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -353,7 +353,7 @@ namespace ProcIMG
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ProcIMG.Properties.Resources.histogram_regular;
-            this.pictureBox2.Location = new System.Drawing.Point(874, 303);
+            this.pictureBox2.Location = new System.Drawing.Point(874, 283);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(260, 99);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -363,7 +363,7 @@ namespace ProcIMG
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(851, 110);
+            this.pictureBox1.Location = new System.Drawing.Point(851, 90);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(283, 169);
             this.pictureBox1.TabIndex = 5;
@@ -372,7 +372,7 @@ namespace ProcIMG
             // pbEditImage
             // 
             this.pbEditImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbEditImage.Location = new System.Drawing.Point(13, 110);
+            this.pbEditImage.Location = new System.Drawing.Point(13, 90);
             this.pbEditImage.Name = "pbEditImage";
             this.pbEditImage.Size = new System.Drawing.Size(822, 473);
             this.pbEditImage.TabIndex = 4;

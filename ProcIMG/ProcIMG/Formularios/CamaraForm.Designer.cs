@@ -35,6 +35,9 @@ namespace ProcIMG
             // 
             // btnExitFormCamara
             // 
+            this.btnExitFormCamara.FlatAppearance.BorderSize = 0;
+            this.btnExitFormCamara.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExitFormCamara.ForeColor = System.Drawing.Color.White;
             this.btnExitFormCamara.Location = new System.Drawing.Point(13, 13);
             this.btnExitFormCamara.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExitFormCamara.Name = "btnExitFormCamara";
@@ -49,7 +52,7 @@ namespace ProcIMG
             this.lblImagen.AutoSize = true;
             this.lblImagen.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblImagen.ForeColor = System.Drawing.Color.White;
-            this.lblImagen.Location = new System.Drawing.Point(427, 13);
+            this.lblImagen.Location = new System.Drawing.Point(514, 13);
             this.lblImagen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblImagen.Name = "lblImagen";
             this.lblImagen.Size = new System.Drawing.Size(131, 38);
@@ -62,7 +65,7 @@ namespace ProcIMG
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
-            this.ClientSize = new System.Drawing.Size(960, 680);
+            this.ClientSize = new System.Drawing.Size(1174, 793);
             this.Controls.Add(this.lblImagen);
             this.Controls.Add(this.btnExitFormCamara);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
