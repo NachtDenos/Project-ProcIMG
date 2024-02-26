@@ -125,5 +125,26 @@
   <ItemGroup>
     <None Include="Resources\LOGOGRANDE.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\histogram-regular.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\subir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\descargas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goma-de-borrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Editada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Original.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\linea.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
