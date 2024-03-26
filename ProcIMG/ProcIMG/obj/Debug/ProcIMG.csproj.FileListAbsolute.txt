@@ -11,3 +11,23 @@ C:\Users\PC\OneDrive\Documentos\Tareas\Procesamiento de Imagenes\Project-ProcIMG
 C:\Users\PC\OneDrive\Documentos\Tareas\Procesamiento de Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.ImagenesForm.resources
 C:\Users\PC\OneDrive\Documentos\Tareas\Procesamiento de Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.VideosForm.resources
 C:\Users\PC\OneDrive\Documentos\Tareas\Procesamiento de Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.PhotoCraft.resources
+C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\bin\Debug\ProcIMG.exe.config
+C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\bin\Debug\ProcIMG.exe
+C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\bin\Debug\ProcIMG.pdb
+C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\bin\Debug\AForge.dll
+C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\bin\Debug\AForge.Video.dll
+C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\bin\Debug\AForge.xml
+C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\bin\Debug\AForge.Video.xml
+C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\bin\Debug\AForge.Video.DirectShow.xml
+C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.csproj.AssemblyReference.cache
+C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.CamaraForm.resources
+C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.PhotoCraft.resources
+C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.ImagenesForm.resources
+C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.Properties.Resources.resources
+C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.VideosForm.resources
+C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.csproj.GenerateResource.cache
+C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.csproj.CoreCompileInputs.cache
+C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.csproj.CopyComplete
+C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.exe
+C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.pdb

@@ -41,6 +41,7 @@ namespace ProcIMG
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pbCamera = new System.Windows.Forms.PictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -69,7 +70,7 @@ namespace ProcIMG
             this.lblImagen.Location = new System.Drawing.Point(514, 13);
             this.lblImagen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblImagen.Name = "lblImagen";
-            this.lblImagen.Size = new System.Drawing.Size(131, 38);
+            this.lblImagen.Size = new System.Drawing.Size(165, 48);
             this.lblImagen.TabIndex = 2;
             this.lblImagen.Text = "Cámara";
             // 
@@ -81,7 +82,7 @@ namespace ProcIMG
             this.label3.Location = new System.Drawing.Point(86, 603);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(242, 27);
+            this.label3.Size = new System.Drawing.Size(302, 33);
             this.label3.TabIndex = 47;
             this.label3.Text = "Encendido de Cámara";
             // 
@@ -93,7 +94,7 @@ namespace ProcIMG
             this.label2.Location = new System.Drawing.Point(983, 121);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 23);
+            this.label2.Size = new System.Drawing.Size(117, 28);
             this.label2.TabIndex = 49;
             this.label2.Text = "Personas:";
             // 
@@ -105,7 +106,7 @@ namespace ProcIMG
             this.lblNumPerson.Location = new System.Drawing.Point(1079, 121);
             this.lblNumPerson.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumPerson.Name = "lblNumPerson";
-            this.lblNumPerson.Size = new System.Drawing.Size(21, 23);
+            this.lblNumPerson.Size = new System.Drawing.Size(25, 28);
             this.lblNumPerson.TabIndex = 50;
             this.lblNumPerson.Text = "0";
             // 
@@ -117,7 +118,7 @@ namespace ProcIMG
             this.cbCamera.ForeColor = System.Drawing.SystemColors.Window;
             this.cbCamera.Location = new System.Drawing.Point(424, 665);
             this.cbCamera.Name = "cbCamera";
-            this.cbCamera.Size = new System.Drawing.Size(244, 31);
+            this.cbCamera.Size = new System.Drawing.Size(244, 36);
             this.cbCamera.TabIndex = 53;
             // 
             // pictureBox1
@@ -142,6 +143,7 @@ namespace ProcIMG
             this.btnOnOffCamera.Size = new System.Drawing.Size(40, 40);
             this.btnOnOffCamera.TabIndex = 51;
             this.btnOnOffCamera.UseVisualStyleBackColor = false;
+            this.btnOnOffCamera.Click += new System.EventHandler(this.btnOnOffCamera_Click);
             // 
             // pictureBox7
             // 
@@ -172,12 +174,21 @@ namespace ProcIMG
             this.pbCamera.TabIndex = 28;
             this.pbCamera.TabStop = false;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(979, 397);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 28);
+            this.comboBox1.TabIndex = 54;
+            // 
             // CamaraForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
             this.ClientSize = new System.Drawing.Size(1174, 793);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.cbCamera);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnOnOffCamera);
@@ -195,6 +206,8 @@ namespace ProcIMG
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CamaraForm";
             this.Text = "CamaraForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CamaraForm_FormClosed);
+            this.Load += new System.EventHandler(this.CamaraForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -217,5 +230,6 @@ namespace ProcIMG
         private System.Windows.Forms.Button btnOnOffCamera;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cbCamera;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
