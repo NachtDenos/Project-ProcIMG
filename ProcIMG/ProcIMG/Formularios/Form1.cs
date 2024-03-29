@@ -43,7 +43,7 @@ namespace ProcIMG
 
         private void btnManual_Click(object sender, EventArgs e)
         {
-            //Codigo para abrir el manual de usuario en pdf.
+            openChildForm(new ManualForm());
         }
         #endregion
 

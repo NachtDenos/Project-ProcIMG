@@ -14,6 +14,7 @@ namespace ProcIMG
 {
     public partial class CamaraForm : Form
     {
+        private int activeCameraIndex = -1;
         private bool DevicesExist;
         private FilterInfoCollection MyDevices;
         private VideoCaptureDevice MyWebCam;
@@ -29,8 +30,8 @@ namespace ProcIMG
             {
                 DevicesExist = true;
                 for(int i = 0; i < MyDevices.Count; i++)
-                    comboBox1.Items.Add(MyDevices[i].Name.ToString());
-                comboBox1.Text = MyDevices[0].ToString();
+                    cbCamera.Items.Add(MyDevices[i].Name.ToString());
+                cbCamera.Text = MyDevices[0].ToString();
             }
             else
             {
@@ -59,12 +60,28 @@ namespace ProcIMG
 
         private void btnOnOffCamera_Click(object sender, EventArgs e)
         {
-            turnOffWebCam();
-            int i = comboBox1.SelectedIndex;
-            string nameVideo = MyDevices[i].MonikerString;
-            MyWebCam = new VideoCaptureDevice(nameVideo);
-            MyWebCam.NewFrame += new NewFrameEventHandler(capture);
-            MyWebCam.Start();
+            if (activeCameraIndex >= 0)
+            {
+                turnOffWebCam();
+                activeCameraIndex = -1;
+                pbCamera.Image = null;
+            }
+            else
+            {
+                int i = cbCamera.SelectedIndex;
+                if (i >= 0 && i < MyDevices.Count)
+                {
+                    string nameVideo = MyDevices[i].MonikerString;
+                    MyWebCam = new VideoCaptureDevice(nameVideo);
+                    MyWebCam.NewFrame += new NewFrameEventHandler(capture);
+                    MyWebCam.Start();
+                    activeCameraIndex = i; 
+                }
+                else
+                {
+                    MessageBox.Show("Selecciona una cámara válida.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
 
         private void capture(object sender, NewFrameEventArgs eventArgs)

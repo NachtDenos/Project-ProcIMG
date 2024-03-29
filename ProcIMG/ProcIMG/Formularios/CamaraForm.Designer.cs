@@ -41,7 +41,6 @@ namespace ProcIMG
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pbCamera = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -171,16 +170,9 @@ namespace ProcIMG
             this.pbCamera.Location = new System.Drawing.Point(237, 94);
             this.pbCamera.Name = "pbCamera";
             this.pbCamera.Size = new System.Drawing.Size(685, 473);
+            this.pbCamera.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbCamera.TabIndex = 28;
             this.pbCamera.TabStop = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(979, 397);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 28);
-            this.comboBox1.TabIndex = 54;
             // 
             // CamaraForm
             // 
@@ -188,7 +180,6 @@ namespace ProcIMG
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
             this.ClientSize = new System.Drawing.Size(1174, 793);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.cbCamera);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnOnOffCamera);
@@ -230,6 +221,5 @@ namespace ProcIMG
         private System.Windows.Forms.Button btnOnOffCamera;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ComboBox cbCamera;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
