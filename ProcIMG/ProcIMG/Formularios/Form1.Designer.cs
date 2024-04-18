@@ -31,7 +31,6 @@ namespace ProcIMG
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhotoCraft));
             this.panelSideMenu = new System.Windows.Forms.Panel();
-            this.btnManual = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnCamara = new System.Windows.Forms.Button();
             this.btnVideo = new System.Windows.Forms.Button();
@@ -51,7 +50,6 @@ namespace ProcIMG
             // 
             this.panelSideMenu.AutoScroll = true;
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
-            this.panelSideMenu.Controls.Add(this.btnManual);
             this.panelSideMenu.Controls.Add(this.btnExit);
             this.panelSideMenu.Controls.Add(this.btnCamara);
             this.panelSideMenu.Controls.Add(this.btnVideo);
@@ -62,27 +60,6 @@ namespace ProcIMG
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(250, 793);
             this.panelSideMenu.TabIndex = 0;
-            // 
-            // btnManual
-            // 
-            this.btnManual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
-            this.btnManual.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnManual.FlatAppearance.BorderSize = 0;
-            this.btnManual.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btnManual.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnManual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManual.Font = new System.Drawing.Font("Arial Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManual.ForeColor = System.Drawing.Color.White;
-            this.btnManual.Image = global::ProcIMG.Properties.Resources.manual;
-            this.btnManual.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnManual.Location = new System.Drawing.Point(0, 280);
-            this.btnManual.Name = "btnManual";
-            this.btnManual.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnManual.Size = new System.Drawing.Size(250, 60);
-            this.btnManual.TabIndex = 5;
-            this.btnManual.Text = "Manual";
-            this.btnManual.UseVisualStyleBackColor = false;
-            this.btnManual.Click += new System.EventHandler(this.btnManual_Click);
             // 
             // btnExit
             // 
@@ -211,7 +188,7 @@ namespace ProcIMG
             // 
             // PhotoCraft
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(1424, 793);
@@ -245,7 +222,6 @@ namespace ProcIMG
         private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button btnManual;
     }
 }
 

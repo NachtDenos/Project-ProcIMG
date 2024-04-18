@@ -41,10 +41,6 @@ namespace ProcIMG
             Application.Exit();
         }
 
-        private void btnManual_Click(object sender, EventArgs e)
-        {
-            openChildForm(new ManualForm());
-        }
         #endregion
 
         #region Functions

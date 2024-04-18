@@ -31,4 +31,3 @@ C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG
 C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.csproj.CopyComplete
 C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.exe
 C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.pdb
-C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.ManualForm.resources
