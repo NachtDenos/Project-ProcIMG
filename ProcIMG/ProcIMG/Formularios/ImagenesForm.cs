@@ -12,6 +12,17 @@ namespace ProcIMG
 {
     public partial class ImagenesForm : Form
     {
+        public Bitmap resultImg;
+        public Bitmap originalImg;
+        public string sFilter = "";
+        public enum Channel
+        {
+            Red,
+            Green,
+            Blue
+        }
+
+
         public ImagenesForm()
         {
             InitializeComponent();
@@ -69,11 +80,37 @@ namespace ProcIMG
             btnBlueImg2.Visible = true;
             btnMoreColorsImg.Visible = true;
             btnMoreColorsImg2.Visible = true;
+            sFilter = "Gradiente";
         }
 
         private void btnNegativeImg_Click(object sender, EventArgs e)
         {
             cleanConfiguration();
+            if (originalImg == null)
+            {
+                MessageBox.Show("Debe seleccionar una imagen antes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            int x = 0;
+            int y = 0;
+            resultImg = new Bitmap(originalImg.Width, originalImg.Height);
+            Color rColor = new Color();
+            Color oColor = new Color();
+            for (x = 0; x < originalImg.Width; x++)
+            {
+                for (y = 0; y < originalImg.Height; y++)
+                {
+                    oColor = originalImg.GetPixel(x, y);
+
+                    rColor = Color.FromArgb(255 - oColor.R,
+                                            255 - oColor.G,
+                                            255 - oColor.B);
+
+                    resultImg.SetPixel(x, y, rColor);
+                }
+            }
+            this.Invalidate();
+            pbEditImage.Image = resultImg;
         }
 
         private void btnPixelImg_Click(object sender, EventArgs e)
@@ -84,12 +121,18 @@ namespace ProcIMG
 
         private void btnColorImg_Click(object sender, EventArgs e)
         {
+            if (originalImg == null)
+            {
+                MessageBox.Show("Debe seleccionar una imagen antes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             cleanConfiguration();
             lblColorChoiceImg.Visible = true;
             btnRedImg.Visible = true;
             btnGreenImg.Visible = true;
             btnBlueImg.Visible = true;
             btnMoreColorsImg.Visible = true;
+            sFilter = "Color";
         }
 
         private void btnNoiseImg_Click(object sender, EventArgs e)
@@ -116,6 +159,92 @@ namespace ProcIMG
         private void btnEraseImg_Click(object sender, EventArgs e)
         {
             cleanConfiguration();
+        }
+
+        private void btnUploadImg_Click(object sender, EventArgs e)
+        {
+            Bitmap bitmapImage = null;
+            OpenFileDialog fileImage = new OpenFileDialog();
+            fileImage.Filter = "archivos de imagenes (*.png; *.jpg; *.jpeg)| *.png;*jpg;*jpeg";
+            if(fileImage.ShowDialog() == DialogResult.OK)
+            {
+                pbEditImage.Image = Image.FromFile(fileImage.FileName);
+                pbOriginalImage.Image = Image.FromFile(fileImage.FileName);
+                bitmapImage = new Bitmap(fileImage.FileName);
+                originalImg = bitmapImage;
+            }
+        }
+
+        private void btnRedImg_Click(object sender, EventArgs e)
+        {
+            if (sFilter == "Color")
+            {
+                pbEditImage.Image = ApplyChannelFilter(originalImg, Channel.Red);
+                this.Invalidate();
+            }
+            else
+            {
+
+            }
+        }
+
+        private void btnGreenImg_Click(object sender, EventArgs e)
+        {
+            if (sFilter == "Color")
+            {
+                pbEditImage.Image = ApplyChannelFilter(originalImg, Channel.Green);
+                this.Invalidate();
+            }
+            else
+            {
+
+            }
+        }
+
+        private void btnBlueImg_Click(object sender, EventArgs e)
+        {
+            if (sFilter == "Color")
+            {
+                pbEditImage.Image = ApplyChannelFilter(originalImg, Channel.Blue);
+                this.Invalidate();
+            }
+            else
+            {
+
+            }
+        }
+
+        private Bitmap ApplyChannelFilter(Bitmap originalImg, Channel channel)
+        {
+            Bitmap resultImg = new Bitmap(originalImg.Width, originalImg.Height);
+
+            for (int x = 0; x < originalImg.Width; x++)
+            {
+                for (int y = 0; y < originalImg.Height; y++)
+                {
+                    Color oColor = originalImg.GetPixel(x, y);
+                    Color newColor;
+
+                    switch (channel)
+                    {
+                        case Channel.Red:
+                            newColor = Color.FromArgb(oColor.R, 0, 0);
+                            break;
+                        case Channel.Green:
+                            newColor = Color.FromArgb(0, oColor.G, 0);
+                            break;
+                        case Channel.Blue:
+                            newColor = Color.FromArgb(0, 0, oColor.B);
+                            break;
+                        default:
+                            newColor = oColor;
+                            break;
+                    }
+
+                    resultImg.SetPixel(x, y, newColor);
+                }
+            }
+            return resultImg;
         }
     }
 }

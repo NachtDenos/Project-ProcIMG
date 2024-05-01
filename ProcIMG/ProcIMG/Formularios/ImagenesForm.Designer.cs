@@ -110,7 +110,7 @@ namespace ProcIMG
             this.lblImagen.Location = new System.Drawing.Point(514, 13);
             this.lblImagen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblImagen.Name = "lblImagen";
-            this.lblImagen.Size = new System.Drawing.Size(162, 38);
+            this.lblImagen.Size = new System.Drawing.Size(203, 48);
             this.lblImagen.TabIndex = 1;
             this.lblImagen.Text = "Imágenes";
             // 
@@ -122,7 +122,7 @@ namespace ProcIMG
             this.label1.Location = new System.Drawing.Point(388, 53);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 23);
+            this.label1.Size = new System.Drawing.Size(94, 28);
             this.label1.TabIndex = 2;
             this.label1.Text = "Editada";
             // 
@@ -134,7 +134,7 @@ namespace ProcIMG
             this.label2.Location = new System.Drawing.Point(958, 53);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 23);
+            this.label2.Size = new System.Drawing.Size(98, 28);
             this.label2.TabIndex = 3;
             this.label2.Text = "Original";
             // 
@@ -366,6 +366,7 @@ namespace ProcIMG
             this.btnUploadImg.Size = new System.Drawing.Size(50, 50);
             this.btnUploadImg.TabIndex = 10;
             this.btnUploadImg.UseVisualStyleBackColor = false;
+            this.btnUploadImg.Click += new System.EventHandler(this.btnUploadImg_Click);
             // 
             // pbHistogramEditImg
             // 
@@ -393,6 +394,7 @@ namespace ProcIMG
             this.pbOriginalImage.Location = new System.Drawing.Point(851, 90);
             this.pbOriginalImage.Name = "pbOriginalImage";
             this.pbOriginalImage.Size = new System.Drawing.Size(283, 169);
+            this.pbOriginalImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbOriginalImage.TabIndex = 5;
             this.pbOriginalImage.TabStop = false;
             // 
@@ -402,6 +404,7 @@ namespace ProcIMG
             this.pbEditImage.Location = new System.Drawing.Point(13, 90);
             this.pbEditImage.Name = "pbEditImage";
             this.pbEditImage.Size = new System.Drawing.Size(822, 473);
+            this.pbEditImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbEditImage.TabIndex = 4;
             this.pbEditImage.TabStop = false;
             // 
@@ -413,7 +416,7 @@ namespace ProcIMG
             this.label3.Location = new System.Drawing.Point(62, 606);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 27);
+            this.label3.Size = new System.Drawing.Size(100, 33);
             this.label3.TabIndex = 16;
             this.label3.Text = "Filtros";
             // 
@@ -425,7 +428,7 @@ namespace ProcIMG
             this.label4.Location = new System.Drawing.Point(807, 606);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(158, 27);
+            this.label4.Size = new System.Drawing.Size(198, 33);
             this.label4.TabIndex = 17;
             this.label4.Text = "Configuración";
             // 
@@ -463,7 +466,7 @@ namespace ProcIMG
             // 
             this.tbFilterOnlyImg.Location = new System.Drawing.Point(745, 648);
             this.tbFilterOnlyImg.Name = "tbFilterOnlyImg";
-            this.tbFilterOnlyImg.Size = new System.Drawing.Size(402, 45);
+            this.tbFilterOnlyImg.Size = new System.Drawing.Size(402, 56);
             this.tbFilterOnlyImg.TabIndex = 21;
             this.tbFilterOnlyImg.TickStyle = System.Windows.Forms.TickStyle.None;
             this.tbFilterOnlyImg.Visible = false;
@@ -476,7 +479,7 @@ namespace ProcIMG
             this.lblColorChoiceImg.Location = new System.Drawing.Point(741, 658);
             this.lblColorChoiceImg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblColorChoiceImg.Name = "lblColorChoiceImg";
-            this.lblColorChoiceImg.Size = new System.Drawing.Size(159, 23);
+            this.lblColorChoiceImg.Size = new System.Drawing.Size(193, 28);
             this.lblColorChoiceImg.TabIndex = 22;
             this.lblColorChoiceImg.Text = "Escoge un color:";
             this.lblColorChoiceImg.Visible = false;
@@ -494,6 +497,7 @@ namespace ProcIMG
             this.btnRedImg.TabIndex = 23;
             this.btnRedImg.UseVisualStyleBackColor = false;
             this.btnRedImg.Visible = false;
+            this.btnRedImg.Click += new System.EventHandler(this.btnRedImg_Click);
             // 
             // btnGreenImg
             // 
@@ -508,6 +512,7 @@ namespace ProcIMG
             this.btnGreenImg.TabIndex = 24;
             this.btnGreenImg.UseVisualStyleBackColor = false;
             this.btnGreenImg.Visible = false;
+            this.btnGreenImg.Click += new System.EventHandler(this.btnGreenImg_Click);
             // 
             // btnBlueImg
             // 
@@ -522,6 +527,7 @@ namespace ProcIMG
             this.btnBlueImg.TabIndex = 25;
             this.btnBlueImg.UseVisualStyleBackColor = false;
             this.btnBlueImg.Visible = false;
+            this.btnBlueImg.Click += new System.EventHandler(this.btnBlueImg_Click);
             // 
             // btnMoreColorsImg
             // 
@@ -603,7 +609,7 @@ namespace ProcIMG
             this.lblColorChoiceImg2.Location = new System.Drawing.Point(741, 696);
             this.lblColorChoiceImg2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblColorChoiceImg2.Name = "lblColorChoiceImg2";
-            this.lblColorChoiceImg2.Size = new System.Drawing.Size(159, 23);
+            this.lblColorChoiceImg2.Size = new System.Drawing.Size(193, 28);
             this.lblColorChoiceImg2.TabIndex = 27;
             this.lblColorChoiceImg2.Text = "Escoge un color:";
             this.lblColorChoiceImg2.Visible = false;
@@ -612,7 +618,7 @@ namespace ProcIMG
             // 
             this.tbGradientImg.Location = new System.Drawing.Point(745, 736);
             this.tbGradientImg.Name = "tbGradientImg";
-            this.tbGradientImg.Size = new System.Drawing.Size(402, 45);
+            this.tbGradientImg.Size = new System.Drawing.Size(402, 56);
             this.tbGradientImg.TabIndex = 32;
             this.tbGradientImg.TickStyle = System.Windows.Forms.TickStyle.None;
             this.tbGradientImg.Visible = false;
@@ -649,7 +655,7 @@ namespace ProcIMG
             // 
             // ImagenesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
             this.ClientSize = new System.Drawing.Size(1174, 793);
