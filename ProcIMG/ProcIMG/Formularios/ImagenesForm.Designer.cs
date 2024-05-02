@@ -469,7 +469,9 @@ namespace ProcIMG
             this.tbFilterOnlyImg.Size = new System.Drawing.Size(402, 56);
             this.tbFilterOnlyImg.TabIndex = 21;
             this.tbFilterOnlyImg.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.tbFilterOnlyImg.Value = 5;
             this.tbFilterOnlyImg.Visible = false;
+            this.tbFilterOnlyImg.Scroll += new System.EventHandler(this.tbFilterOnlyImg_Scroll);
             // 
             // lblColorChoiceImg
             // 
