@@ -176,6 +176,59 @@ namespace ProcIMG
             this.Invalidate();
             pbEditImage.Image = resultImg;
         }
+
+        private void PixelFilter(int pixelPercent)
+        {
+            if (pixelPercent == 0)
+                return;
+            int x = 0;
+            int y = 0;
+            int pixel = 8;
+            int xp = 0;
+            int yp = 0;
+            Color rColor;
+            Color oColor;
+            int rs = 0;
+            int gs = 0;
+            int bs = 0;
+            int r = 0;
+            int g = 0;
+            int b = 0;
+            resultImg = new Bitmap(originalImg.Width, originalImg.Height);
+            for (x = 0; x < originalImg.Width - pixelPercent; x += pixelPercent)
+            {
+                for (y = 0; y < originalImg.Height - pixelPercent; y += pixelPercent)
+                {
+                    rs = 0;
+                    gs = 0;
+                    bs = 0;
+                    for (xp = x; xp < (x + pixelPercent); xp++)
+                    {
+                        for (yp = y; yp < (y + pixelPercent); yp++)
+                        {
+                            oColor = originalImg.GetPixel(xp,yp);
+                            rs += oColor.R;
+                            gs += oColor.G;
+                            bs += oColor.B;
+                        }
+                    }
+                    r = rs / (pixelPercent * pixelPercent);
+                    g = gs / (pixelPercent * pixelPercent);
+                    b = bs / (pixelPercent * pixelPercent);
+                    rColor = Color.FromArgb(r, g, b);
+                    for (xp = x; xp < (x + pixelPercent); xp++)
+                    {
+                        for (yp = y; yp < (y + pixelPercent); yp++)
+                        {
+                            resultImg.SetPixel(xp, yp, rColor);
+                        }
+                    }
+                }
+
+            }
+            this.Invalidate();
+            pbEditImage.Image = resultImg;
+        }
         #endregion
 
         #region Buttons
@@ -253,8 +306,15 @@ namespace ProcIMG
 
         private void btnPixelImg_Click(object sender, EventArgs e)
         {
+            sFilter = "PixelFilter";
             cleanConfiguration();
+            if (originalImg == null)
+            {
+                MessageBox.Show("Debe seleccionar una imagen antes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             tbFilterOnlyImg.Visible = true;
+            PixelFilter(10);
         }
 
         private void btnColorImg_Click(object sender, EventArgs e)
@@ -376,6 +436,9 @@ namespace ProcIMG
                     break;
                 case "NoiseFilter":
                     NoiseFilter(tbFilterOnlyImg.Value);
+                    break;
+                case "PixelFilter":
+                    PixelFilter(tbFilterOnlyImg.Value);
                     break;
             }
         }
