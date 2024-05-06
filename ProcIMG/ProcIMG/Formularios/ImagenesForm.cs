@@ -292,8 +292,8 @@ namespace ProcIMG
 
         private void tbFilterOnlyImg_Scroll(object sender, EventArgs e)
         {
-            float pBrillo = tbFilterOnlyImg.Value;
-            BrightnessFilter(pBrillo / 5);
+            float pBrightness = tbFilterOnlyImg.Value;
+            BrightnessFilter(pBrightness / 5);
         }
     }
 }
