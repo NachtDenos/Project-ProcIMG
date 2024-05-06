@@ -114,9 +114,67 @@ namespace ProcIMG
                     rColor = Color.FromArgb(r, g, b);
                     resultImg.SetPixel(x, y, rColor);
                 }
-                this.Invalidate();
-                pbEditImage.Image = resultImg;
+                
             }
+            this.Invalidate();
+            pbEditImage.Image = resultImg;
+        }
+        private void NoiseFilter(float noisePercent)
+        {
+            int x = 0;
+            int y = 0;
+            int rangeMin = 85;
+            int rangeMax = 300;
+            float pBrightness = 0;
+
+            Random rnd = new Random();
+            Color rColor;
+            Color oColor;
+
+            int r = 0;
+            int g = 0;
+            int b = 0;
+
+            resultImg = new Bitmap(originalImg.Width, originalImg.Height);
+            for (x = 0; x < originalImg.Width; x++)
+            {
+                for (y = 0; y < originalImg.Height; y++)
+                {
+                    if (rnd.Next(1, 100) <= noisePercent)
+                    {
+                        pBrightness = rnd.Next(rangeMin, rangeMax) / 100.0f;
+                        oColor = originalImg.GetPixel(x, y);
+                        r = (int)(oColor.R * pBrightness);
+                        g = (int)(oColor.G * pBrightness);
+                        b = (int)(oColor.B * pBrightness);
+
+                        if (r > 255)
+                            r = 255;
+                        else if (r < 0)
+                            r = 0;
+
+                        if (g > 255)
+                            g = 255;
+                        else if (g < 0)
+                            g = 0;
+
+                        if (b > 255)
+                            b = 255;
+                        else if (b < 0)
+                            b = 0;
+
+                        rColor = Color.FromArgb(r,g,b);
+                    }
+                    else
+                    {
+                        rColor = originalImg.GetPixel(x, y);
+                    }
+                    resultImg.SetPixel(x, y, rColor);
+                }
+                
+            }
+            this.Invalidate();
+            pbEditImage.Image = resultImg;
         }
         #endregion
 
@@ -127,7 +185,13 @@ namespace ProcIMG
         }
         private void btnBrightnessImg_Click(object sender, EventArgs e)
         {
+            sFilter = "BrightnessFilter";
             cleanConfiguration();
+            if (originalImg == null)
+            {
+                MessageBox.Show("Debe seleccionar una imagen antes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             tbFilterOnlyImg.Visible = true;
             BrightnessFilter(1.0f);
         }
@@ -211,7 +275,14 @@ namespace ProcIMG
 
         private void btnNoiseImg_Click(object sender, EventArgs e)
         {
+            sFilter = "NoiseFilter";
             cleanConfiguration();
+            if (originalImg == null)
+            {
+                MessageBox.Show("Debe seleccionar una imagen antes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            NoiseFilter(10);
             tbFilterOnlyImg.Visible = true;
         }
 
@@ -224,6 +295,11 @@ namespace ProcIMG
         private void btnMirrorImg_Click(object sender, EventArgs e)
         {
             cleanConfiguration();
+            if (originalImg == null)
+            {
+                MessageBox.Show("Debe seleccionar una imagen antes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             btnVerticalImg.Visible = true;
             btnHorizontalImg.Visible = true;
         }
@@ -292,8 +368,64 @@ namespace ProcIMG
 
         private void tbFilterOnlyImg_Scroll(object sender, EventArgs e)
         {
-            float pBrightness = tbFilterOnlyImg.Value;
-            BrightnessFilter(pBrightness / 5);
+            switch (sFilter)
+            {
+                case "BrightnessFilter":
+                    float pBrightness = tbFilterOnlyImg.Value;
+                    BrightnessFilter(pBrightness / 5);
+                    break;
+                case "NoiseFilter":
+                    NoiseFilter(tbFilterOnlyImg.Value);
+                    break;
+            }
+        }
+
+        private void btnHorizontalImg_Click(object sender, EventArgs e)
+        {
+            int x = 0;
+            int y = 0;
+            resultImg = new Bitmap(originalImg.Width, originalImg.Height);
+            Color rColor = new Color();
+            Color oColor = new Color();
+            for (x = 0; x < originalImg.Width; x++)
+            {
+                for (y = 0; y < originalImg.Height; y++)
+                {
+                    oColor = originalImg.GetPixel(x, y);
+
+                    rColor = Color.FromArgb(oColor.R,
+                                            oColor.G,
+                                            oColor.B);
+
+                    resultImg.SetPixel(originalImg.Width - x - 1, y, rColor);
+                }
+            }
+            this.Invalidate();
+            pbEditImage.Image = resultImg;
+        }
+
+        private void btnVerticalImg_Click(object sender, EventArgs e)
+        {
+            int x = 0;
+            int y = 0;
+            resultImg = new Bitmap(originalImg.Width, originalImg.Height);
+            Color rColor = new Color();
+            Color oColor = new Color();
+            for (x = 0; x < originalImg.Width; x++)
+            {
+                for (y = 0; y < originalImg.Height; y++)
+                {
+                    oColor = originalImg.GetPixel(x, y);
+
+                    rColor = Color.FromArgb(oColor.R,
+                                            oColor.G,
+                                            oColor.B);
+
+                    resultImg.SetPixel(x, originalImg.Height - y - 1, rColor);
+                }
+            }
+            this.Invalidate();
+            pbEditImage.Image = resultImg;
         }
     }
 }

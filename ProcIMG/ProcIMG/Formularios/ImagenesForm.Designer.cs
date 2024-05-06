@@ -639,6 +639,7 @@ namespace ProcIMG
             this.btnHorizontalImg.Text = "Horizontal";
             this.btnHorizontalImg.UseVisualStyleBackColor = false;
             this.btnHorizontalImg.Visible = false;
+            this.btnHorizontalImg.Click += new System.EventHandler(this.btnHorizontalImg_Click);
             // 
             // btnVerticalImg
             // 
@@ -654,6 +655,7 @@ namespace ProcIMG
             this.btnVerticalImg.Text = "Vertical";
             this.btnVerticalImg.UseVisualStyleBackColor = false;
             this.btnVerticalImg.Visible = false;
+            this.btnVerticalImg.Click += new System.EventHandler(this.btnVerticalImg_Click);
             // 
             // ImagenesForm
             // 
