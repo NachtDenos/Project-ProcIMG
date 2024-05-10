@@ -38,6 +38,7 @@ namespace ProcIMG
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            CamaraForm.turnOffWebCam();
             Application.Exit();
         }
 

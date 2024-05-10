@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AForge.Video.DirectShow;
 using AForge.Video;
+using Emgu.CV;
+using Emgu.CV.Structure;
 
 namespace ProcIMG
 {
@@ -17,7 +19,8 @@ namespace ProcIMG
         private int activeCameraIndex = -1;
         private bool DevicesExist;
         private FilterInfoCollection MyDevices;
-        private VideoCaptureDevice MyWebCam;
+        public static VideoCaptureDevice MyWebCam;
+        static readonly CascadeClassifier cascadeClassifier = new CascadeClassifier("haarcascade_frontalface_alt_tree.xml");
         public CamaraForm()
         {
             InitializeComponent();
@@ -49,7 +52,7 @@ namespace ProcIMG
             loadDevices();
         }
 
-        public void turnOffWebCam()
+        public static void turnOffWebCam()
         {
             if (MyWebCam != null && MyWebCam.IsRunning)
             {
@@ -57,6 +60,8 @@ namespace ProcIMG
                 MyWebCam = null;
             }
         }
+
+        
 
         private void btnOnOffCamera_Click(object sender, EventArgs e)
         {
@@ -73,7 +78,7 @@ namespace ProcIMG
                 {
                     string nameVideo = MyDevices[i].MonikerString;
                     MyWebCam = new VideoCaptureDevice(nameVideo);
-                    MyWebCam.NewFrame += new NewFrameEventHandler(capture);
+                    MyWebCam.NewFrame += new NewFrameEventHandler(Capturing);
                     MyWebCam.Start();
                     activeCameraIndex = i; 
                 }
@@ -83,6 +88,37 @@ namespace ProcIMG
                 }
             }
         }
+
+        private void Capturing(object sender, NewFrameEventArgs eventArgs)
+        {
+            Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
+            Image<Bgr, byte> grayImage = new Image<Bgr, byte>(bitmap);
+            Rectangle[] rectangles = cascadeClassifier.DetectMultiScale(grayImage, 1.2, 1);
+
+            // Obtener el número de rostros detectados
+            int numRostros = rectangles.Length;
+
+            if (lblNumPerson.IsHandleCreated)
+            {
+                lblNumPerson.Invoke((MethodInvoker)(() => lblNumPerson.Text = $"{numRostros}"));
+            }
+
+            foreach (Rectangle rectangle in rectangles)
+            {
+                using (Graphics graphics = Graphics.FromImage(bitmap))
+                {
+                    using (Pen pen = new Pen(Color.Red, 1))
+                    {
+                        graphics.DrawRectangle(pen, rectangle);
+                    }
+                }
+            }
+
+            pbCamera.Image = bitmap;
+        }
+
+
+
 
         private void capture(object sender, NewFrameEventArgs eventArgs)
         {
