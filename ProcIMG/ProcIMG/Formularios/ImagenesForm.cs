@@ -16,6 +16,9 @@ namespace ProcIMG
         public Bitmap originalImg;
         public string sFilter = "";
         private int[,] conv3x3 = new int[3, 3];
+        private int[] histogramR = new int[256];
+        private int[] histogramG = new int[256];
+        private int[] histogramB = new int[256];
 
         public enum Channel
         {
@@ -47,9 +50,67 @@ namespace ProcIMG
             btnVerticalImg.Visible = false;
             btnHorizontalImg.Visible = false;
         }
+
+        public void UpdateHistogram()
+        {
+
+            int x = 0;
+            int y = 0;
+            Color rColor = new Color();
+            //resultImg = originalImg;
+
+            for (x = 0; x < originalImg.Width; x++)
+            {
+                for (y = 0; y < originalImg.Height; y++)
+                {
+                    rColor = originalImg.GetPixel(x, y);
+                    histogramR[rColor.R]++;
+                    histogramG[rColor.G]++;
+                    histogramB[rColor.B]++;
+                }
+            }
+
+            HistogramRGB h = new HistogramRGB(histogramR, histogramG, histogramB);
+
+            h.TopLevel = false;
+            h.Location = new Point(30, 190);
+            flowHistogram.Controls.Add(h);
+            h.BringToFront();
+            h.Show();
+        }
+
+        public void UpdateHistogram2()
+        {
+
+            int x = 0;
+            int y = 0;
+            Color rColor = new Color();
+            //resultImg = originalImg;
+            
+            for (x = 0; x < originalImg.Width; x++)
+            {
+                for (y = 0; y < originalImg.Height; y++)
+                {
+                    rColor = resultImg.GetPixel(x, y);
+                    histogramR[rColor.R]++;
+                    histogramG[rColor.G]++;
+                    histogramB[rColor.B]++;
+                }
+            }
+
+            HistogramRGB h = new HistogramRGB(histogramR, histogramG, histogramB);
+
+            h.TopLevel = false;
+            h.Location = new Point(30, 190);
+            flowHistogram2.Controls.Add(h);
+            h.BringToFront();
+            h.Show();
+        }
+
+
         private Bitmap ApplyChannelFilter(Bitmap originalImg, Channel channel)
         {
-            Bitmap resultImg = new Bitmap(originalImg.Width, originalImg.Height);
+            Bitmap resultImgLocal = new Bitmap(originalImg.Width, originalImg.Height);
 
             for (int x = 0; x < originalImg.Width; x++)
             {
@@ -74,10 +135,11 @@ namespace ProcIMG
                             break;
                     }
 
-                    resultImg.SetPixel(x, y, newColor);
+                    resultImgLocal.SetPixel(x, y, newColor);
                 }
             }
-            return resultImg;
+            resultImg = resultImgLocal;
+            return resultImgLocal;
         }
 
         private void BrightnessFilter(float pBrightness)
@@ -120,6 +182,7 @@ namespace ProcIMG
             }
             this.Invalidate();
             pbEditImage.Image = resultImg;
+            UpdateHistogram2();
         }
         private void NoiseFilter(float noisePercent)
         {
@@ -177,6 +240,7 @@ namespace ProcIMG
             }
             this.Invalidate();
             pbEditImage.Image = resultImg;
+            UpdateHistogram2();
         }
 
         private void PixelFilter(int pixelPercent)
@@ -229,6 +293,7 @@ namespace ProcIMG
             }
             this.Invalidate();
             pbEditImage.Image = resultImg;
+            UpdateHistogram2();
         }
 
         private void ConstrastFilter(int contrast)
@@ -275,6 +340,7 @@ namespace ProcIMG
             }
             this.Invalidate();
             pbEditImage.Image = resultImg;
+            UpdateHistogram2();
         }
 
         private void ConvGris(int[,] pMatriz, Bitmap pImagen, int pInferior, int pSuperior)
@@ -321,6 +387,7 @@ namespace ProcIMG
             ConvGris(conv3x3, intermedio, 32, 64);
             this.Invalidate();
             pbEditImage.Image = resultImg;
+            UpdateHistogram2();
         }
 
         private void shadesOfGray()
@@ -430,6 +497,7 @@ namespace ProcIMG
             }
             this.Invalidate();
             pbEditImage.Image = resultImg;
+            UpdateHistogram2();
         }
 
         private void btnPixelImg_Click(object sender, EventArgs e)
@@ -509,6 +577,7 @@ namespace ProcIMG
                 bitmapImage = new Bitmap(fileImage.FileName);
                 originalImg = bitmapImage;
             }
+            UpdateHistogram();
         }
 
         private void btnRedImg_Click(object sender, EventArgs e)
@@ -517,6 +586,7 @@ namespace ProcIMG
             {
                 pbEditImage.Image = ApplyChannelFilter(originalImg, Channel.Red);
                 this.Invalidate();
+                UpdateHistogram2();
             }
             else
             {
@@ -530,6 +600,7 @@ namespace ProcIMG
             {
                 pbEditImage.Image = ApplyChannelFilter(originalImg, Channel.Green);
                 this.Invalidate();
+                UpdateHistogram2();
             }
             else
             {
@@ -543,6 +614,7 @@ namespace ProcIMG
             {
                 pbEditImage.Image = ApplyChannelFilter(originalImg, Channel.Blue);
                 this.Invalidate();
+                UpdateHistogram2();
             }
             else
             {
@@ -596,6 +668,7 @@ namespace ProcIMG
             }
             this.Invalidate();
             pbEditImage.Image = resultImg;
+            UpdateHistogram2();
         }
 
         private void btnVerticalImg_Click(object sender, EventArgs e)
@@ -620,6 +693,7 @@ namespace ProcIMG
             }
             this.Invalidate();
             pbEditImage.Image = resultImg;
+            UpdateHistogram2();
         }
     }
 }

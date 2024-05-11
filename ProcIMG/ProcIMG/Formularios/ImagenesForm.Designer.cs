@@ -45,21 +45,8 @@ namespace ProcIMG
             this.btnNoiseImg = new System.Windows.Forms.Button();
             this.btnGaussianImg = new System.Windows.Forms.Button();
             this.btnMirrorImg = new System.Windows.Forms.Button();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.btnDownloadImg = new System.Windows.Forms.Button();
-            this.btnEraseImg = new System.Windows.Forms.Button();
-            this.btnUploadImg = new System.Windows.Forms.Button();
-            this.pbHistogramEditImg = new System.Windows.Forms.PictureBox();
-            this.pbHistogramOriginalImg = new System.Windows.Forms.PictureBox();
-            this.pbOriginalImage = new System.Windows.Forms.PictureBox();
-            this.pbEditImage = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.tbFilterOnlyImg = new System.Windows.Forms.TrackBar();
             this.lblColorChoiceImg = new System.Windows.Forms.Label();
             this.btnRedImg = new System.Windows.Forms.Button();
@@ -74,6 +61,26 @@ namespace ProcIMG
             this.tbGradientImg = new System.Windows.Forms.TrackBar();
             this.btnHorizontalImg = new System.Windows.Forms.Button();
             this.btnVerticalImg = new System.Windows.Forms.Button();
+            this.flowHistogram = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btnDownloadImg = new System.Windows.Forms.Button();
+            this.btnEraseImg = new System.Windows.Forms.Button();
+            this.btnUploadImg = new System.Windows.Forms.Button();
+            this.pbHistogramEditImg = new System.Windows.Forms.PictureBox();
+            this.pbHistogramOriginalImg = new System.Windows.Forms.PictureBox();
+            this.pbOriginalImage = new System.Windows.Forms.PictureBox();
+            this.pbEditImage = new System.Windows.Forms.PictureBox();
+            this.flowHistogram2 = new System.Windows.Forms.FlowLayoutPanel();
+            ((System.ComponentModel.ISupportInitialize)(this.tbFilterOnlyImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbGradientImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -81,11 +88,6 @@ namespace ProcIMG
             ((System.ComponentModel.ISupportInitialize)(this.pbHistogramOriginalImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOriginalImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEditImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbFilterOnlyImg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbGradientImg)).BeginInit();
             this.SuspendLayout();
             // 
             // btnExitFormImagen
@@ -297,117 +299,6 @@ namespace ProcIMG
             this.btnMirrorImg.UseVisualStyleBackColor = false;
             this.btnMirrorImg.Click += new System.EventHandler(this.btnMirrorImg_Click);
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::ProcIMG.Properties.Resources.linea;
-            this.pictureBox6.Location = new System.Drawing.Point(138, 618);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(589, 10);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 15;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::ProcIMG.Properties.Resources.Original;
-            this.pictureBox5.Location = new System.Drawing.Point(845, 293);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(23, 77);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 14;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::ProcIMG.Properties.Resources.Editada;
-            this.pictureBox4.Location = new System.Drawing.Point(845, 397);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(23, 80);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 13;
-            this.pictureBox4.TabStop = false;
-            // 
-            // btnDownloadImg
-            // 
-            this.btnDownloadImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
-            this.btnDownloadImg.FlatAppearance.BorderSize = 0;
-            this.btnDownloadImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDownloadImg.ForeColor = System.Drawing.Color.White;
-            this.btnDownloadImg.Image = global::ProcIMG.Properties.Resources.descargas;
-            this.btnDownloadImg.Location = new System.Drawing.Point(1053, 533);
-            this.btnDownloadImg.Name = "btnDownloadImg";
-            this.btnDownloadImg.Size = new System.Drawing.Size(50, 50);
-            this.btnDownloadImg.TabIndex = 12;
-            this.btnDownloadImg.UseVisualStyleBackColor = false;
-            // 
-            // btnEraseImg
-            // 
-            this.btnEraseImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
-            this.btnEraseImg.FlatAppearance.BorderSize = 0;
-            this.btnEraseImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEraseImg.ForeColor = System.Drawing.Color.White;
-            this.btnEraseImg.Image = global::ProcIMG.Properties.Resources.goma_de_borrar;
-            this.btnEraseImg.Location = new System.Drawing.Point(974, 533);
-            this.btnEraseImg.Name = "btnEraseImg";
-            this.btnEraseImg.Size = new System.Drawing.Size(50, 50);
-            this.btnEraseImg.TabIndex = 11;
-            this.btnEraseImg.UseVisualStyleBackColor = false;
-            this.btnEraseImg.Click += new System.EventHandler(this.btnEraseImg_Click);
-            // 
-            // btnUploadImg
-            // 
-            this.btnUploadImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
-            this.btnUploadImg.FlatAppearance.BorderSize = 0;
-            this.btnUploadImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUploadImg.ForeColor = System.Drawing.Color.White;
-            this.btnUploadImg.Image = global::ProcIMG.Properties.Resources.subir;
-            this.btnUploadImg.Location = new System.Drawing.Point(891, 533);
-            this.btnUploadImg.Name = "btnUploadImg";
-            this.btnUploadImg.Size = new System.Drawing.Size(50, 50);
-            this.btnUploadImg.TabIndex = 10;
-            this.btnUploadImg.UseVisualStyleBackColor = false;
-            this.btnUploadImg.Click += new System.EventHandler(this.btnUploadImg_Click);
-            // 
-            // pbHistogramEditImg
-            // 
-            this.pbHistogramEditImg.Image = global::ProcIMG.Properties.Resources.histogram_regular;
-            this.pbHistogramEditImg.Location = new System.Drawing.Point(874, 388);
-            this.pbHistogramEditImg.Name = "pbHistogramEditImg";
-            this.pbHistogramEditImg.Size = new System.Drawing.Size(260, 99);
-            this.pbHistogramEditImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbHistogramEditImg.TabIndex = 7;
-            this.pbHistogramEditImg.TabStop = false;
-            // 
-            // pbHistogramOriginalImg
-            // 
-            this.pbHistogramOriginalImg.Image = global::ProcIMG.Properties.Resources.histogram_regular;
-            this.pbHistogramOriginalImg.Location = new System.Drawing.Point(874, 283);
-            this.pbHistogramOriginalImg.Name = "pbHistogramOriginalImg";
-            this.pbHistogramOriginalImg.Size = new System.Drawing.Size(260, 99);
-            this.pbHistogramOriginalImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbHistogramOriginalImg.TabIndex = 6;
-            this.pbHistogramOriginalImg.TabStop = false;
-            // 
-            // pbOriginalImage
-            // 
-            this.pbOriginalImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbOriginalImage.Location = new System.Drawing.Point(851, 90);
-            this.pbOriginalImage.Name = "pbOriginalImage";
-            this.pbOriginalImage.Size = new System.Drawing.Size(283, 169);
-            this.pbOriginalImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbOriginalImage.TabIndex = 5;
-            this.pbOriginalImage.TabStop = false;
-            // 
-            // pbEditImage
-            // 
-            this.pbEditImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbEditImage.Location = new System.Drawing.Point(13, 90);
-            this.pbEditImage.Name = "pbEditImage";
-            this.pbEditImage.Size = new System.Drawing.Size(822, 473);
-            this.pbEditImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbEditImage.TabIndex = 4;
-            this.pbEditImage.TabStop = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -431,36 +322,6 @@ namespace ProcIMG
             this.label4.Size = new System.Drawing.Size(198, 33);
             this.label4.TabIndex = 17;
             this.label4.Text = "Configuración";
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::ProcIMG.Properties.Resources.linea;
-            this.pictureBox7.Location = new System.Drawing.Point(13, 618);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(42, 10);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 18;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::ProcIMG.Properties.Resources.linea;
-            this.pictureBox8.Location = new System.Drawing.Point(962, 618);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(185, 15);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 19;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::ProcIMG.Properties.Resources.linea;
-            this.pictureBox9.Location = new System.Drawing.Point(745, 618);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(55, 10);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 20;
-            this.pictureBox9.TabStop = false;
             // 
             // tbFilterOnlyImg
             // 
@@ -657,12 +518,169 @@ namespace ProcIMG
             this.btnVerticalImg.Visible = false;
             this.btnVerticalImg.Click += new System.EventHandler(this.btnVerticalImg_Click);
             // 
+            // flowHistogram
+            // 
+            this.flowHistogram.Location = new System.Drawing.Point(874, 283);
+            this.flowHistogram.Name = "flowHistogram";
+            this.flowHistogram.Size = new System.Drawing.Size(260, 99);
+            this.flowHistogram.TabIndex = 35;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::ProcIMG.Properties.Resources.linea;
+            this.pictureBox9.Location = new System.Drawing.Point(745, 618);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(55, 10);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 20;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::ProcIMG.Properties.Resources.linea;
+            this.pictureBox8.Location = new System.Drawing.Point(962, 618);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(185, 15);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 19;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::ProcIMG.Properties.Resources.linea;
+            this.pictureBox7.Location = new System.Drawing.Point(13, 618);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(42, 10);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 18;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::ProcIMG.Properties.Resources.linea;
+            this.pictureBox6.Location = new System.Drawing.Point(138, 618);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(589, 10);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 15;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::ProcIMG.Properties.Resources.Original;
+            this.pictureBox5.Location = new System.Drawing.Point(845, 293);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(23, 77);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 14;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::ProcIMG.Properties.Resources.Editada;
+            this.pictureBox4.Location = new System.Drawing.Point(845, 397);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(23, 80);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 13;
+            this.pictureBox4.TabStop = false;
+            // 
+            // btnDownloadImg
+            // 
+            this.btnDownloadImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnDownloadImg.FlatAppearance.BorderSize = 0;
+            this.btnDownloadImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDownloadImg.ForeColor = System.Drawing.Color.White;
+            this.btnDownloadImg.Image = global::ProcIMG.Properties.Resources.descargas;
+            this.btnDownloadImg.Location = new System.Drawing.Point(1053, 533);
+            this.btnDownloadImg.Name = "btnDownloadImg";
+            this.btnDownloadImg.Size = new System.Drawing.Size(50, 50);
+            this.btnDownloadImg.TabIndex = 12;
+            this.btnDownloadImg.UseVisualStyleBackColor = false;
+            // 
+            // btnEraseImg
+            // 
+            this.btnEraseImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnEraseImg.FlatAppearance.BorderSize = 0;
+            this.btnEraseImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEraseImg.ForeColor = System.Drawing.Color.White;
+            this.btnEraseImg.Image = global::ProcIMG.Properties.Resources.goma_de_borrar;
+            this.btnEraseImg.Location = new System.Drawing.Point(974, 533);
+            this.btnEraseImg.Name = "btnEraseImg";
+            this.btnEraseImg.Size = new System.Drawing.Size(50, 50);
+            this.btnEraseImg.TabIndex = 11;
+            this.btnEraseImg.UseVisualStyleBackColor = false;
+            this.btnEraseImg.Click += new System.EventHandler(this.btnEraseImg_Click);
+            // 
+            // btnUploadImg
+            // 
+            this.btnUploadImg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(53)))));
+            this.btnUploadImg.FlatAppearance.BorderSize = 0;
+            this.btnUploadImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUploadImg.ForeColor = System.Drawing.Color.White;
+            this.btnUploadImg.Image = global::ProcIMG.Properties.Resources.subir;
+            this.btnUploadImg.Location = new System.Drawing.Point(891, 533);
+            this.btnUploadImg.Name = "btnUploadImg";
+            this.btnUploadImg.Size = new System.Drawing.Size(50, 50);
+            this.btnUploadImg.TabIndex = 10;
+            this.btnUploadImg.UseVisualStyleBackColor = false;
+            this.btnUploadImg.Click += new System.EventHandler(this.btnUploadImg_Click);
+            // 
+            // pbHistogramEditImg
+            // 
+            this.pbHistogramEditImg.Image = global::ProcIMG.Properties.Resources.histogram_regular;
+            this.pbHistogramEditImg.Location = new System.Drawing.Point(874, 388);
+            this.pbHistogramEditImg.Name = "pbHistogramEditImg";
+            this.pbHistogramEditImg.Size = new System.Drawing.Size(260, 99);
+            this.pbHistogramEditImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbHistogramEditImg.TabIndex = 7;
+            this.pbHistogramEditImg.TabStop = false;
+            // 
+            // pbHistogramOriginalImg
+            // 
+            this.pbHistogramOriginalImg.Image = global::ProcIMG.Properties.Resources.histogram_regular;
+            this.pbHistogramOriginalImg.Location = new System.Drawing.Point(874, 283);
+            this.pbHistogramOriginalImg.Name = "pbHistogramOriginalImg";
+            this.pbHistogramOriginalImg.Size = new System.Drawing.Size(260, 99);
+            this.pbHistogramOriginalImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbHistogramOriginalImg.TabIndex = 6;
+            this.pbHistogramOriginalImg.TabStop = false;
+            // 
+            // pbOriginalImage
+            // 
+            this.pbOriginalImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbOriginalImage.Location = new System.Drawing.Point(851, 90);
+            this.pbOriginalImage.Name = "pbOriginalImage";
+            this.pbOriginalImage.Size = new System.Drawing.Size(283, 169);
+            this.pbOriginalImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbOriginalImage.TabIndex = 5;
+            this.pbOriginalImage.TabStop = false;
+            // 
+            // pbEditImage
+            // 
+            this.pbEditImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbEditImage.Location = new System.Drawing.Point(13, 90);
+            this.pbEditImage.Name = "pbEditImage";
+            this.pbEditImage.Size = new System.Drawing.Size(822, 473);
+            this.pbEditImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbEditImage.TabIndex = 4;
+            this.pbEditImage.TabStop = false;
+            // 
+            // flowHistogram2
+            // 
+            this.flowHistogram2.Location = new System.Drawing.Point(874, 388);
+            this.flowHistogram2.Name = "flowHistogram2";
+            this.flowHistogram2.Size = new System.Drawing.Size(260, 99);
+            this.flowHistogram2.TabIndex = 36;
+            // 
             // ImagenesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
             this.ClientSize = new System.Drawing.Size(1174, 793);
+            this.Controls.Add(this.flowHistogram2);
+            this.Controls.Add(this.flowHistogram);
             this.Controls.Add(this.btnVerticalImg);
             this.Controls.Add(this.btnHorizontalImg);
             this.Controls.Add(this.tbGradientImg);
@@ -713,6 +731,11 @@ namespace ProcIMG
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ImagenesForm";
             this.Text = "ImagenesForm";
+            ((System.ComponentModel.ISupportInitialize)(this.tbFilterOnlyImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbGradientImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -720,11 +743,6 @@ namespace ProcIMG
             ((System.ComponentModel.ISupportInitialize)(this.pbHistogramOriginalImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOriginalImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEditImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbFilterOnlyImg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tbGradientImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -776,5 +794,7 @@ namespace ProcIMG
         private System.Windows.Forms.TrackBar tbGradientImg;
         private System.Windows.Forms.Button btnHorizontalImg;
         private System.Windows.Forms.Button btnVerticalImg;
+        private System.Windows.Forms.FlowLayoutPanel flowHistogram;
+        private System.Windows.Forms.FlowLayoutPanel flowHistogram2;
     }
 }

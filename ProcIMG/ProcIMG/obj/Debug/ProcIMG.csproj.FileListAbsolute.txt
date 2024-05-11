@@ -61,3 +61,4 @@ C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG
 C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\bin\Debug\tr\ZedGraph.resources.dll
 C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\bin\Debug\zh-cn\ZedGraph.resources.dll
 C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\bin\Debug\zh-tw\ZedGraph.resources.dll
+C:\Users\eeati\OneDrive\Documentos\Tareas\Procesamiento Imagenes\Project-ProcIMG\ProcIMG\ProcIMG\obj\Debug\ProcIMG.HistogramRGB.resources
