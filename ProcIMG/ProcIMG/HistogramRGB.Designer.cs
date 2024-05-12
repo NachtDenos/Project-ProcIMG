@@ -42,6 +42,7 @@ namespace ProcIMG
             this.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.Name = "HistogramRGB";
             this.Text = "HistogramRGB";
+            this.Load += new System.EventHandler(this.HistogramRGB_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.HistogramRGB_Paint);
             this.ResumeLayout(false);
 

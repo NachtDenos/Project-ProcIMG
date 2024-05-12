@@ -65,5 +65,10 @@ namespace ProcIMG
                 g.DrawLine(PenB, n + 20, 270, n + 20, 270 - histogramB[n]);
             }
         }
+
+        private void HistogramRGB_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

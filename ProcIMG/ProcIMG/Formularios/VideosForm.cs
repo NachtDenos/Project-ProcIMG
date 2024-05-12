@@ -7,11 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Emgu.CV;
+using Emgu.CV.Util;
+using Emgu.CV.CvEnum;
+using Emgu.CV.Structure;
+
 
 namespace ProcIMG
 {
     public partial class VideosForm : Form
     {
+        public Bitmap resultVid;
+        public Bitmap originalVid;
+
+        VideoCapture capture;
+        bool pause = false;
         public VideosForm()
         {
             InitializeComponent();
@@ -73,6 +83,32 @@ namespace ProcIMG
         private void btnNegativeVi_Click(object sender, EventArgs e)
         {
             cleanConfiguration();
+            if (originalVid == null)
+            {
+                MessageBox.Show("Debe seleccionar un video antes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            int x = 0;
+            int y = 0;
+            resultVid = new Bitmap(originalVid.Width, originalVid.Height);
+            Color rColor = new Color();
+            Color oColor = new Color();
+            for (x = 0; x < originalVid.Width; x++)
+            {
+                for (y = 0; y < originalVid.Height; y++)
+                {
+                    oColor = originalVid.GetPixel(x, y);
+
+                    rColor = Color.FromArgb(255 - oColor.R,
+                                            255 - oColor.G,
+                                            255 - oColor.B);
+
+                    resultVid.SetPixel(x, y, rColor);
+                }
+            }
+            this.Invalidate();
+            pbEditVideo.Image = resultVid;
+            //UpdateHistogram2();
         }
         private void btnPixelVi_Click(object sender, EventArgs e)
         {
@@ -111,5 +147,57 @@ namespace ProcIMG
         {
             cleanConfiguration();
         }
+        private void btnUploadVi_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                capture = new VideoCapture(ofd.FileName);
+                Mat m = new Mat();
+                capture.Read(m);
+                resultVid = m.Bitmap;
+                originalVid = m.Bitmap;
+                pbEditVideo.Image = resultVid;
+                pbOriginalVideo.Image = originalVid;
+            }
+        }
+
+        private async void btnPlayVi_Click(object sender, EventArgs e)
+        {
+            if (pause == true)
+                pause = false;
+            if (capture == null)
+            {
+                return;
+            }
+            try
+            {
+                while (!pause)
+                {
+                    Mat m = new Mat();
+                    capture.Read(m);
+                    if (!m.IsEmpty)
+                    {
+                        pbEditVideo.Image = m.Bitmap;
+                        double fps = capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.Fps);
+                        await Task.Delay(1000 / Convert.ToInt32(fps));
+                    }
+                    else
+                    {
+                        capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.PosFrames, 0);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnPauseVi_Click(object sender, EventArgs e)
+        {
+            pause = !pause;
+        }
+
     }
 }

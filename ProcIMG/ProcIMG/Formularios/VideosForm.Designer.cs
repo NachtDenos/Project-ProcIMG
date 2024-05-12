@@ -112,7 +112,7 @@ namespace ProcIMG
             this.lblImagen.Location = new System.Drawing.Point(514, 13);
             this.lblImagen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblImagen.Name = "lblImagen";
-            this.lblImagen.Size = new System.Drawing.Size(118, 38);
+            this.lblImagen.Size = new System.Drawing.Size(148, 48);
             this.lblImagen.TabIndex = 2;
             this.lblImagen.Text = "Videos";
             // 
@@ -124,7 +124,7 @@ namespace ProcIMG
             this.label4.Location = new System.Drawing.Point(806, 608);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(158, 27);
+            this.label4.Size = new System.Drawing.Size(198, 33);
             this.label4.TabIndex = 44;
             this.label4.Text = "Configuración";
             // 
@@ -136,7 +136,7 @@ namespace ProcIMG
             this.label3.Location = new System.Drawing.Point(61, 608);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 27);
+            this.label3.Size = new System.Drawing.Size(100, 33);
             this.label3.TabIndex = 43;
             this.label3.Text = "Filtros";
             // 
@@ -298,7 +298,7 @@ namespace ProcIMG
             this.label2.Location = new System.Drawing.Point(957, 39);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 23);
+            this.label2.Size = new System.Drawing.Size(98, 28);
             this.label2.TabIndex = 26;
             this.label2.Text = "Original";
             // 
@@ -310,7 +310,7 @@ namespace ProcIMG
             this.label1.Location = new System.Drawing.Point(387, 39);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 23);
+            this.label1.Size = new System.Drawing.Size(94, 28);
             this.label1.TabIndex = 23;
             this.label1.Text = "Editado";
             // 
@@ -333,6 +333,7 @@ namespace ProcIMG
             this.btnPauseVi.Size = new System.Drawing.Size(41, 41);
             this.btnPauseVi.TabIndex = 50;
             this.btnPauseVi.UseVisualStyleBackColor = true;
+            this.btnPauseVi.Click += new System.EventHandler(this.btnPauseVi_Click);
             // 
             // btnPlayVi
             // 
@@ -346,6 +347,7 @@ namespace ProcIMG
             this.btnPlayVi.Size = new System.Drawing.Size(41, 41);
             this.btnPlayVi.TabIndex = 49;
             this.btnPlayVi.UseVisualStyleBackColor = true;
+            this.btnPlayVi.Click += new System.EventHandler(this.btnPlayVi_Click);
             // 
             // pictureBox9
             // 
@@ -446,6 +448,7 @@ namespace ProcIMG
             this.btnUploadVi.Size = new System.Drawing.Size(50, 50);
             this.btnUploadVi.TabIndex = 37;
             this.btnUploadVi.UseVisualStyleBackColor = false;
+            this.btnUploadVi.Click += new System.EventHandler(this.btnUploadVi_Click);
             // 
             // pbHistogramEditVi
             // 
@@ -473,6 +476,7 @@ namespace ProcIMG
             this.pbOriginalVideo.Location = new System.Drawing.Point(850, 76);
             this.pbOriginalVideo.Name = "pbOriginalVideo";
             this.pbOriginalVideo.Size = new System.Drawing.Size(283, 169);
+            this.pbOriginalVideo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbOriginalVideo.TabIndex = 29;
             this.pbOriginalVideo.TabStop = false;
             // 
@@ -482,6 +486,7 @@ namespace ProcIMG
             this.pbEditVideo.Location = new System.Drawing.Point(12, 76);
             this.pbEditVideo.Name = "pbEditVideo";
             this.pbEditVideo.Size = new System.Drawing.Size(822, 473);
+            this.pbEditVideo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbEditVideo.TabIndex = 27;
             this.pbEditVideo.TabStop = false;
             // 
@@ -489,7 +494,7 @@ namespace ProcIMG
             // 
             this.tbFilterOnlyVi.Location = new System.Drawing.Point(744, 660);
             this.tbFilterOnlyVi.Name = "tbFilterOnlyVi";
-            this.tbFilterOnlyVi.Size = new System.Drawing.Size(402, 45);
+            this.tbFilterOnlyVi.Size = new System.Drawing.Size(402, 56);
             this.tbFilterOnlyVi.TabIndex = 51;
             this.tbFilterOnlyVi.TickStyle = System.Windows.Forms.TickStyle.None;
             this.tbFilterOnlyVi.Visible = false;
@@ -498,7 +503,7 @@ namespace ProcIMG
             // 
             this.tbGradientVi.Location = new System.Drawing.Point(744, 728);
             this.tbGradientVi.Name = "tbGradientVi";
-            this.tbGradientVi.Size = new System.Drawing.Size(402, 45);
+            this.tbGradientVi.Size = new System.Drawing.Size(402, 56);
             this.tbGradientVi.TabIndex = 62;
             this.tbGradientVi.TickStyle = System.Windows.Forms.TickStyle.None;
             this.tbGradientVi.Visible = false;
@@ -568,7 +573,7 @@ namespace ProcIMG
             this.lblColorChoice2Vi.Location = new System.Drawing.Point(740, 688);
             this.lblColorChoice2Vi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblColorChoice2Vi.Name = "lblColorChoice2Vi";
-            this.lblColorChoice2Vi.Size = new System.Drawing.Size(159, 23);
+            this.lblColorChoice2Vi.Size = new System.Drawing.Size(193, 28);
             this.lblColorChoice2Vi.TabIndex = 57;
             this.lblColorChoice2Vi.Text = "Escoge un color:";
             this.lblColorChoice2Vi.Visible = false;
@@ -638,7 +643,7 @@ namespace ProcIMG
             this.lblColorChoiceVi.Location = new System.Drawing.Point(740, 650);
             this.lblColorChoiceVi.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblColorChoiceVi.Name = "lblColorChoiceVi";
-            this.lblColorChoiceVi.Size = new System.Drawing.Size(159, 23);
+            this.lblColorChoiceVi.Size = new System.Drawing.Size(193, 28);
             this.lblColorChoiceVi.TabIndex = 52;
             this.lblColorChoiceVi.Text = "Escoge un color:";
             this.lblColorChoiceVi.Visible = false;
@@ -675,7 +680,7 @@ namespace ProcIMG
             // 
             // VideosForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
             this.ClientSize = new System.Drawing.Size(1174, 793);
