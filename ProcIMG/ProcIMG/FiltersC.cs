@@ -373,5 +373,71 @@ namespace ProcIMG
             }
             return filteredImage;
         }
+
+        public Bitmap GaussianFilter(Bitmap original, int radius)
+        {
+            Bitmap filteredImage = new Bitmap(original.Width, original.Height);
+
+            double deviation = radius / 3.0;
+
+            double[] kernelX = CreateGaussianKernel(radius, deviation);
+            double[] kernelY = CreateGaussianKernel(radius, deviation);
+
+            ApplyConvolution(original, filteredImage, kernelX, radius, true);
+
+            ApplyConvolution(original, filteredImage, kernelY, radius, false);
+
+            return filteredImage;
+        }
+
+        private static void ApplyConvolution(Bitmap source, Bitmap destination, double[] kernel, int radius, bool horizontal)
+        {
+            int size = 2 * radius + 1;
+            int offset = radius;
+
+            for (int y = 0; y < source.Height; y++)
+            {
+                for (int x = 0; x < source.Width; x++)
+                {
+                    double r = 0, g = 0, b = 0;
+
+                    for (int i = 0; i < size; i++)
+                    {
+                        int index = horizontal ? x - offset + i : y - offset + i;
+                        index = Math.Max(0, Math.Min(horizontal ? source.Width - 1 : source.Height - 1, index));
+
+                        Color pixelColor = horizontal ? source.GetPixel(index, y) : source.GetPixel(x, index);
+                        double weight = kernel[i];
+
+                        r += pixelColor.R * weight;
+                        g += pixelColor.G * weight;
+                        b += pixelColor.B * weight;
+                    }
+
+                    destination.SetPixel(x, y, Color.FromArgb((int)r, (int)g, (int)b));
+                }
+            }
+        }
+
+        private static double[] CreateGaussianKernel(int radius, double deviation)
+        {
+            int size = 2 * radius + 1;
+            double[] kernel = new double[size];
+            double sum = 0;
+
+            for (int i = -radius; i <= radius; i++)
+            {
+                double weight = Math.Exp(-(i * i) / (2 * deviation * deviation));
+                kernel[i + radius] = weight;
+                sum += weight;
+            }
+
+            for (int i = 0; i < size; i++)
+            {
+                kernel[i] /= sum;
+            }
+
+            return kernel;
+        }
     }
 }

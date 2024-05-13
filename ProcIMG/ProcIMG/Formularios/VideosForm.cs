@@ -157,7 +157,12 @@ namespace ProcIMG
         private void btnGaussianVi_Click(object sender, EventArgs e)
         {
             cleanConfiguration();
-            tbFilterOnlyVi.Visible = true;
+            if (originalVid == null)
+            {
+                MessageBox.Show("Debe seleccionar un video antes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            sFilter = "GaussianFilter";
         }
         private void btnMirrorVi_Click(object sender, EventArgs e)
         {
@@ -258,6 +263,8 @@ namespace ProcIMG
                     return ApplyColorFilter(frame, "Blue");
                 case "BorderFilter":
                     return ApplyBorderFilter(frame);
+                case "GaussianFilter":
+                    return ApplyGaussianFilter(frame);
                 default:
                     return frame;
             }
@@ -326,6 +333,13 @@ namespace ProcIMG
             Bitmap originalImage = (Bitmap)original;
             FiltersC filters = new FiltersC();
             Bitmap filteredImage = filters.BorderFilter(originalImage);
+            return filteredImage;
+        }
+        private Bitmap ApplyGaussianFilter(Bitmap original)
+        {
+            Bitmap originalImage = (Bitmap)original;
+            FiltersC filters = new FiltersC();
+            Bitmap filteredImage = filters.GaussianFilter(originalImage, 15);
             return filteredImage;
         }
         private void btnPauseVi_Click(object sender, EventArgs e)
