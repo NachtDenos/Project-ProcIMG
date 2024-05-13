@@ -15,7 +15,6 @@ namespace ProcIMG
         public Bitmap resultImg;
         public Bitmap originalImg;
         public string sFilter = "";
-        private int[,] conv3x3 = new int[3, 3];
         private int[] histogramR = new int[256];
         private int[] histogramG = new int[256];
         private int[] histogramB = new int[256];

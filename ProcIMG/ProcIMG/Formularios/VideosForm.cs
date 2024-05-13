@@ -25,6 +25,9 @@ namespace ProcIMG
         VideoCapture capture;
         bool pause = false;
         float valueScroll = 0.0f;
+        private int[] histogramR = new int[256];
+        private int[] histogramG = new int[256];
+        private int[] histogramB = new int[256];
         public enum Channel
         {
             Red,
@@ -52,6 +55,62 @@ namespace ProcIMG
             tbFilterOnlyVi.Visible = false;
             btnVerticalVi.Visible = false;
             btnHorizontalVi.Visible = false;
+        }
+
+        public void UpdateHistogram(Bitmap frame)
+        {
+
+            int x = 0;
+            int y = 0;
+            Color rColor = new Color();
+            //resultImg = originalImg;
+
+            for (x = 0; x < frame.Width; x++)
+            {
+                for (y = 0; y < frame.Height; y++)
+                {
+                    rColor = frame.GetPixel(x, y);
+                    histogramR[rColor.R]++;
+                    histogramG[rColor.G]++;
+                    histogramB[rColor.B]++;
+                }
+            }
+
+            HistogramRGB h = new HistogramRGB(histogramR, histogramG, histogramB);
+
+            h.TopLevel = false;
+            h.Location = new Point(30, 190);
+            flowHistogramVid.Controls.Add(h);
+            h.BringToFront();
+            h.Show();
+        }
+
+        public void UpdateHistogram2(Bitmap frame)
+        {
+
+            int x = 0;
+            int y = 0;
+            Color rColor = new Color();
+            //resultImg = originalImg;
+
+            for (x = 0; x < frame.Width; x++)
+            {
+                for (y = 0; y < frame.Height; y++)
+                {
+                    rColor = frame.GetPixel(x, y);
+                    histogramR[rColor.R]++;
+                    histogramG[rColor.G]++;
+                    histogramB[rColor.B]++;
+                }
+            }
+
+            HistogramRGB h = new HistogramRGB(histogramR, histogramG, histogramB);
+
+            h.TopLevel = false;
+            h.Location = new Point(30, 190);
+            flowHistogramVid2.Controls.Add(h);
+            h.BringToFront();
+            h.Show();
         }
         #endregion
 
@@ -220,9 +279,11 @@ namespace ProcIMG
 
                         pbEditVideo.Image = filteredFrame;
                         pbOriginalVideo.Image = m.Bitmap;
-
+                     
                         double fps = capture.GetCaptureProperty(CapProp.Fps);
-                        await Task.Delay((int)(1000 / fps)); 
+                        await Task.Delay((int)(1000 / fps));
+                        //UpdateHistogram(frame);
+                        //UpdateHistogram2(filteredFrame);
                     }
                     else
                     {

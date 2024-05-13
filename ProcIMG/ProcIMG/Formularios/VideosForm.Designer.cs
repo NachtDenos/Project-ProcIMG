@@ -76,6 +76,8 @@ namespace ProcIMG
             this.lblColorChoiceVi = new System.Windows.Forms.Label();
             this.btnVerticalVi = new System.Windows.Forms.Button();
             this.btnHorizontalVi = new System.Windows.Forms.Button();
+            this.flowHistogramVid = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowHistogramVid2 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -684,12 +686,28 @@ namespace ProcIMG
             this.btnHorizontalVi.Visible = false;
             this.btnHorizontalVi.Click += new System.EventHandler(this.btnHorizontalVi_Click);
             // 
+            // flowHistogramVid
+            // 
+            this.flowHistogramVid.Location = new System.Drawing.Point(874, 283);
+            this.flowHistogramVid.Name = "flowHistogramVid";
+            this.flowHistogramVid.Size = new System.Drawing.Size(259, 99);
+            this.flowHistogramVid.TabIndex = 65;
+            // 
+            // flowHistogramVid2
+            // 
+            this.flowHistogramVid2.Location = new System.Drawing.Point(874, 401);
+            this.flowHistogramVid2.Name = "flowHistogramVid2";
+            this.flowHistogramVid2.Size = new System.Drawing.Size(259, 99);
+            this.flowHistogramVid2.TabIndex = 66;
+            // 
             // VideosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(14)))), ((int)(((byte)(16)))));
             this.ClientSize = new System.Drawing.Size(1174, 793);
+            this.Controls.Add(this.flowHistogramVid2);
+            this.Controls.Add(this.flowHistogramVid);
             this.Controls.Add(this.btnVerticalVi);
             this.Controls.Add(this.btnHorizontalVi);
             this.Controls.Add(this.tbGradientVi);
@@ -808,5 +826,7 @@ namespace ProcIMG
         private System.Windows.Forms.Label lblColorChoiceVi;
         private System.Windows.Forms.Button btnVerticalVi;
         private System.Windows.Forms.Button btnHorizontalVi;
+        private System.Windows.Forms.FlowLayoutPanel flowHistogramVid;
+        private System.Windows.Forms.FlowLayoutPanel flowHistogramVid2;
     }
 }
