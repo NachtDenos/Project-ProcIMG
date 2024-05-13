@@ -607,6 +607,7 @@ namespace ProcIMG
             this.btnBlueVi.TabIndex = 55;
             this.btnBlueVi.UseVisualStyleBackColor = false;
             this.btnBlueVi.Visible = false;
+            this.btnBlueVi.Click += new System.EventHandler(this.btnBlueVi_Click);
             // 
             // btnGreenVi
             // 
@@ -621,6 +622,7 @@ namespace ProcIMG
             this.btnGreenVi.TabIndex = 54;
             this.btnGreenVi.UseVisualStyleBackColor = false;
             this.btnGreenVi.Visible = false;
+            this.btnGreenVi.Click += new System.EventHandler(this.btnGreenVi_Click);
             // 
             // btnRedVi
             // 
@@ -635,6 +637,7 @@ namespace ProcIMG
             this.btnRedVi.TabIndex = 53;
             this.btnRedVi.UseVisualStyleBackColor = false;
             this.btnRedVi.Visible = false;
+            this.btnRedVi.Click += new System.EventHandler(this.btnRedVi_Click);
             // 
             // lblColorChoiceVi
             // 

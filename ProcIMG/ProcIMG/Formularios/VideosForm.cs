@@ -21,9 +21,16 @@ namespace ProcIMG
         public Bitmap resultVid;
         public Bitmap originalVid;
         public string sFilter = "";
+        public string sFilterColor = "";
         VideoCapture capture;
         bool pause = false;
         float valueScroll = 0.0f;
+        public enum Channel
+        {
+            Red,
+            Green,
+            Blue
+        }
         public VideosForm()
         {
             InitializeComponent();
@@ -68,6 +75,12 @@ namespace ProcIMG
         {
             cleanConfiguration();
             tbFilterOnlyVi.Visible = true;
+            if (originalVid == null)
+            {
+                MessageBox.Show("Debe seleccionar un video antes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            sFilter = "ContrastFilter";
         }
         private void btnBorderVi_Click(object sender, EventArgs e)
         {
@@ -102,20 +115,38 @@ namespace ProcIMG
         {
             cleanConfiguration();
             tbFilterOnlyVi.Visible = true;
+            if (originalVid == null)
+            {
+                MessageBox.Show("Debe seleccionar un video antes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            sFilter = "PixelFilter";
         }
         private void btnColorVi_Click(object sender, EventArgs e)
         {
             cleanConfiguration();
+            if (originalVid == null)
+            {
+                MessageBox.Show("Debe seleccionar un video antes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             lblColorChoiceVi.Visible = true;
             btnRedVi.Visible = true;
             btnGreenVi.Visible = true;
             btnBlueVi.Visible = true;
             btnMoreColorsVi.Visible = true;
+            sFilterColor = "Color";
         }
         private void btnNoiseVi_Click(object sender, EventArgs e)
         {
             cleanConfiguration();
             tbFilterOnlyVi.Visible = true;
+            if (originalVid == null)
+            {
+                MessageBox.Show("Debe seleccionar un video antes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            sFilter = "NoiseFilter";
         }
         private void btnGaussianVi_Click(object sender, EventArgs e)
         {
@@ -207,6 +238,18 @@ namespace ProcIMG
                     return ApplyVerticalFilter(frame);
                 case "BrightnessFilter":
                     return ApplyBrightnessFilter(frame);
+                case "PixelFilter":
+                    return ApplyPixelFilter(frame);
+                case "ContrastFilter":
+                    return ApplyContrastFilter(frame);
+                case "NoiseFilter":
+                    return ApplyNoiseFilter(frame);
+                case "FilterRed":
+                    return ApplyColorFilter(frame, "Red");
+                case "FilterGreen":
+                    return ApplyColorFilter(frame, "Green");
+                case "FilterBlue":
+                    return ApplyColorFilter(frame, "Blue");
                 default:
                     return frame;
             }
@@ -242,6 +285,34 @@ namespace ProcIMG
             Bitmap filteredImage = filters.BrightnessFilter(originalImage, valueScroll);
             return filteredImage;
         }
+        private Bitmap ApplyPixelFilter(Bitmap original)
+        {
+            Bitmap originalImage = (Bitmap)original;
+            FiltersC filters = new FiltersC();
+            Bitmap filteredImage = filters.PixelFilter(originalImage, Convert.ToInt32(valueScroll));
+            return filteredImage;
+        }
+        private Bitmap ApplyContrastFilter(Bitmap original)
+        {
+            Bitmap originalImage = (Bitmap)original;
+            FiltersC filters = new FiltersC();
+            Bitmap filteredImage = filters.ContrastFilter(originalImage, Convert.ToInt32(valueScroll));
+            return filteredImage;
+        }
+        private Bitmap ApplyNoiseFilter(Bitmap original)
+        {
+            Bitmap originalImage = (Bitmap)original;
+            FiltersC filters = new FiltersC();
+            Bitmap filteredImage = filters.NoiseFilter(originalImage, valueScroll);
+            return filteredImage;
+        }
+        private Bitmap ApplyColorFilter(Bitmap original, string channel)
+        {
+            Bitmap originalImage = (Bitmap)original;
+            FiltersC filters = new FiltersC();
+            Bitmap filteredImage = filters.ColorFilter(originalImage, channel);
+            return filteredImage;
+        }
         private void btnPauseVi_Click(object sender, EventArgs e)
         {
             pause = !pause;
@@ -270,6 +341,36 @@ namespace ProcIMG
         private void tbFilterOnlyVi_Scroll(object sender, EventArgs e)
         {
             valueScroll = tbFilterOnlyVi.Value;
+        }
+
+        private void btnRedVi_Click(object sender, EventArgs e)
+        {
+            if (sFilterColor == "Color")
+                sFilter = "FilterRed";
+            else
+            {
+
+            }
+        }
+
+        private void btnGreenVi_Click(object sender, EventArgs e)
+        {
+            if (sFilterColor == "Color")
+                sFilter = "FilterGreen";
+            else
+            {
+
+            }
+        }
+
+        private void btnBlueVi_Click(object sender, EventArgs e)
+        {
+            if (sFilterColor == "Color")
+                sFilter = "FilterBlue";
+            else
+            {
+
+            }
         }
     }
 }

@@ -20,14 +20,6 @@ namespace ProcIMG
         private int[] histogramG = new int[256];
         private int[] histogramB = new int[256];
 
-        public enum Channel
-        {
-            Red,
-            Green,
-            Blue
-        }
-
-
         public ImagenesForm()
         {
             InitializeComponent();
@@ -106,40 +98,13 @@ namespace ProcIMG
             h.BringToFront();
             h.Show();
         }
-
-
-        private Bitmap ApplyChannelFilter(Bitmap originalImg, Channel channel)
+        public Bitmap ApplyChannelFilter(Bitmap originalImg, string channel)
         {
-            Bitmap resultImgLocal = new Bitmap(originalImg.Width, originalImg.Height);
-
-            for (int x = 0; x < originalImg.Width; x++)
-            {
-                for (int y = 0; y < originalImg.Height; y++)
-                {
-                    Color oColor = originalImg.GetPixel(x, y);
-                    Color newColor;
-
-                    switch (channel)
-                    {
-                        case Channel.Red:
-                            newColor = Color.FromArgb(oColor.R, 0, 0);
-                            break;
-                        case Channel.Green:
-                            newColor = Color.FromArgb(0, oColor.G, 0);
-                            break;
-                        case Channel.Blue:
-                            newColor = Color.FromArgb(0, 0, oColor.B);
-                            break;
-                        default:
-                            newColor = oColor;
-                            break;
-                    }
-
-                    resultImgLocal.SetPixel(x, y, newColor);
-                }
-            }
-            resultImg = resultImgLocal;
-            return resultImgLocal;
+            Bitmap originalImage = (Bitmap)originalImg;
+            FiltersC filters = new FiltersC();
+            Bitmap filteredImage = filters.ColorFilter(originalImage, channel);
+            resultImg = filteredImage;
+            return filteredImage;
         }
 
         private void BrightnessFilter(float pBrightness)
@@ -154,60 +119,12 @@ namespace ProcIMG
         }
         private void NoiseFilter(float noisePercent)
         {
-            int x = 0;
-            int y = 0;
-            int rangeMin = 85;
-            int rangeMax = 300;
-            float pBrightness = 0;
-
-            Random rnd = new Random();
-            Color rColor;
-            Color oColor;
-
-            int r = 0;
-            int g = 0;
-            int b = 0;
-
-            resultImg = new Bitmap(originalImg.Width, originalImg.Height);
-            for (x = 0; x < originalImg.Width; x++)
-            {
-                for (y = 0; y < originalImg.Height; y++)
-                {
-                    if (rnd.Next(1, 100) <= noisePercent)
-                    {
-                        pBrightness = rnd.Next(rangeMin, rangeMax) / 100.0f;
-                        oColor = originalImg.GetPixel(x, y);
-                        r = (int)(oColor.R * pBrightness);
-                        g = (int)(oColor.G * pBrightness);
-                        b = (int)(oColor.B * pBrightness);
-
-                        if (r > 255)
-                            r = 255;
-                        else if (r < 0)
-                            r = 0;
-
-                        if (g > 255)
-                            g = 255;
-                        else if (g < 0)
-                            g = 0;
-
-                        if (b > 255)
-                            b = 255;
-                        else if (b < 0)
-                            b = 0;
-
-                        rColor = Color.FromArgb(r,g,b);
-                    }
-                    else
-                    {
-                        rColor = originalImg.GetPixel(x, y);
-                    }
-                    resultImg.SetPixel(x, y, rColor);
-                }
-                
-            }
+            Bitmap originalImage = (Bitmap)originalImg;
+            FiltersC filters = new FiltersC();
+            Bitmap filteredImage = filters.NoiseFilter(originalImage, noisePercent);
             this.Invalidate();
-            pbEditImage.Image = resultImg;
+            pbEditImage.Image = filteredImage;
+            resultImg = filteredImage;
             UpdateHistogram2();
         }
 
@@ -215,99 +132,23 @@ namespace ProcIMG
         {
             if (pixelPercent == 0)
                 return;
-            int x = 0;
-            int y = 0;
-            int xp = 0;
-            int yp = 0;
-            Color rColor;
-            Color oColor;
-            int rs = 0;
-            int gs = 0;
-            int bs = 0;
-            int r = 0;
-            int g = 0;
-            int b = 0;
-            resultImg = new Bitmap(originalImg.Width, originalImg.Height);
-            for (x = 0; x < originalImg.Width - pixelPercent; x += pixelPercent)
-            {
-                for (y = 0; y < originalImg.Height - pixelPercent; y += pixelPercent)
-                {
-                    rs = 0;
-                    gs = 0;
-                    bs = 0;
-                    for (xp = x; xp < (x + pixelPercent); xp++)
-                    {
-                        for (yp = y; yp < (y + pixelPercent); yp++)
-                        {
-                            oColor = originalImg.GetPixel(xp,yp);
-                            rs += oColor.R;
-                            gs += oColor.G;
-                            bs += oColor.B;
-                        }
-                    }
-                    r = rs / (pixelPercent * pixelPercent);
-                    g = gs / (pixelPercent * pixelPercent);
-                    b = bs / (pixelPercent * pixelPercent);
-                    rColor = Color.FromArgb(r, g, b);
-                    for (xp = x; xp < (x + pixelPercent); xp++)
-                    {
-                        for (yp = y; yp < (y + pixelPercent); yp++)
-                        {
-                            resultImg.SetPixel(xp, yp, rColor);
-                        }
-                    }
-                }
-
-            }
+            Bitmap originalImage = (Bitmap)originalImg;
+            FiltersC filters = new FiltersC();
+            Bitmap filteredImage = filters.PixelFilter(originalImage, pixelPercent);
             this.Invalidate();
-            pbEditImage.Image = resultImg;
+            pbEditImage.Image = filteredImage;
+            resultImg = filteredImage;
             UpdateHistogram2();
         }
 
         private void ConstrastFilter(int contrast)
         {
-            //int contrast = 30;
-            float c = (100.0f + contrast / 100.0f);
-            c *= c;
-            int x = 0;
-            int y = 0;
-            resultImg = new Bitmap(originalImg.Width, originalImg.Height);
-            Color rColor = new Color();
-            Color oColor = new Color();
-            float r = 0;
-            float g = 0;
-            float b = 0;
-            for (x = 0; x < originalImg.Width; x++)
-            {
-                for (y = 0; y < originalImg.Height; y++)
-                {
-                    oColor = originalImg.GetPixel(x, y);
-
-                    r = ((((oColor.R / 255.0f) - 0.5f) * c) + 0.5f) * 255;
-                    if (r > 255)
-                        r = 255;
-                    else if (r < 0)
-                        r = 0;
-
-                    g = ((((oColor.G / 255.0f) - 0.5f) * c) + 0.5f) * 255;
-                    if (g > 255)
-                        g = 255;
-                    else if (g < 0)
-                        g = 0;
-
-                    b = ((((oColor.B / 255.0f) - 0.5f) * c) + 0.5f) * 255;
-                    if (b > 255)
-                        b = 255;
-                    else if (b < 0)
-                        b = 0;
-
-                    rColor = Color.FromArgb((int)r, (int)g, (int)b);
-                    resultImg.SetPixel(x, y, rColor);
-                }
-
-            }
+            Bitmap originalImage = (Bitmap)originalImg;
+            FiltersC filters = new FiltersC();
+            Bitmap filteredImage = filters.ContrastFilter(originalImage, contrast);
             this.Invalidate();
-            pbEditImage.Image = resultImg;
+            pbEditImage.Image = filteredImage;
+            resultImg = filteredImage;
             UpdateHistogram2();
         }
 
@@ -606,7 +447,7 @@ namespace ProcIMG
         {
             if (sFilter == "Color")
             {
-                pbEditImage.Image = ApplyChannelFilter(originalImg, Channel.Red);
+                pbEditImage.Image = ApplyChannelFilter(originalImg, "Red");
                 this.Invalidate();
                 UpdateHistogram2();
             }
@@ -620,7 +461,7 @@ namespace ProcIMG
         {
             if (sFilter == "Color")
             {
-                pbEditImage.Image = ApplyChannelFilter(originalImg, Channel.Green);
+                pbEditImage.Image = ApplyChannelFilter(originalImg, "Green");
                 this.Invalidate();
                 UpdateHistogram2();
             }
@@ -634,7 +475,7 @@ namespace ProcIMG
         {
             if (sFilter == "Color")
             {
-                pbEditImage.Image = ApplyChannelFilter(originalImg, Channel.Blue);
+                pbEditImage.Image = ApplyChannelFilter(originalImg, "Blue");
                 this.Invalidate();
                 UpdateHistogram2();
             }
@@ -643,9 +484,6 @@ namespace ProcIMG
 
             }
         }
-
-
-
         #endregion
 
         private void tbFilterOnlyImg_Scroll(object sender, EventArgs e)
@@ -689,5 +527,6 @@ namespace ProcIMG
             pbEditImage.Image = filteredImage;
             UpdateHistogram2();
         }
+
     }
 }
