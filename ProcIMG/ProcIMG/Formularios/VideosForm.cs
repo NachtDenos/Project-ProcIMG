@@ -13,6 +13,7 @@ using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 
 
+
 namespace ProcIMG
 {
     public partial class VideosForm : Form
@@ -164,27 +165,42 @@ namespace ProcIMG
 
         private async void btnPlayVi_Click(object sender, EventArgs e)
         {
-            if (pause == true)
+            if (pause)
+            {
                 pause = false;
+                return;
+            }
+
             if (capture == null)
             {
                 return;
             }
+
             try
             {
                 while (!pause)
                 {
                     Mat m = new Mat();
                     capture.Read(m);
+
                     if (!m.IsEmpty)
                     {
-                        pbEditVideo.Image = m.Bitmap;
-                        double fps = capture.GetCaptureProperty(Emgu.CV.CvEnum.CapProp.Fps);
-                        await Task.Delay(1000 / Convert.ToInt32(fps));
+                        Bitmap frame = m.Bitmap;
+
+                        // Aplicar el filtro en un hilo separado utilizando Task.Run
+                        Bitmap filteredFrame = await Task.Run(() => ApplySelectedFilter(frame));
+
+                        // Actualizar la interfaz de usuario en el hilo principal
+                        pbEditVideo.Image = filteredFrame;
+                        pbOriginalVideo.Image = m.Bitmap;
+
+                        double fps = capture.GetCaptureProperty(CapProp.Fps);
+                        await Task.Delay((int)(1000 / fps)); // Ajustar el retraso para mantener el FPS deseado
                     }
                     else
                     {
-                        capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.PosFrames, 0);
+                        // Reiniciar la reproducción cuando se llega al final del video
+                        capture.SetCaptureProperty(CapProp.PosFrames, 0);
                     }
                 }
             }
@@ -193,6 +209,47 @@ namespace ProcIMG
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private Bitmap ApplySelectedFilter(Bitmap frame)
+        {
+           
+
+              return ApplyNegativeFilter(frame);
+
+        }
+
+        private Bitmap ApplyNegativeFilter(Bitmap original)
+        {
+            Bitmap filteredImage = new Bitmap(original.Width, original.Height);
+
+            // Aplicar el filtro negativo
+            for (int x = 0; x < original.Width; x++)
+            {
+                for (int y = 0; y < original.Height; y++)
+                {
+                    Color pixel = original.GetPixel(x, y);
+
+                    int r = pixel.R;
+                    int g = pixel.G;
+                    int b = pixel.B;
+
+                    int newR = 255 - r;
+                    int newG = 255 - g;
+                    int newB = 255 - b;
+
+                    // Asegurar que los valores estén en el rango [0, 255]
+                    newR = Math.Max(0, Math.Min(255, newR));
+                    newG = Math.Max(0, Math.Min(255, newG));
+                    newB = Math.Max(0, Math.Min(255, newB));
+
+                    Color newPixel = Color.FromArgb(newR, newG, newB);
+                    filteredImage.SetPixel(x, y, newPixel);
+                }
+            }
+
+            return filteredImage;
+        }
+
 
         private void btnPauseVi_Click(object sender, EventArgs e)
         {
