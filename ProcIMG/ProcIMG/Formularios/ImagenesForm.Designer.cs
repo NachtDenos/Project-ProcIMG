@@ -435,6 +435,7 @@ namespace ProcIMG
             this.btnBlueImg2.TabIndex = 30;
             this.btnBlueImg2.UseVisualStyleBackColor = false;
             this.btnBlueImg2.Visible = false;
+            this.btnBlueImg2.Click += new System.EventHandler(this.btnBlueImg2_Click);
             // 
             // btnGreenImg2
             // 
@@ -449,6 +450,7 @@ namespace ProcIMG
             this.btnGreenImg2.TabIndex = 29;
             this.btnGreenImg2.UseVisualStyleBackColor = false;
             this.btnGreenImg2.Visible = false;
+            this.btnGreenImg2.Click += new System.EventHandler(this.btnGreenImg2_Click);
             // 
             // btnRedImg2
             // 
@@ -463,6 +465,7 @@ namespace ProcIMG
             this.btnRedImg2.TabIndex = 28;
             this.btnRedImg2.UseVisualStyleBackColor = false;
             this.btnRedImg2.Visible = false;
+            this.btnRedImg2.Click += new System.EventHandler(this.btnRedImg2_Click);
             // 
             // lblColorChoiceImg2
             // 
@@ -493,7 +496,7 @@ namespace ProcIMG
             this.btnHorizontalImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHorizontalImg.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHorizontalImg.ForeColor = System.Drawing.Color.White;
-            this.btnHorizontalImg.Location = new System.Drawing.Point(828, 688);
+            this.btnHorizontalImg.Location = new System.Drawing.Point(822, 688);
             this.btnHorizontalImg.Name = "btnHorizontalImg";
             this.btnHorizontalImg.Size = new System.Drawing.Size(119, 30);
             this.btnHorizontalImg.TabIndex = 33;

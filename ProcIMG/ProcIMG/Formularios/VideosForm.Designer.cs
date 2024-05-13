@@ -540,6 +540,7 @@ namespace ProcIMG
             this.btnBlueVi2.TabIndex = 60;
             this.btnBlueVi2.UseVisualStyleBackColor = false;
             this.btnBlueVi2.Visible = false;
+            this.btnBlueVi2.Click += new System.EventHandler(this.btnBlueVi2_Click);
             // 
             // btnGreenVi2
             // 
@@ -554,6 +555,7 @@ namespace ProcIMG
             this.btnGreenVi2.TabIndex = 59;
             this.btnGreenVi2.UseVisualStyleBackColor = false;
             this.btnGreenVi2.Visible = false;
+            this.btnGreenVi2.Click += new System.EventHandler(this.btnGreenVi2_Click);
             // 
             // btnRedVi2
             // 
@@ -568,6 +570,7 @@ namespace ProcIMG
             this.btnRedVi2.TabIndex = 58;
             this.btnRedVi2.UseVisualStyleBackColor = false;
             this.btnRedVi2.Visible = false;
+            this.btnRedVi2.Click += new System.EventHandler(this.btnRedVi2_Click);
             // 
             // lblColorChoice2Vi
             // 
@@ -662,7 +665,7 @@ namespace ProcIMG
             this.btnVerticalVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerticalVi.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerticalVi.ForeColor = System.Drawing.Color.White;
-            this.btnVerticalVi.Location = new System.Drawing.Point(961, 688);
+            this.btnVerticalVi.Location = new System.Drawing.Point(962, 687);
             this.btnVerticalVi.Name = "btnVerticalVi";
             this.btnVerticalVi.Size = new System.Drawing.Size(119, 30);
             this.btnVerticalVi.TabIndex = 64;
@@ -678,7 +681,7 @@ namespace ProcIMG
             this.btnHorizontalVi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHorizontalVi.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHorizontalVi.ForeColor = System.Drawing.Color.White;
-            this.btnHorizontalVi.Location = new System.Drawing.Point(827, 688);
+            this.btnHorizontalVi.Location = new System.Drawing.Point(836, 688);
             this.btnHorizontalVi.Name = "btnHorizontalVi";
             this.btnHorizontalVi.Size = new System.Drawing.Size(119, 30);
             this.btnHorizontalVi.TabIndex = 63;

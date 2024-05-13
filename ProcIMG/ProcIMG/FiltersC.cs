@@ -439,5 +439,49 @@ namespace ProcIMG
 
             return kernel;
         }
+
+        public Bitmap GradientFilter(Bitmap original, Color color1, Color color2)
+        {
+            Bitmap filteredImage = new Bitmap(original.Width, original.Height);
+            float r1 = color1.R;
+            float g1 = color1.G;
+            float b1 = color1.B;
+            float r2 = color2.R;
+            float g2 = color2.G;
+            float b2 = color2.B;
+            float dr = (r2 - r1) / (float)original.Width;
+            float dg = (g2 - g1) / (float)original.Width;
+            float db = (b2 - b1) / (float)original.Width;
+            Color oColor = new Color();
+            Bitmap resultImg = shadesOfGray(original);
+
+            float centerX = original.Width / 2.0f;
+            float centerY = original.Height / 2.0f;
+            float maxDistance = (float)Math.Sqrt(centerX * centerX + centerY * centerY);
+
+            for (int x = 0; x < original.Width; x++)
+            {
+                for (int y = 0; y < original.Height; y++)
+                {
+                    oColor = resultImg.GetPixel(x, y);
+                    float distanceFromCenter = (float)Math.Sqrt((x - centerX) * (x - centerX) + (y - centerY) * (y - centerY));
+                    float blendFactor = distanceFromCenter / maxDistance;
+                    int r = (int)(r1 + dr * x);
+                    int g = (int)(g1 + dg * x);
+                    int b = (int)(b1 + db * x);
+                    if (r > 255) r = 255;
+                    else if (r < 0) r = 0;
+                    if (g > 255) g = 255;
+                    else if (g < 0) g = 0;
+                    if (b > 255) b = 255;
+                    else if (b < 0) b = 0;
+                    Color blendedColor = Color.FromArgb((int)(oColor.R * (1 - blendFactor) + r * blendFactor),
+                                                        (int)(oColor.G * (1 - blendFactor) + g * blendFactor),
+                                                        (int)(oColor.B * (1 - blendFactor) + b * blendFactor));
+                    filteredImage.SetPixel(x, y, blendedColor);
+                }
+            }
+            return filteredImage;
+        }
     }
 }

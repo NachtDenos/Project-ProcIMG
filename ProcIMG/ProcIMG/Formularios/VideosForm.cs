@@ -28,6 +28,9 @@ namespace ProcIMG
         private int[] histogramR = new int[256];
         private int[] histogramG = new int[256];
         private int[] histogramB = new int[256];
+        Color color1;
+        Color color2;
+        bool primerBotonSeleccionado = false;
         public enum Channel
         {
             Red,
@@ -322,6 +325,8 @@ namespace ProcIMG
                     return ApplyBorderFilter(frame);
                 case "GaussianFilter":
                     return ApplyGaussianFilter(frame);
+                case "GradientFilter":
+                    return ApplyGradientFilter(frame);
                 default:
                     return frame;
             }
@@ -399,6 +404,13 @@ namespace ProcIMG
             Bitmap filteredImage = filters.GaussianFilter(originalImage, 15);
             return filteredImage;
         }
+        private Bitmap ApplyGradientFilter(Bitmap original)
+        {
+            Bitmap originalImage = (Bitmap)original;
+            FiltersC filters = new FiltersC();
+            Bitmap filteredImage = filters.GradientFilter(originalImage, color1, color2);
+            return filteredImage;
+        }
         private void btnPauseVi_Click(object sender, EventArgs e)
         {
             pause = !pause;
@@ -435,7 +447,8 @@ namespace ProcIMG
                 sFilter = "FilterRed";
             else
             {
-
+                color1 = Color.Red;
+                primerBotonSeleccionado = true;
             }
         }
 
@@ -445,7 +458,8 @@ namespace ProcIMG
                 sFilter = "FilterGreen";
             else
             {
-
+                color1 = Color.Green;
+                primerBotonSeleccionado = true;
             }
         }
 
@@ -455,7 +469,8 @@ namespace ProcIMG
                 sFilter = "FilterBlue";
             else
             {
-
+                color1 = Color.Blue;
+                primerBotonSeleccionado = true;
             }
         }
 
@@ -504,6 +519,30 @@ namespace ProcIMG
                 MessageBox.Show("El video se ha guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
+        }
+
+        private void btnRedVi2_Click(object sender, EventArgs e)
+        {
+            if (primerBotonSeleccionado)
+            {
+                color2 = Color.Red;
+                primerBotonSeleccionado = false;
+                sFilter = "GradientFilter";
+            }
+        }
+
+        private void btnGreenVi2_Click(object sender, EventArgs e)
+        {
+            color2 = Color.Green;
+            primerBotonSeleccionado = false;
+            sFilter = "GradientFilter";
+        }
+
+        private void btnBlueVi2_Click(object sender, EventArgs e)
+        {
+            color2 = Color.Blue;
+            primerBotonSeleccionado = false;
+            sFilter = "GradientFilter";
         }
     }
 }

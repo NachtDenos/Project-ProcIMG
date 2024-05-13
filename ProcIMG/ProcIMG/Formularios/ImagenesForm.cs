@@ -18,6 +18,9 @@ namespace ProcIMG
         private int[] histogramR = new int[256];
         private int[] histogramG = new int[256];
         private int[] histogramB = new int[256];
+        Color color1;
+        Color color2;
+        bool primerBotonSeleccionado = false;
 
         public ImagenesForm()
         {
@@ -98,6 +101,15 @@ namespace ProcIMG
             h.Show();
         }
         public Bitmap ApplyChannelFilter(Bitmap originalImg, string channel)
+        {
+            Bitmap originalImage = (Bitmap)originalImg;
+            FiltersC filters = new FiltersC();
+            Bitmap filteredImage = filters.ColorFilter(originalImage, channel);
+            resultImg = filteredImage;
+            return filteredImage;
+        }
+
+        public Bitmap ApplyGradientFilter(Bitmap originalImg, string channel)
         {
             Bitmap originalImage = (Bitmap)originalImg;
             FiltersC filters = new FiltersC();
@@ -331,7 +343,8 @@ namespace ProcIMG
             }
             else
             {
-
+                color1 = Color.Red;
+                primerBotonSeleccionado = true;
             }
         }
 
@@ -345,7 +358,8 @@ namespace ProcIMG
             }
             else
             {
-
+                color1 = Color.Green;
+                primerBotonSeleccionado = true;
             }
         }
 
@@ -359,7 +373,8 @@ namespace ProcIMG
             }
             else
             {
-
+                color1 = Color.Blue;
+                primerBotonSeleccionado = true;
             }
         }
         #endregion
@@ -428,6 +443,54 @@ namespace ProcIMG
                 }
             }
 
+        }
+
+        private void btnGreenImg2_Click(object sender, EventArgs e)
+        {
+            if (primerBotonSeleccionado)
+            {
+                color2 = Color.Green;
+                primerBotonSeleccionado = false;
+                Bitmap originalImage = (Bitmap)originalImg;
+                FiltersC filters = new FiltersC();
+                Bitmap filteredImage = filters.GradientFilter(originalImage, color1, color2);
+                this.Invalidate();
+                pbEditImage.Image = filteredImage;
+                resultImg = filteredImage;
+                UpdateHistogram2();
+            }
+        }
+
+        private void btnRedImg2_Click(object sender, EventArgs e)
+        {
+            if (primerBotonSeleccionado)
+            {
+                color2 = Color.Red;
+                primerBotonSeleccionado = false;
+                Bitmap originalImage = (Bitmap)originalImg;
+                FiltersC filters = new FiltersC();
+                Bitmap filteredImage = filters.GradientFilter(originalImage, color1, color2);
+                this.Invalidate();
+                pbEditImage.Image = filteredImage;
+                resultImg = filteredImage;
+                UpdateHistogram2();
+            }
+        }
+
+        private void btnBlueImg2_Click(object sender, EventArgs e)
+        {
+            if (primerBotonSeleccionado)
+            {
+                color2 = Color.Blue;
+                primerBotonSeleccionado = false;
+                Bitmap originalImage = (Bitmap)originalImg;
+                FiltersC filters = new FiltersC();
+                Bitmap filteredImage = filters.GradientFilter(originalImage, color1, color2);
+                this.Invalidate();
+                pbEditImage.Image = filteredImage;
+                resultImg = filteredImage;
+                UpdateHistogram2();
+            }
         }
     }
 }
