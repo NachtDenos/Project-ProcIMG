@@ -423,6 +423,7 @@ namespace ProcIMG
             this.btnDownloadVi.Size = new System.Drawing.Size(50, 50);
             this.btnDownloadVi.TabIndex = 39;
             this.btnDownloadVi.UseVisualStyleBackColor = false;
+            this.btnDownloadVi.Click += new System.EventHandler(this.btnDownloadVi_Click);
             // 
             // btnEraseVi
             // 

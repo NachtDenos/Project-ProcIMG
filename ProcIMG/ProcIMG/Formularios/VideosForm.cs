@@ -162,9 +162,6 @@ namespace ProcIMG
             btnGreenVi2.Visible = true;
             btnBlueVi.Visible = true;
             btnBlueVi2.Visible = true;
-            btnMoreColorsVi.Visible = true;
-            btnMoreColorsVi2.Visible = true;
-            tbGradientVi.Visible = true;
         }
         private void btnNegativeVi_Click(object sender, EventArgs e)
         {
@@ -199,7 +196,6 @@ namespace ProcIMG
             btnRedVi.Visible = true;
             btnGreenVi.Visible = true;
             btnBlueVi.Visible = true;
-            btnMoreColorsVi.Visible = true;
             sFilterColor = "Color";
         }
         private void btnNoiseVi_Click(object sender, EventArgs e)
@@ -235,6 +231,7 @@ namespace ProcIMG
         private void btnEraseVi_Click(object sender, EventArgs e)
         {
             cleanConfiguration();
+            sFilter = "";
         }
         private void btnUploadVi_Click(object sender, EventArgs e)
         {
@@ -258,12 +255,10 @@ namespace ProcIMG
                 pause = false;
                 return;
             }
-
             if (capture == null)
             {
                 return;
             }
-
             try
             {
                 while (!pause)
@@ -462,6 +457,53 @@ namespace ProcIMG
             {
 
             }
+        }
+
+        private void btnDownloadVi_Click(object sender, EventArgs e)
+        {
+            if (pbEditVideo.Image == null)
+            {
+                MessageBox.Show("No hay video para guardar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Archivos de video (*.avi)|*.avi|Archivos de video (*.mp4)|*.mp4";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+
+                VideoWriter videoWriter = new VideoWriter(filePath, VideoWriter.Fourcc('X', 'V', 'I', 'D'), 25, new Size(pbEditVideo.Image.Width, pbEditVideo.Image.Height), true);
+
+                capture.SetCaptureProperty(CapProp.PosFrames, 0);
+                while (true)
+                {
+                    Mat m = new Mat();
+                    capture.Read(m);
+
+                    if (!m.IsEmpty)
+                    {
+                        Bitmap frame = m.Bitmap;
+
+                        Bitmap filteredFrame = ApplySelectedFilter(frame);
+
+                        using (Image<Bgr, byte> img = new Image<Bgr, byte>(filteredFrame))
+                        {
+                            videoWriter.Write(img.Mat);
+                        }
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                videoWriter.Dispose();
+
+                MessageBox.Show("El video se ha guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
     }
 }

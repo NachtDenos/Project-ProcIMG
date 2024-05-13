@@ -211,8 +211,6 @@ namespace ProcIMG
             btnGreenImg2.Visible = true;
             btnBlueImg.Visible = true;
             btnBlueImg2.Visible = true;
-            btnMoreColorsImg.Visible = true;
-            btnMoreColorsImg2.Visible = true;
             sFilter = "Gradiente";
         }
 
@@ -253,7 +251,6 @@ namespace ProcIMG
             btnRedImg.Visible = true;
             btnGreenImg.Visible = true;
             btnBlueImg.Visible = true;
-            btnMoreColorsImg.Visible = true;
             sFilter = "Color";
         }
 
