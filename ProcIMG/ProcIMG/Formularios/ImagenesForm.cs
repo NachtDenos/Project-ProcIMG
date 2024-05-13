@@ -152,74 +152,6 @@ namespace ProcIMG
             UpdateHistogram2();
         }
 
-        private void ConvGris(int[,] pMatriz, Bitmap pImagen, int pInferior, int pSuperior)
-        {
-            int x = 0;
-            int y = 0;
-            int a = 0;
-            int b = 0;
-            Color oColor;
-            int suma = 0;
-            for (x = 1; x < pImagen.Width - 1; x++)
-            {
-                for (y = 1; y < pImagen.Height - 1; y++)
-                {
-                    suma = 0;
-                    for (a = -1; a < 2; a++)
-                    {
-                        for (b = -1; b < 2; b++)
-                        {
-                            oColor = pImagen.GetPixel(x + a, y + b);
-                            suma = suma + (oColor.R * pMatriz[a + 1, b + 1]);
-                        }
-                    }
-                    if (suma < pInferior)
-                        suma = 0;
-                    else if (suma > pSuperior)
-                        suma = 255;
-
-                    resultImg.SetPixel(x, y, Color.FromArgb(suma, suma, suma));
-                }
-            }
-        }
-
-        private void BorderFilter()
-        {
-            conv3x3 = new int[,]
-            {
-                {-1,0,-1},
-                {0, 4, 0},
-                {-1,0,-1}
-            };
-            shadesOfGray();
-            Bitmap intermedio = (Bitmap)resultImg.Clone();
-            ConvGris(conv3x3, intermedio, 32, 64);
-            this.Invalidate();
-            pbEditImage.Image = resultImg;
-            UpdateHistogram2();
-        }
-
-        private void shadesOfGray()
-        {
-            int x = 0;
-            int y = 0;
-            resultImg = new Bitmap(originalImg.Width, originalImg.Height);
-            Color rColor = new Color();
-            Color oColor = new Color();
-            float g = 0;
-            for (x = 0; x < originalImg.Width; x++)
-            {
-                for (y = 0; y < originalImg.Height; y++)
-                {
-                    oColor = originalImg.GetPixel(x, y);
-                    g = oColor.R * 0.299f + oColor.G * 0.587f + oColor.B * 0.114f;
-                    rColor = Color.FromArgb((int)g, (int)g, (int)g);
-                    resultImg.SetPixel(x, y, rColor);
-                }
-            }
-            this.Invalidate();
-        }
-
         public void GaussianBlurFilter(int radius)
         {
             resultImg = new Bitmap(originalImg.Width, originalImg.Height);
@@ -325,8 +257,15 @@ namespace ProcIMG
                 MessageBox.Show("Debe seleccionar una imagen antes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            BorderFilter();
+            //BorderFilter();
             cleanConfiguration();
+            Bitmap originalImage = (Bitmap)originalImg;
+            FiltersC filters = new FiltersC();
+            Bitmap filteredImage = filters.BorderFilter(originalImage);
+            this.Invalidate();
+            pbEditImage.Image = filteredImage;
+            resultImg = filteredImage;
+            UpdateHistogram2();
         }
 
         private void btnGradientImg_Click(object sender, EventArgs e)

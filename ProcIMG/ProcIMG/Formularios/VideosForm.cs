@@ -85,6 +85,12 @@ namespace ProcIMG
         private void btnBorderVi_Click(object sender, EventArgs e)
         {
             cleanConfiguration();
+            if (originalVid == null)
+            {
+                MessageBox.Show("Debe seleccionar un video antes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            sFilter = "BorderFilter";
         }
         private void btnGradientVi_Click(object sender, EventArgs e)
         {
@@ -250,6 +256,8 @@ namespace ProcIMG
                     return ApplyColorFilter(frame, "Green");
                 case "FilterBlue":
                     return ApplyColorFilter(frame, "Blue");
+                case "BorderFilter":
+                    return ApplyBorderFilter(frame);
                 default:
                     return frame;
             }
@@ -311,6 +319,13 @@ namespace ProcIMG
             Bitmap originalImage = (Bitmap)original;
             FiltersC filters = new FiltersC();
             Bitmap filteredImage = filters.ColorFilter(originalImage, channel);
+            return filteredImage;
+        }
+        private Bitmap ApplyBorderFilter(Bitmap original)
+        {
+            Bitmap originalImage = (Bitmap)original;
+            FiltersC filters = new FiltersC();
+            Bitmap filteredImage = filters.BorderFilter(originalImage);
             return filteredImage;
         }
         private void btnPauseVi_Click(object sender, EventArgs e)

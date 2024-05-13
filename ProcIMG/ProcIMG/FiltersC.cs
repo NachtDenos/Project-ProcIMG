@@ -16,6 +16,7 @@ namespace ProcIMG
 {
     public class FiltersC
     {
+        private int[,] conv3x3 = new int[3, 3];
         public Bitmap HorizontalFilter(Bitmap original)
         {
             Bitmap filteredImage = new Bitmap(original.Width, original.Height);
@@ -302,6 +303,75 @@ namespace ProcIMG
                 }
             }
             return resultImgLocal;
+        }
+
+        public Bitmap BorderFilter(Bitmap original)
+        {
+            conv3x3 = new int[,]
+            {
+                {-1,0,-1},
+                {0, 4, 0},
+                {-1,0,-1}
+            };
+            Bitmap resultImg = shadesOfGray(original);
+            Bitmap intermedio = (Bitmap)resultImg.Clone();
+            Bitmap editImage = ConvGris(conv3x3, intermedio, 32, 64);
+            return editImage;
+
+        }
+
+        public Bitmap shadesOfGray(Bitmap original)
+        {
+            int x = 0;
+            int y = 0;
+            Bitmap filteredImage = new Bitmap(original.Width, original.Height);
+            Color rColor = new Color();
+            Color oColor = new Color();
+            float g = 0;
+            for (x = 0; x < original.Width; x++)
+            {
+                for (y = 0; y < original.Height; y++)
+                {
+                    oColor = original.GetPixel(x, y);
+                    g = oColor.R * 0.299f + oColor.G * 0.587f + oColor.B * 0.114f;
+                    rColor = Color.FromArgb((int)g, (int)g, (int)g);
+                    filteredImage.SetPixel(x, y, rColor);
+                }
+            }
+            return filteredImage;
+        }
+
+        private Bitmap ConvGris(int[,] pMatriz, Bitmap pImagen, int pInferior, int pSuperior)
+        {
+            int x = 0;
+            int y = 0;
+            int a = 0;
+            int b = 0;
+            Color oColor;
+            int suma = 0;
+            Bitmap filteredImage = new Bitmap(pImagen.Width, pImagen.Height);
+            for (x = 1; x < pImagen.Width - 1; x++)
+            {
+                for (y = 1; y < pImagen.Height - 1; y++)
+                {
+                    suma = 0;
+                    for (a = -1; a < 2; a++)
+                    {
+                        for (b = -1; b < 2; b++)
+                        {
+                            oColor = pImagen.GetPixel(x + a, y + b);
+                            suma = suma + (oColor.R * pMatriz[a + 1, b + 1]);
+                        }
+                    }
+                    if (suma < pInferior)
+                        suma = 0;
+                    else if (suma > pSuperior)
+                        suma = 255;
+
+                    filteredImage.SetPixel(x, y, Color.FromArgb(suma, suma, suma));
+                }
+            }
+            return filteredImage;
         }
     }
 }
