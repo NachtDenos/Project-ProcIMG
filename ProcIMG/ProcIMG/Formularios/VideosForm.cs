@@ -20,7 +20,7 @@ namespace ProcIMG
     {
         public Bitmap resultVid;
         public Bitmap originalVid;
-
+        public string sFilter = "";
         VideoCapture capture;
         bool pause = false;
         public VideosForm()
@@ -89,26 +89,10 @@ namespace ProcIMG
                 MessageBox.Show("Debe seleccionar un video antes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            int x = 0;
-            int y = 0;
-            resultVid = new Bitmap(originalVid.Width, originalVid.Height);
-            Color rColor = new Color();
-            Color oColor = new Color();
-            for (x = 0; x < originalVid.Width; x++)
-            {
-                for (y = 0; y < originalVid.Height; y++)
-                {
-                    oColor = originalVid.GetPixel(x, y);
-
-                    rColor = Color.FromArgb(255 - oColor.R,
-                                            255 - oColor.G,
-                                            255 - oColor.B);
-
-                    resultVid.SetPixel(x, y, rColor);
-                }
-            }
-            this.Invalidate();
-            pbEditVideo.Image = resultVid;
+            sFilter = "NegativeFilter";
+            // Aplicar el filtro negativo
+            //resultVid = ApplyNegativeFilter(originalVid);
+            //pbEditVideo.Image = resultVid;
             //UpdateHistogram2();
         }
         private void btnPixelVi_Click(object sender, EventArgs e)
@@ -187,19 +171,16 @@ namespace ProcIMG
                     {
                         Bitmap frame = m.Bitmap;
 
-                        // Aplicar el filtro en un hilo separado utilizando Task.Run
                         Bitmap filteredFrame = await Task.Run(() => ApplySelectedFilter(frame));
 
-                        // Actualizar la interfaz de usuario en el hilo principal
                         pbEditVideo.Image = filteredFrame;
                         pbOriginalVideo.Image = m.Bitmap;
 
                         double fps = capture.GetCaptureProperty(CapProp.Fps);
-                        await Task.Delay((int)(1000 / fps)); // Ajustar el retraso para mantener el FPS deseado
+                        await Task.Delay((int)(1000 / fps)); 
                     }
                     else
                     {
-                        // Reiniciar la reproducción cuando se llega al final del video
                         capture.SetCaptureProperty(CapProp.PosFrames, 0);
                     }
                 }
@@ -212,9 +193,14 @@ namespace ProcIMG
 
         private Bitmap ApplySelectedFilter(Bitmap frame)
         {
-           
 
-              return ApplyNegativeFilter(frame);
+            switch (sFilter)
+            {
+                case "NegativeFilter":
+                    return ApplyNegativeFilter(frame);
+                default:
+                    return frame;
+            }
 
         }
 
@@ -222,7 +208,6 @@ namespace ProcIMG
         {
             Bitmap filteredImage = new Bitmap(original.Width, original.Height);
 
-            // Aplicar el filtro negativo
             for (int x = 0; x < original.Width; x++)
             {
                 for (int y = 0; y < original.Height; y++)
@@ -237,7 +222,6 @@ namespace ProcIMG
                     int newG = 255 - g;
                     int newB = 255 - b;
 
-                    // Asegurar que los valores estén en el rango [0, 255]
                     newR = Math.Max(0, Math.Min(255, newR));
                     newG = Math.Max(0, Math.Min(255, newG));
                     newB = Math.Max(0, Math.Min(255, newB));
@@ -256,5 +240,14 @@ namespace ProcIMG
             pause = !pause;
         }
 
+        private void btnHorizontalVi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVerticalVi_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

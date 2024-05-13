@@ -662,6 +662,7 @@ namespace ProcIMG
             this.btnVerticalVi.Text = "Vertical";
             this.btnVerticalVi.UseVisualStyleBackColor = false;
             this.btnVerticalVi.Visible = false;
+            this.btnVerticalVi.Click += new System.EventHandler(this.btnVerticalVi_Click);
             // 
             // btnHorizontalVi
             // 
@@ -677,6 +678,7 @@ namespace ProcIMG
             this.btnHorizontalVi.Text = "Horizontal";
             this.btnHorizontalVi.UseVisualStyleBackColor = false;
             this.btnHorizontalVi.Visible = false;
+            this.btnHorizontalVi.Click += new System.EventHandler(this.btnHorizontalVi_Click);
             // 
             // VideosForm
             // 
