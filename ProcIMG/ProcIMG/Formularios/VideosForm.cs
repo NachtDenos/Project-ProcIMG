@@ -282,6 +282,7 @@ namespace ProcIMG
                      
                         double fps = capture.GetCaptureProperty(CapProp.Fps);
                         await Task.Delay((int)(1000 / fps));
+                        //Descomentar al final para mostrar funcionalidad
                         //UpdateHistogram(frame);
                         //UpdateHistogram2(filteredFrame);
                     }

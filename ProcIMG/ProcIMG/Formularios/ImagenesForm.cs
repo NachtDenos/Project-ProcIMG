@@ -303,6 +303,10 @@ namespace ProcIMG
         private void btnEraseImg_Click(object sender, EventArgs e)
         {
             cleanConfiguration();
+            resultImg = originalImg;
+            this.Invalidate();
+            pbEditImage.Image = resultImg;
+            UpdateHistogram2();
         }
 
         private void btnUploadImg_Click(object sender, EventArgs e)
@@ -405,5 +409,28 @@ namespace ProcIMG
             UpdateHistogram2();
         }
 
+        private void btnDownloadImg_Click(object sender, EventArgs e)
+        {
+            if (pbEditImage.Image == null)
+            {
+                MessageBox.Show("No ha editado ninguna imagen.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            } 
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "archivos de imagenes (*.png)|*.png|archivos de imagenes (*.jpg)|*.jpg|archivos de imagenes (*.jpeg)|*.jpeg";
+
+            saveFileDialog.FileName = "imageEdited.png"; 
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = saveFileDialog.FileName;
+
+                if (pbEditImage.Image != null)
+                {
+                    pbEditImage.Image.Save(filePath);
+                }
+            }
+
+        }
     }
 }

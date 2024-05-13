@@ -597,6 +597,7 @@ namespace ProcIMG
             this.btnDownloadImg.Size = new System.Drawing.Size(50, 50);
             this.btnDownloadImg.TabIndex = 12;
             this.btnDownloadImg.UseVisualStyleBackColor = false;
+            this.btnDownloadImg.Click += new System.EventHandler(this.btnDownloadImg_Click);
             // 
             // btnEraseImg
             // 
