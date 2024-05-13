@@ -498,6 +498,7 @@ namespace ProcIMG
             this.tbFilterOnlyVi.TabIndex = 51;
             this.tbFilterOnlyVi.TickStyle = System.Windows.Forms.TickStyle.None;
             this.tbFilterOnlyVi.Visible = false;
+            this.tbFilterOnlyVi.Scroll += new System.EventHandler(this.tbFilterOnlyVi_Scroll);
             // 
             // tbGradientVi
             // 

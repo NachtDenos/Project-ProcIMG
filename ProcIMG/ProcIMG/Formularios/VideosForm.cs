@@ -23,6 +23,7 @@ namespace ProcIMG
         public string sFilter = "";
         VideoCapture capture;
         bool pause = false;
+        float valueScroll = 0.0f;
         public VideosForm()
         {
             InitializeComponent();
@@ -56,6 +57,12 @@ namespace ProcIMG
         {
             cleanConfiguration();
             tbFilterOnlyVi.Visible = true;
+            if (originalVid == null)
+            {
+                MessageBox.Show("Debe seleccionar un video antes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            sFilter = "BrightnessFilter";
         }
         private void btnContrastVi_Click(object sender, EventArgs e)
         {
@@ -90,10 +97,6 @@ namespace ProcIMG
                 return;
             }
             sFilter = "NegativeFilter";
-            // Aplicar el filtro negativo
-            //resultVid = ApplyNegativeFilter(originalVid);
-            //pbEditVideo.Image = resultVid;
-            //UpdateHistogram2();
         }
         private void btnPixelVi_Click(object sender, EventArgs e)
         {
@@ -198,6 +201,12 @@ namespace ProcIMG
             {
                 case "NegativeFilter":
                     return ApplyNegativeFilter(frame);
+                case "HorizontalFilter":
+                    return ApplyHorizontalFilter(frame);
+                case "VerticalFilter":
+                    return ApplyVerticalFilter(frame);
+                case "BrightnessFilter":
+                    return ApplyBrightnessFilter(frame);
                 default:
                     return frame;
             }
@@ -206,35 +215,33 @@ namespace ProcIMG
 
         private Bitmap ApplyNegativeFilter(Bitmap original)
         {
-            Bitmap filteredImage = new Bitmap(original.Width, original.Height);
-
-            for (int x = 0; x < original.Width; x++)
-            {
-                for (int y = 0; y < original.Height; y++)
-                {
-                    Color pixel = original.GetPixel(x, y);
-
-                    int r = pixel.R;
-                    int g = pixel.G;
-                    int b = pixel.B;
-
-                    int newR = 255 - r;
-                    int newG = 255 - g;
-                    int newB = 255 - b;
-
-                    newR = Math.Max(0, Math.Min(255, newR));
-                    newG = Math.Max(0, Math.Min(255, newG));
-                    newB = Math.Max(0, Math.Min(255, newB));
-
-                    Color newPixel = Color.FromArgb(newR, newG, newB);
-                    filteredImage.SetPixel(x, y, newPixel);
-                }
-            }
-
+            Bitmap originalImage = (Bitmap)original;
+            FiltersC filters = new FiltersC();
+            Bitmap filteredImage = filters.NegativeFilter(originalImage);
             return filteredImage;
         }
 
-
+        private Bitmap ApplyHorizontalFilter(Bitmap original)
+        {
+            Bitmap originalImage = (Bitmap)original;
+            FiltersC filters = new FiltersC();
+            Bitmap filteredImage = filters.HorizontalFilter(originalImage);
+            return filteredImage;
+        }
+        private Bitmap ApplyVerticalFilter(Bitmap original)
+        {
+            Bitmap originalImage = (Bitmap)original;
+            FiltersC filters = new FiltersC();
+            Bitmap filteredImage = filters.VerticalFilter(originalImage);
+            return filteredImage;
+        }
+        private Bitmap ApplyBrightnessFilter(Bitmap original)
+        {
+            Bitmap originalImage = (Bitmap)original;
+            FiltersC filters = new FiltersC();
+            Bitmap filteredImage = filters.BrightnessFilter(originalImage, valueScroll);
+            return filteredImage;
+        }
         private void btnPauseVi_Click(object sender, EventArgs e)
         {
             pause = !pause;
@@ -242,12 +249,27 @@ namespace ProcIMG
 
         private void btnHorizontalVi_Click(object sender, EventArgs e)
         {
-
+            if (originalVid == null)
+            {
+                MessageBox.Show("Debe seleccionar un video antes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            sFilter = "HorizontalFilter";
         }
 
         private void btnVerticalVi_Click(object sender, EventArgs e)
         {
+            if (originalVid == null)
+            {
+                MessageBox.Show("Debe seleccionar un video antes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            sFilter = "VerticalFilter";
+        }
 
+        private void tbFilterOnlyVi_Scroll(object sender, EventArgs e)
+        {
+            valueScroll = tbFilterOnlyVi.Value;
         }
     }
 }

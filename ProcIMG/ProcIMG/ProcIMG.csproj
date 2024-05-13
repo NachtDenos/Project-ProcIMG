@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FiltersC.cs" />
     <Compile Include="Formularios\CamaraForm.cs">
       <SubType>Form</SubType>
     </Compile>

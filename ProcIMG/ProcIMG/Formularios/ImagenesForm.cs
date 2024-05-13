@@ -144,44 +144,12 @@ namespace ProcIMG
 
         private void BrightnessFilter(float pBrightness)
         {
-            int x = 0;
-            int y = 0;
-            resultImg = new Bitmap(originalImg.Width, originalImg.Height);
-            Color rColor = new Color();
-            Color oColor = new Color();
-            int r = 0;
-            int g = 0;
-            int b = 0;
-            for (x = 0; x < originalImg.Width; x++)
-            {
-                for (y = 0; y < originalImg.Height; y++)
-                {
-                    oColor = originalImg.GetPixel(x, y);
-                    r = (int)(oColor.R * pBrightness);
-                    g = (int)(oColor.G * pBrightness);
-                    b = (int)(oColor.B * pBrightness);
-
-                    if (r > 255)
-                        r = 255;
-                    else if (r < 0)
-                        r = 0;
-
-                    if (g > 255)
-                        g = 255;
-                    else if (g < 0)
-                        g = 0;
-
-                    if (b > 255)
-                        b = 255;
-                    else if (b < 0)
-                        b = 0;
-                    rColor = Color.FromArgb(r, g, b);
-                    resultImg.SetPixel(x, y, rColor);
-                }
-                
-            }
+            Bitmap originalImage = (Bitmap)originalImg;
+            FiltersC filters = new FiltersC();
+            Bitmap filteredImage = filters.BrightnessFilter(originalImage, pBrightness);
             this.Invalidate();
-            pbEditImage.Image = resultImg;
+            pbEditImage.Image = filteredImage;
+            resultImg = filteredImage;
             UpdateHistogram2();
         }
         private void NoiseFilter(float noisePercent)
@@ -539,31 +507,12 @@ namespace ProcIMG
         private void btnNegativeImg_Click(object sender, EventArgs e)
         {
             cleanConfiguration();
-            if (originalImg == null)
-            {
-                MessageBox.Show("Debe seleccionar una imagen antes.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            int x = 0;
-            int y = 0;
-            resultImg = new Bitmap(originalImg.Width, originalImg.Height);
-            Color rColor = new Color();
-            Color oColor = new Color();
-            for (x = 0; x < originalImg.Width; x++)
-            {
-                for (y = 0; y < originalImg.Height; y++)
-                {
-                    oColor = originalImg.GetPixel(x, y);
-
-                    rColor = Color.FromArgb(255 - oColor.R,
-                                            255 - oColor.G,
-                                            255 - oColor.B);
-
-                    resultImg.SetPixel(x, y, rColor);
-                }
-            }
+            Bitmap originalImage = (Bitmap)originalImg;
+            FiltersC filters = new FiltersC();
+            Bitmap filteredImage = filters.NegativeFilter(originalImage);
             this.Invalidate();
-            pbEditImage.Image = resultImg;
+            pbEditImage.Image = filteredImage;
+            resultImg = filteredImage;
             UpdateHistogram2();
         }
 
@@ -721,51 +670,23 @@ namespace ProcIMG
 
         private void btnHorizontalImg_Click(object sender, EventArgs e)
         {
-            int x = 0;
-            int y = 0;
-            resultImg = new Bitmap(originalImg.Width, originalImg.Height);
-            Color rColor = new Color();
-            Color oColor = new Color();
-            for (x = 0; x < originalImg.Width; x++)
-            {
-                for (y = 0; y < originalImg.Height; y++)
-                {
-                    oColor = originalImg.GetPixel(x, y);
-
-                    rColor = Color.FromArgb(oColor.R,
-                                            oColor.G,
-                                            oColor.B);
-
-                    resultImg.SetPixel(originalImg.Width - x - 1, y, rColor);
-                }
-            }
+            Bitmap originalImage = (Bitmap)originalImg;
+            FiltersC filters = new FiltersC();
+            Bitmap filteredImage = filters.HorizontalFilter(originalImage);
             this.Invalidate();
-            pbEditImage.Image = resultImg;
+            resultImg = filteredImage;
+            pbEditImage.Image = filteredImage;
             UpdateHistogram2();
         }
 
         private void btnVerticalImg_Click(object sender, EventArgs e)
         {
-            int x = 0;
-            int y = 0;
-            resultImg = new Bitmap(originalImg.Width, originalImg.Height);
-            Color rColor = new Color();
-            Color oColor = new Color();
-            for (x = 0; x < originalImg.Width; x++)
-            {
-                for (y = 0; y < originalImg.Height; y++)
-                {
-                    oColor = originalImg.GetPixel(x, y);
-
-                    rColor = Color.FromArgb(oColor.R,
-                                            oColor.G,
-                                            oColor.B);
-
-                    resultImg.SetPixel(x, originalImg.Height - y - 1, rColor);
-                }
-            }
+            Bitmap originalImage = (Bitmap)originalImg;
+            FiltersC filters = new FiltersC();
+            Bitmap filteredImage = filters.VerticalFilter(originalImage);
             this.Invalidate();
-            pbEditImage.Image = resultImg;
+            resultImg = filteredImage;
+            pbEditImage.Image = filteredImage;
             UpdateHistogram2();
         }
     }
